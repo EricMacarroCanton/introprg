@@ -1,0 +1,36 @@
+TÍTOL:Exercici 00_01. Similaritats i diferències
+AUTORIA: Èric Macarro Cantón 23/09/2025
+INTRODUCCIÓ:Es tracta d'un exercici en que es compara la realització d'un mateix programa escrit en diferents llenguatges de programacio amb L'objectiu general de diferenciar cada llenguatge i saber-hi els avantatges i desavantatges.
+PREGUNTA 1. Què fa el programa? Quin és el problema que pretén resoldre el programa, independentment de amb quin llenguatge estigui escrit?
+ El programa demana a l’usuari que introdueixi el radi d’un cercle i calcula l’àrea corresponent mitjançant la seva fórmula matemàtica
+PREGUNTA 2. Elements comuns Fixa't que els diferents llenguatges tenen maneres diferents d'expressar les passes a realitzar per portar a terme la resolució del problema. Amb tot, si mirem amb atenció, trobem que hi ha elements que es repeteixen a totes (o quasi totes) les versions. Identifica'ls i descriu-los. 
+En C i Java s’utilitza #define PI 3.14159 o Math.PI, En Python i Kotlin s’utilitza math.pi o Math.PI i en pseudocodi es posa const PI = 3,14159 per tal de donar-li un valor a la constant pi. Per altra banda en tots els llenguatges es defineixen almenys dues variables, radi que és el valor introduït per l’usuari i àrea que és resultat del càlcul. Sempre es mostra un text tipus "Càlcul de l’àrea d’un cercle" i després "Introduïu el radi:" això serveix per guiar la interacció amb l’usuari. Per últim la fórmula és la mateixa a tots: àrea=π×radi2
+PREGUNTA 3. Entrada/sortida: El programa, en les seves diferents versions, ha de demanar un valor als seus usuaris i escriure un resultat. Indica, per cada llenguatge, de quina manera obté la dada i de quina manera mostra el resultat. Per exemple:En pseudocodi, l'entrada l'obté amb llegeix radi i el resultat el mostra amb escriu "L'àrea és ", àrea".
+Pseudocodi
+Entrada: llegeix radi
+Sortida: escriu "L'àrea és ", àrea
+C
+Entrada: scanf("%f", &radi);
+Sortida: printf("L'àrea és %f\n", area);
+Python
+Entrada: linia = input("Introduïu el radi: ") i després radi = float(linia)
+Sortida: print(f"L'àrea és {area}")
+Java
+Entrada: BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+String linia = reader.readLine();
+radi = Float.parseFloat(linia);
+Sortida:system.out.println("L'àrea és " + area);
+Kotlin
+Entrada:val reader = BufferedReader(InputStreamReader(System.`in`))
+val linia = reader.readLine()
+val radi = linia.toFloat()
+Sortida:println("L'àrea és $area")
+PREGUNTA 4. Variables. Hi ha un tipus d'element que apareix a totes les versions, que es coneix com a variable. Les variables serveixen als programes per poder referir-se als diferents valors que han de manegar. Un exemple d'aquestes variables és area.Hi trobes més exemples? Quins?
+Resum de variables en cada llenguatge:
+Pseudocodi: radi, àrea
+C: radi, area
+Python: linia, radi, area
+Java: linia, radi, area, i també reader (objecte per llegir l’entrada)
+Kotlin: linia, radi, area, i també reader
+PREGUNTA 5. Preferència: Potser és molt d'hora, però, així a primera vista, quin dels llenguatges que et presento, veus més interessant? Perquè?
+Prefereixo python perquè esl'únic que he aprés de moment i no em va semblar gaire difícil.
