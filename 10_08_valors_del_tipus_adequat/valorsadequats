@@ -1,0 +1,19 @@
+        int tallaSabates = 45;
+
+      
+        String dataAniversari = "15/08/2000";
+
+    
+        String nom = "Eric";
+
+       
+        String colorEscriptori = "Blanc";
+
+    
+        boolean mAgradaLlimona = true;
+
+     
+        String cancoPreferida = "El patio";
+
+       
+        String obresPreferides = "Cars, Nemo i Com entrenar al teu drac";
