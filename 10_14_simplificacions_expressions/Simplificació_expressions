@@ -1,0 +1,43 @@
+true && A, A
+| true | A    | true && A |
+| cert | cert | cert      |
+| cert | fals | fals      |
+
+A && A, A
+| A    | A && A 
+| cert | cert   |
+| fals | fals   |
+
+A || false, A
+| A    | false | A || false |
+| cert | fals | cert |
+| fals | fals | fals |
+
+A || A, A
+| A    | A || A |
+| cert | cert |
+| fals | fals |
+
+A && false, false
+| A    | false | A && false |
+| cert | fals  | fals       |
+| fals | fals  | fals       |
+
+A || true, true
+
+| A | true | A || true |
+| cert | cert | cert |
+| fals | cert | cert |
+
+! (A && B), !A || !B
+| A | B | A && B | !(A && B) | !A | !B | !A || !B |
+| cert | cert | cert | fals | fals | fals | fals |
+| cert | fals | fals | cert | fals | cert | cert |
+| fals | cert | fals | cert | cert | fals | cert |
+| fals | fals | fals | cert | cert | cert | cert |
+! (A || B), !A && !B
+| A    | B    | A || B | !(A || B) | !A | !B | !A && !B |
+| cert | cert | cert | fals | fals | fals | fals |
+| cert | fals | cert | fals | fals | cert | fals |
+| fals | cert | cert | fals | cert | fals | fals |
+| fals | fals | fals | cert | cert | cert | cert |
