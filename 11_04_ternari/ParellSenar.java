@@ -15,7 +15,7 @@ public class ParellSenar {
         // Fem servir l'operador ternari per decidir si és parell o senar
         String resultat = (numero % 2 == 0) ? "parell" : "senar";
         
-        System.out.println("El número " + numero + " és " + resultat + ".");
+        System.out.println("El número " + numero + " és " + resultat);
     }
 }
 
