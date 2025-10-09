@@ -17,7 +17,7 @@ public class DiaSetmana {
         } else if (dia == 7) {
             System.out.println("Diumenge");
         } else {
-            System.out.println("error");
+            System.out.println("Error");
         }
     }
 }
