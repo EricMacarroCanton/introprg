@@ -9,7 +9,7 @@ public class ClassificaCaravana {
 
         if (preu < 50000) {                     // Econòmica
             System.out.println("Econòmica");
-        } else if (preu < 175000) {            // General
+        } else if (preu <= 175000) {            // General
             System.out.println("General");
         } else {                                // Luxe
             System.out.println("Luxe");
