@@ -5,13 +5,7 @@
  * Descripció:
  *   Aquest programa demana tres nombres enters a l'usuari
  *   i els mostra ordenats creixentment (de menor a major).
- * Exemple:
- *   Primer? 3
- *   Segon? 4
- *   Tercer? 2
- *   Sortida: 2, 3 i 4
- * Objectiu:
- *   Practicar l'entrada amb readLine() i la lògica per ordenar valors.
+ 
  */
 
 public class TresEnOrdre {
@@ -27,7 +21,6 @@ public class TresEnOrdre {
 
         int min, mid, max;
 
-        // Comparacions per ordenar
         if (primer <= segon && primer <= tercer) {
             min = primer;
             if (segon <= tercer) {
@@ -57,7 +50,7 @@ public class TresEnOrdre {
             }
         }
 
-        // Escriure resultat
+
         System.out.println(min + ", " + mid + " i " + max);
     }
 }
