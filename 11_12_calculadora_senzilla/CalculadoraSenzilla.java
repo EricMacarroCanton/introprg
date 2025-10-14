@@ -15,6 +15,7 @@ public class CalculadoraSenzilla {
         double operand2 = Double.parseDouble(Entrada.readLine());
 
         double resultat = 0;
+        boolean error = false; 
 
         if (operador == '+') {
             resultat = operand1 + operand2;
@@ -25,16 +26,19 @@ public class CalculadoraSenzilla {
         } else if (operador == '/') {
             if (operand2 == 0) {
                 System.out.println("No es pot dividir entre 0");
-                return;
+                error = true;
+            } else {
+                resultat = operand1 / operand2;
             }
-            resultat = operand1 / operand2;
         } else {
             System.out.println("L'operador " + operador + " no està disponible");
-        
+            error = true;
         }
 
-        // Escriure resultat de manera senzilla
-        System.out.println(operand1 + " " + operador + " " + operand2 + " = " + resultat);
+      
+        if (!error) {
+            System.out.println(operand1 + " " + operador + " " + operand2 + " = " + resultat);
+        }
     }
 }
 
