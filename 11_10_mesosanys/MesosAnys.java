@@ -1,4 +1,9 @@
-
+/**
+ * Nom del fitxer: MesosAnys.java
+ * Autor:Eric
+ Aquest programa demana a l'usuari un mes i un any,
+ *   i mostra el mes anterior i el mes següent amb l'any corresponent.
+*//
 public class MesosAnys {
     public static void main(String[] args) {
  System.out.println("Mes?");

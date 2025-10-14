@@ -1,4 +1,10 @@
-public class DiaSetmanaSwitch {
+/**
+ * Programa: DiaSetmanaSwitch
+ * Objectiu: Convertir un número de dia (1-7) en el nom corresponent del dia de la setmana.
+ * Autor: Eric
+ *
+ *
+ */public class DiaSetmanaSwitch {
     public static void main(String[] args) {
 
         int day = Integer.parseInt(args[0]);
