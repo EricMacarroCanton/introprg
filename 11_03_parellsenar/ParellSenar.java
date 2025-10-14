@@ -7,9 +7,9 @@ public class ParellSenar {
     public static void main(String[] args) {
         int numero = Integer.parseInt(args[0]);
          if (numero % 2 == 0) {
-            System.out.println("El número " + numero + " es par.");
+            System.out.println("El número " + numero + " és par");
         } else {
-            System.out.println("El número " + numero + " es impar.");
+            System.out.println("El número " + numero + " és senar");
         }
     }
  }
