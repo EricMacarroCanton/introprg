@@ -28,7 +28,7 @@ public class Ascensor {
             else if (boto.equals("pujar un")) nouPis = "error";
             else if (boto.equals("baixar dos")) nouPis = "planta baixa";
         } else if (pisActual.equals("golfes")) {
-            if (boto.equals("baixar un")) nouPis = "segon pis";
+            if (boto.equals("baixar un")) nouPis = "error";
         }
 
         System.out.println(nouPis);
