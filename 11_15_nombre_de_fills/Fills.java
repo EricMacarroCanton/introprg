@@ -1,4 +1,12 @@
-public class Fills {
+/**
+Eric
+ Programa: FillsDescripció:
+Aquest programa pregunta al usuari quants fills té
+ mostra un missatge diferent segons la quantitat:
+ - Mensatge d'error si és negatiu
+  - Comentari divertit o advertència segons el nombre de fills
+ */
+ public class Fills {
 public static void main(String[] args) {
 
 
