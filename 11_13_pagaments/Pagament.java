@@ -1,4 +1,11 @@
-public class Pagament {
+/**
+Eric Macarro
+ Programa: Pagament
+ Descripció: 
+ Aquest programa demana el preu d’un producte i la quantitat que paga el client.
+ Calcula si sobren diners, si falta pagar-ne més o si el pagament és exacte.
+ */
+ public class Pagament {
 public static void main(String[] args) {
  
   System.out.println("Preu?");
