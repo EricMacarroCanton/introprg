@@ -38,7 +38,7 @@ public class Metge {
                         System.out.println("Pren un carmel d'eucaliptus");
                     }
                 } else {
-                    System.out.println("Vine a la consulta.");
+                    System.out.println("Vine a la consulta");
                 }
             }
         } else {
