@@ -22,7 +22,7 @@ public class Metge {
                 if (problemesEstomac.equals("sí")) {
                     System.out.println("Pren paracetamol");
                 } else {
-                    System.out.println("Pren una aspirina");
+                    System.out.println("Pren aspirina");
                 }
             } else {
                
