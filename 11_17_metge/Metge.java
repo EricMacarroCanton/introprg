@@ -1,5 +1,5 @@
 /**
- * Eric
+ * Eric M
  * Programa: Metge
  * Descripció:
  * Simula un metge atenent a un pacient. Pregunta els símptomes i depenent del que tingui,
