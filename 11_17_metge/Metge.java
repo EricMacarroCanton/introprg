@@ -33,9 +33,9 @@ public class Metge {
                     System.out.println("Edat?");
                     int edat = Integer.parseInt(Entrada.readLine());
                     if (edat < 12) {
-                        System.out.println("Pren un carmel de mel");
+                        System.out.println("Pren un carmel de mel");   
                     } else {
-                        System.out.println("Pren un carmel d’eucaliptus");
+                        System.out.println("Pren un carmel d'eucaliptus");
                     }
                 } else {
                     System.out.println("Vine a la consulta");
