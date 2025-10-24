@@ -1,0 +1,16 @@
+
+Taula dels tipus de dades primitius en Java, amb la seva mida en bits, rang de valors i un exemple
+
+
+
+| Tipus     | Bits       | Mínim     | Màxim               | Exemple |
+| --------- | ---------- | --------- | ------------------- | ------- |
+| `int`     | 32         | -2³¹      | 2³¹-1               | 42      |
+| `boolean` | indefinida | false     | true                | true    |
+| `byte`    | 8          | -128      | 127                 | 100     |
+| `short`   | 16         | -32,768   | 32,767              | 2000    |
+| `long`    | 64         | -2⁶³      | 2⁶³-1               | 100000L |
+| `float`   | 32         | ~1.4e-45  | ~3.4e38             | 3.14f   |
+| `double`  | 64         | ~4.9e-324 | ~1.8e308            | 3.14159 |
+| `char`    | 16         |'\u0000'(0)| '\uffff' (65,535)   | 'A'     |
+
