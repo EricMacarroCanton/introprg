@@ -2,41 +2,25 @@ public class InformeString {
     public static void main(String[] args) {
         // Lectura de dades
         System.out.println("Text principal?");
-        String text = Entrada.readLine();
+        String principal = Entrada.readLine();
 
         System.out.println("Text secundari?");
-        String textSecundari = Entrada.readLine();
+        String secundari = Entrada.readLine();
 
         System.out.println("Número positiu?");
-        int numeroPositiu = Integer.parseInt(Entrada.readLine());
+        int num = Integer.parseInt(Entrada.readLine());
 
-        // Preparar els resultats
-        int longitud = text.length();
-        boolean iniciaAmb = text.startsWith(textSecundari);
-        boolean acabaAmb = text.endsWith(textSecundari);
-        boolean iguala = text.equals(textSecundari);
-        boolean igualaSenseCase = text.equalsIgnoreCase(textSecundari);
-        boolean estaEnBlanc = text.isBlank();
-        boolean estaBuit = text.isEmpty();
-        char caracter3 = text.charAt(numeroPositiu);
-        String concatenat = text.concat(textSecundari);
-        String repetit = text.repeat(numeroPositiu);
-        String majuscules = text.toUpperCase();
-        String minuscules = text.toLowerCase();
-
-        // Mostrar els resultats
-        System.out.println("\"" + text + "\".length(): " + longitud);
-        System.out.println("\"" + text + "\".startsWith(\"" + textSecundari + "\"): " + iniciaAmb);
-        System.out.println("\"" + text + "\".endsWith(\"" + textSecundari + "\"): " + acabaAmb);
-        System.out.println("\"" + text + "\".equals(\"" + textSecundari + "\"): " + iguala);
-        System.out.println("\"" + text + "\".equalsIgnoreCase(\"" + textSecundari + "\"): " + igualaSenseCase);
-        System.out.println("\"" + text + "\".isBlank(): " + estaEnBlanc);
-        System.out.println("\"" + text + "\".isEmpty(): " + estaBuit);
-        System.out.println("\"" + text + "\".charAt(" + numeroPositiu + "): " + repetit);
-        System.out.println("\"" + text + "\".concat(\"" + textSecundari + "\"): " + concatenat);
-        System.out.println("\"" + text + "\".repeat(" + numeroPositiu + "): " + repetit);
-        System.out.println("\"" + text + "\".toUpperCase(): " + majuscules);
-        System.out.println("\"" + text + "\".toLowerCase(): " + minuscules);
+        System.out.println(principal + ".length(): " + principal.length());
+        System.out.println(principal + ".startsWith(" + secundari + "): " + principal.startsWith(secundari));
+        System.out.println(principal + ".endsWith(" + secundari + "): " + principal.endsWith(secundari));
+        System.out.println(principal + ".equals(" + secundari + "): " + principal.equals(secundari));
+        System.out.println(principal + ".equalsIgnoreCase(" + secundari + "): " + principal.equalsIgnoreCase(secundari));
+        System.out.println(principal + ".isBlank(): " + principal.isBlank());
+        System.out.println(principal + ".isEmpty(): " + principal.isEmpty());
+        System.out.println(principal + ".charAt(" + num + "): " + principal.charAt(num));
+        System.out.println(principal + ".concat(" + secundari + "): " + principal.concat(secundari));
+        System.out.println(principal + ".repeat(" + num + "): " + principal.repeat(num));
+        System.out.println(principal + ".toUpperCase(): " + principal.toUpperCase());
+        System.out.println(principal + ".toLowerCase(): " + principal.toLowerCase());
     }
-}
-
+    }
