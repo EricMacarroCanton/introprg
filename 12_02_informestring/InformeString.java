@@ -18,7 +18,7 @@ public class InformeString {
         boolean igualaSenseCase = text.equalsIgnoreCase(textSecundari);
         boolean estaEnBlanc = text.isBlank();
         boolean estaBuit = text.isEmpty();
-        char caracter3 = text.charAt(3);
+        char caracter3 = text.charAt(numeroPositiu);
         String concatenat = text.concat(textSecundari);
         String repetit = text.repeat(numeroPositiu);
         String majuscules = text.toUpperCase();
