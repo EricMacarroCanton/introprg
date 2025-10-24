@@ -32,7 +32,7 @@ public class InformeString {
         System.out.println("\"" + text + "\".equalsIgnoreCase(\"" + textSecundari + "\"): " + igualaSenseCase);
         System.out.println("\"" + text + "\".isBlank(): " + estaEnBlanc);
         System.out.println("\"" + text + "\".isEmpty(): " + estaBuit);
-        System.out.println("\"" + text + "\".charAt(3): " + caracter3);
+        System.out.println("\"" + text + "\".charAt(numeroPositiu): " + caracter3);
         System.out.println("\"" + text + "\".concat(\"" + textSecundari + "\"): " + concatenat);
         System.out.println("\"" + text + "\".repeat(" + numeroPositiu + "): " + repetit);
         System.out.println("\"" + text + "\".toUpperCase(): " + majuscules);
