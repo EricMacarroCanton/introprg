@@ -17,7 +17,7 @@ public class AcabaLletraNoVocal {
             if (ultima == 'a' || ultima == 'e' || ultima == 'i' || ultima == 'o' || ultima == 'u') {
                 System.out.println("\"" + text + "\" no finalitza amb lletra no vocal");
             } else {
-                System.out.println("\"" + text + "\" finalitza amb lletra no vocal '" + ultimaOriginal + "'");
+                System.out.println("\"" + text + "\" finalitza amb la lletra no vocal '" + ultimaOriginal + "'");
             }
         }
     }
