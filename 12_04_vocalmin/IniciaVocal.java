@@ -1,20 +1,24 @@
+// exercici 12_04 on hem de fer un codi per veure si la paraula començaamb vocal o no (eric)
+
 public class IniciaVocal {
     public static void main(String[] args) {
         System.out.println("Text?");
-        String paraula = Entrada.readLine();
+        String text = Entrada.readLine();
 
-        if (paraula.length() == 0) {
-            System.out.println("El text no té lletres");
-            return;
+        char primera = ' '; // inicialitzem amb un valor per defecte
+
+        // Només agafem el primer caràcter de text
+        if (text.length() > 0) {
+            primera = Character.toLowerCase(text.charAt(0));
         }
 
-        char primera = paraula.charAt(0);
-        primera = Character.toLowerCase(primera);
-
-        if (primera == 'a' || primera == 'e' || primera == 'i' || primera == 'o' || primera == 'u') {
-            System.out.println("\"" + paraula + "\" inicia amb la vocal '" + primera + "'");
+        // Comprovació vocal
+        if (text.length() == 0) {
+            System.out.println("El text no té lletres");
+        } else if (primera == 'a' || primera == 'e' || primera == 'i' || primera == 'o' || primera == 'u') {
+            System.out.println("\"" + text + "\" inicia amb la vocal '" + primera + "'");
         } else {
-            System.out.println("\"" + paraula + "\" no inicia amb vocal");
+            System.out.println("\"" + text + "\" no inicia amb vocal");
         }
     }
 }
