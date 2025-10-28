@@ -8,23 +8,18 @@ public class AcabaLletraNoVocal {
             return;
         }
 
-        // Busquem l'últim caràcter que sigui una lletra
-        int i = text.length() - 1;
-        while (i >= 0 && !Character.isLetter(text.charAt(i))) {
-            i--;
-        }
+        char ultimaOriginal = text.charAt(text.length() - 1);
 
-        if (i < 0) {
-            // No hi ha cap lletra
+        if (!Character.isLetter(ultimaOriginal)) {
+            // L'últim caràcter no és una lletra
             System.out.println("\"" + text + "\" no finalitza amb lletra no vocal");
         } else {
-            char ultimaOriginal = text.charAt(i); // mantenim la lletra original
-            char ultima = Character.toLowerCase(ultimaOriginal); // per la comprovació de vocal
-
-            if (ultima != 'a' && ultima != 'e' && ultima != 'i' && ultima != 'o' && ultima != 'u') {
-                System.out.println("\"" + text + "\" finalitza amb la lletra no vocal '" + ultimaOriginal + "'");
-            } else {
+            // Comprovem si és vocal
+            char ultima = Character.toLowerCase(ultimaOriginal);
+            if (ultima == 'a' || ultima == 'e' || ultima == 'i' || ultima == 'o' || ultima == 'u') {
                 System.out.println("\"" + text + "\" no finalitza amb lletra no vocal");
+            } else {
+                System.out.println("\"" + text + "\" finalitza amb lletra no vocal '" + ultimaOriginal + "'");
             }
         }
     }
