@@ -22,7 +22,7 @@ public class AcabaLletraNoVocal {
             char ultima = Character.toLowerCase(ultimaOriginal); // per la comprovació de vocal
 
             if (ultima != 'a' && ultima != 'e' && ultima != 'i' && ultima != 'o' && ultima != 'u') {
-                System.out.println("\"" + text + "\" finalitza amb lletra no vocal '" + ultimaOriginal + "'");
+                System.out.println("\"" + text + "\" finalitza amb la lletra no vocal '" + ultimaOriginal + "'");
             } else {
                 System.out.println("\"" + text + "\" no finalitza amb lletra no vocal");
             }
