@@ -4,7 +4,7 @@ public class IniciaVocal {
         String paraula = Entrada.readLine();
 
         if (paraula.length() == 0) {
-            System.out.println("No s'ha introduït cap text");
+            System.out.println("El text no té lletres");
             return;
         }
 
