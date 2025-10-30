@@ -2,7 +2,7 @@
 
  public class MatriculaValida {
     public static void main(String[] args) {
-        System.out.println("Introduïu una matrícula:");
+        System.out.println("Introduïu una matrícula");
         String matricula = Entrada.readLine();
 
         // Comprovem la longitud
