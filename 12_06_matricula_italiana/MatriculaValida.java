@@ -20,10 +20,10 @@
             boolean valid = true;
 
             // Lletres inicials
-            if (!Character.isUpperCase(c1) || c1 == 'I' || c1 == 'O' || c1 == 'Q' || c1 == 'U'|| c1 == 'Ñ'|| c1 == 'À'|| c1 == 'Ä') {
+            if (!Character.isUpperCase(c1) || c1 == 'I' || c1 == 'O' || c1 == 'Q' || c1 == 'U'|| c1 == 'Ñ'|| c1 == 'À'|| c1 == 'Ä'|| c1 == 'Æ') { 
                 valid = false;
             }
-            if (!Character.isUpperCase(c2) || c2 == 'I' || c2 == 'O' || c2 == 'Q' || c2 == 'U'|| c2 == 'Ñ'|| c2 == 'À'|| c2 == 'Ä') {
+            if (!Character.isUpperCase(c2) || c2 == 'I' || c2 == 'O' || c2 == 'Q' || c2 == 'U'|| c2 == 'Ñ'|| c2 == 'À'|| c2 == 'Ä'|| c2 == 'Æ') {
                 valid = false;
             }
 
@@ -39,10 +39,10 @@
             }
 
             // Lletres finals
-            if (!Character.isUpperCase(c3) || c3 == 'I' || c3 == 'O' || c3 == 'Q' || c3 == 'U' || c3 == 'Ñ'|| c3 == 'À'|| c3 == 'Ä') {
+            if (!Character.isUpperCase(c3) || c3 == 'I' || c3 == 'O' || c3 == 'Q' || c3 == 'U' || c3 == 'Ñ'|| c3 == 'À'|| c3 == 'Ä'|| c3 == 'Æ') {
                 valid = false;
             }
-            if (!Character.isUpperCase(c4) || c4 == 'I' || c4 == 'O' || c4 == 'Q' || c4 == 'U'|| c4 == 'Ñ'|| c4 == 'À'|| c4 == 'Ä') {
+            if (!Character.isUpperCase(c4) || c4 == 'I' || c4 == 'O' || c4 == 'Q' || c4 == 'U'|| c4 == 'Ñ'|| c4 == 'À'|| c4 == 'Ä'|| c4 == 'Æ') {
                 valid = false;
             }
 
