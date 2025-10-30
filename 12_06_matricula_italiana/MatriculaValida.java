@@ -20,10 +20,10 @@
             boolean valid = true;
 
             // Lletres inicials
-            if (!Character.isUpperCase(c1) || c1 == 'I' || c1 == 'O' || c1 == 'Q' || c1 == 'U') {
+            if (!Character.isUpperCase(c1) || c1 == 'I' || c1 == 'O' || c1 == 'Q' || c1 == 'U'|| c1 == 'Ñ') {
                 valid = false;
             }
-            if (!Character.isUpperCase(c2) || c2 == 'I' || c2 == 'O' || c2 == 'Q' || c2 == 'U') {
+            if (!Character.isUpperCase(c2) || c2 == 'I' || c2 == 'O' || c2 == 'Q' || c2 == 'U'|| c2 == 'Ñ') {
                 valid = false;
             }
 
@@ -39,10 +39,10 @@
             }
 
             // Lletres finals
-            if (!Character.isUpperCase(c3) || c3 == 'I' || c3 == 'O' || c3 == 'Q' || c3 == 'U') {
+            if (!Character.isUpperCase(c3) || c3 == 'I' || c3 == 'O' || c3 == 'Q' || c3 == 'U' || c3 == 'Ñ') {
                 valid = false;
             }
-            if (!Character.isUpperCase(c4) || c4 == 'I' || c4 == 'O' || c4 == 'Q' || c4 == 'U') {
+            if (!Character.isUpperCase(c4) || c4 == 'I' || c4 == 'O' || c4 == 'Q' || c4 == 'U'|| c4 == 'Ñ') {
                 valid = false;
             }
 
