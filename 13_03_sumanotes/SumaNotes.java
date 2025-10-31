@@ -1,21 +1,28 @@
 public class SumaNotes {
     public static void main(String[] args) {
-        int notafinal = 0;  
+        int notafinal = 0;
 
-        while (true) { // bucle infinit fins que es compleixi la condició
-            // demana el valor
+        while (true) {
             System.out.println("Introdueix una nota");
             int nota = Integer.parseInt(Entrada.readLine());
 
-            
-            notafinal = notafinal + nota;
+            // si la nota és negativa, sortim del bucle
+            if (nota < 0) {
+                break;
+            }
 
-            // comprova si la suma arriba a 100 o més
+            // només sumem notes vàlides (0-100)
+            if (nota <= 100) {
+                notafinal += nota;
+            }
+
+            // si la suma arriba a 100 o més, sortim immediatament
             if (notafinal >= 100) {
-                System.out.println("La suma de les notes és " + notafinal);
-                return; 
+                break;
             }
         }
+
+        System.out.println("La suma de les notes és " + notafinal);
     }
 }
 
