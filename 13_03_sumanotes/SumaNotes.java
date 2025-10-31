@@ -22,7 +22,7 @@ public class SumaNotes {
             }
         }
 
-        System.out.println("La suma de les notes és " + notafinal);
+        System.out.println("La suma de les notes vàlides és " + notafinal);
     }
 }
 
