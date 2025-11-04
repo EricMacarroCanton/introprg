@@ -6,18 +6,14 @@
  * Autor: (Escriu el teu nom aquí)
  * Data: 04/11/2025
  */
- public class QuantsParells {
+public class QuantsParells {
     public static void main(String[] args) {
-    
-    
-  int comptadorParells = 0; 
-        int valor;
-        
+
         int comptadorParells = 0; // Inicialitzem el comptador
         int valor;
-       
-         while (true) {
-            System.out.println("Introdueix un valor");
+
+        while (true) {
+            System.out.println("Introdueix un valor:");
             valor = Integer.parseInt(Entrada.readLine());
 
             // Si és negatiu, sortim del bucle
@@ -30,4 +26,8 @@
                 comptadorParells++;
             }
         }
+
+        System.out.println("Has introduït " + comptadorParells + " valors parells.");
+    }
+}
 
