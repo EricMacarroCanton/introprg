@@ -24,7 +24,7 @@ public class InformeCaracter {
             } else {
                 char c = text.charAt(posicio);
             
-                System.out.println("→ Character.getName('" + c + "'): " + Character.getName(c));
+                System.out.println("Character.getName('" + c + "'): " + Character.getName(c));
                 System.out.println("Character.isDigit('" + c + "'): " + Character.isDigit(c));
                 System.out.println("Character.isJavaIdentifierStart('" + c + "'): " + Character.isJavaIdentifierStart(c));
                 System.out.println("Character.isJavaIdentifierPart('" + c + "'): " + Character.isJavaIdentifierPart(c));
