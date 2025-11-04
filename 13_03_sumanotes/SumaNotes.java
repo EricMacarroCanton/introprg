@@ -11,18 +11,13 @@
 public class SumaNotes {
     public static void main(String[] args) {
         int sumaNotes = 0;
-        int nota;
 
         System.out.println("Introdueix una nota");
-        nota = Integer.parseInt(Entrada.readLine());
+        int nota = Integer.parseInt(Entrada.readLine());
 
-        while (nota >= 0) { // mentre la nota no sigui negativa
-            if (nota <= 100) {
-                sumaNotes += nota;
-            }
-
-            System.out.println("Introdueix una nota");
-            nota = Integer.parseInt(Entrada.readLine());
+        // Només sumem si la nota és vàlida (0–100)
+        if (nota >= 0 && nota <= 100) {
+            sumaNotes = nota;
         }
 
         System.out.println("La suma de les notes vàlides és " + sumaNotes);
