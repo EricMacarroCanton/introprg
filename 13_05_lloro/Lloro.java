@@ -14,7 +14,7 @@ public class Lloro {
             paraula = Entrada.readLine();
 
             // Comprovem si la cadena és buida o només conté espais
-            if (paraula.isEmpty()) {
+            if (paraula.isBlank()) {
                 System.out.println("Adéu");
                 break;
             }
