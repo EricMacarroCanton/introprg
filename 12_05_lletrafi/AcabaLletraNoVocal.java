@@ -16,7 +16,7 @@ public class AcabaLletraNoVocal {
         String text = Entrada.readLine();
 
         // Si el text és buit o només té espais
-        if (text.isEmpty()) {
+        if (text.isBlank()) {
             System.out.println("El text no té lletres");
         } else {
             char ultimaOriginal = text.charAt(text.length() - 1);
