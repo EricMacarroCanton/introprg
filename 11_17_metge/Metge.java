@@ -5,9 +5,9 @@
  * Simula un metge atenent a un pacient. Pregunta els símptomes i depenent del que tingui,
  * recomana unes coses o altres.
  */
+
 public class Metge {
     public static void main(String[] args) {
-
         System.out.println("Esternuts? (sí o no)");
         String esternuts = Entrada.readLine();
 
@@ -21,44 +21,30 @@ public class Metge {
 
                 if (problemesEstomac.equals("sí")) {
                     System.out.println("Pren paracetamol");
+                    return; // acabem aquí, no cal seguir preguntant
                 } else {
                     System.out.println("Pren aspirina");
+                    return;
                 }
-            } else {
-               
-                System.out.println("Tos? (sí o no)");
-                String tos = Entrada.readLine();
+            }
+        }
 
-                if (tos.equals("sí")) {
-                    System.out.println("Edat?");
-                    int edat = Integer.parseInt(Entrada.readLine());
-                    if (edat < 12) {
-                        System.out.println("Pren un carmel de mel");   
-                    } else {
-                        System.out.println("Pren un carmel d'eucaliptus");
-                    }
-                } else {
-                    System.out.println("Vine a la consulta");
-                }
+  
+        System.out.println("Tos? (sí o no)");
+        String tos = Entrada.readLine();
+
+        if (tos.equals("sí")) {
+            System.out.println("Edat?");
+            int edat = Integer.parseInt(Entrada.readLine());
+
+            if (edat < 12) {
+                System.out.println("Pren un carmel de mel");
+            } else {
+                System.out.println("Pren un carmel d'eucaliptus");
             }
         } else {
-            // No té esternuts: comprovem si té tos
-            System.out.println("Tos? (sí o no)");
-            String tos = Entrada.readLine();
-
-            if (tos.equals("sí")) {
-                System.out.println("Edat?");
-                int edat = Integer.parseInt(Entrada.readLine());
-                if (edat < 12) {
-                    System.out.println("Pren un carmel de mel");
-                } else {
-                    System.out.println("Pren un carmel d'eucaliptus");
-                }
-            } else {
-                System.out.println("Vine a la consulta");
-            }
+            System.out.println("Vine a la consulta");
         }
     }
 }
-
 
