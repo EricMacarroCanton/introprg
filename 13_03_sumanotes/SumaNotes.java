@@ -8,23 +8,21 @@
  *
  * Autor: Eric Macarro
  */
-
 public class SumaNotes {
     public static void main(String[] args) {
         int sumaNotes = 0;
-        String linia;
+        int nota;
 
         System.out.println("Introdueix una nota");
-        while ((linia = Entrada.readLine()) != null) {
-            int nota = Integer.parseInt(linia);
+        nota = Integer.parseInt(Entrada.readLine());
 
-            if (nota < 0) break; // sortim si és negativa
-
+        while (nota >= 0) { // mentre la nota no sigui negativa
             if (nota <= 100) {
                 sumaNotes += nota;
             }
 
             System.out.println("Introdueix una nota");
+            nota = Integer.parseInt(Entrada.readLine());
         }
 
         System.out.println("La suma de les notes vàlides és " + sumaNotes);
