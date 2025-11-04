@@ -13,26 +13,26 @@
 public class LloroVocalIniFi {
     public static void main(String[] args) {
 
-        String paraula;
+String paraula;
 
-        while (true) {
-            System.out.println("Paraula?");
-            paraula = Entrada.readLine();
+while (true) {
+	System.out.println("Paraula?");
+	paraula = Entrada.readLine();
 
            
-            if (paraula.trim().isEmpty()) {
-                System.out.println("Adéu");
-                break;
+if (paraula.trim().isEmpty()) {
+	System.out.println("Adéu");
+	break;
             }
 
            
-            String text = paraula.trim().toLowerCase();
+String text = paraula.trim().toLowerCase();
 
-            char primera = text.charAt(0);
-            char darrera = text.charAt(text.length() - 1);
+char primera = text.charAt(0);
+char darrera = text.charAt(text.length() - 1);
 
   
-            if ((primera == 'a' || primera == 'e' || primera == 'i' || primera == 'o' || primera == 'u') &&
+if ((primera == 'a' || primera == 'e' || primera == 'i' || primera == 'o' || primera == 'u') &&
                 primera == darrera) {
                 System.out.println("Repeteixo: " + paraula);
             }

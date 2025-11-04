@@ -5,21 +5,21 @@
  * [Eric Macarro]
  */
 public class Lloro {
-    public static void main(String[] args) {
+ public static void main(String[] args) {
         
         String paraula;
 
-        while (true) {
-            System.out.println("El lloro espera paraula:");
-            paraula = Entrada.readLine();
+while (true) {
+	System.out.println("El lloro espera paraula:");
+	paraula = Entrada.readLine();
 
-            // Comprovem si la cadena és buida o només conté espais
-            if (paraula.isBlank()) {
-                System.out.println("Adéu");
-                break;
+           
+if (paraula.isBlank()) {
+	System.out.println("Adéu");
+	break;
             }
 
-            System.out.println("El lloro repeteix: " + paraula);
+	System.out.println("El lloro repeteix: " + paraula);
         }
     }
 }

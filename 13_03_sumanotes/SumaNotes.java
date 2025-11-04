@@ -10,19 +10,18 @@
  */
 public class SumaNotes {
     public static void main(String[] args) {
+	int totalNotes = 0;       
+        int notaActual = 0;      
 
-        int totalNotes = 0;       // suma → totalNotes
-        int notaActual = 0;       // nota → notaActual
+        
+System.out.println("Introdueix una nota");
+notaActual = Integer.parseInt(Entrada.readLine());
 
-        // Demanem la primera nota
-        System.out.println("Introdueix una nota");
-        notaActual = Integer.parseInt(Entrada.readLine());
+while (notaActual >= 0 && notaActual <= 100) {
+	totalNotes = totalNotes + notaActual;
 
-        while (notaActual >= 0 && notaActual <= 100) {
-            totalNotes = totalNotes + notaActual;
-
-            System.out.println("Introdueix una nota");
-            notaActual = Integer.parseInt(Entrada.readLine());
+	System.out.println("Introdueix una nota");
+	notaActual = Integer.parseInt(Entrada.readLine());
         }
 
         System.out.println("La suma de les notes vàlides és " + totalNotes);
