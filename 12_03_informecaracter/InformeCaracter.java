@@ -16,23 +16,18 @@ public class InformeCaracter {
         System.out.println("Posició?");
         int posicio = Integer.parseInt(Entrada.readLine());
         
-        
-        char nom = text.charAt(posicio);
+        char c = text.charAt(posicio);
     
-   System.out.println();
-   System.out.println();
-   System.out.println();
-   System.out.println();
-   System.out.println();
-   System.out.println();
-   System.out.println();
-   System.out.println();
-   System.out.println();
-   System.out.println();
-   System.out.println();
-
+        System.out.println("→ Character.getName('" + c + "'): " + Character.getName(c));
+        System.out.println("Character.isDigit('" + c + "'): " + Character.isDigit(c));
+        System.out.println("Character.isJavaIdentifierStart('" + c + "'): " + Character.isJavaIdentifierStart(c));
+        System.out.println("Character.isJavaIdentifierPart('" + c + "'): " + Character.isJavaIdentifierPart(c));
+        System.out.println("Character.isLetter('" + c + "'): " + Character.isLetter(c));
+        System.out.println("Character.isLowerCase('" + c + "'): " + Character.isLowerCase(c));
+        System.out.println("Character.isUpperCase('" + c + "'): " + Character.isUpperCase(c));
+        System.out.println("Character.isWhitespace('" + c + "'): " + Character.isWhitespace(c));
+        System.out.println("Character.toLowerCase('" + c + "'): " + Character.toLowerCase(c));
+        System.out.println("Character.toUpperCase('" + c + "'): " + Character.toUpperCase(c));
+    }
 }
-}
-
-
 
