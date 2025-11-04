@@ -12,20 +12,19 @@
 public class SumaNotes {
     public static void main(String[] args) {
         int sumaNotes = 0;
+        String linia;
 
-        while (true) {
-            System.out.println("Introdueix una nota");
-            int nota = Integer.parseInt(Entrada.readLine());
+        System.out.println("Introdueix una nota");
+        while ((linia = Entrada.readLine()) != null) {
+            int nota = Integer.parseInt(linia);
 
-            // Si la nota és negativa, sortim del bucle
-            if (nota < 0) {
-                break;
-            }
+            if (nota < 0) break; // sortim si és negativa
 
-            // Només sumem les notes vàlides (0–100)
             if (nota <= 100) {
                 sumaNotes += nota;
             }
+
+            System.out.println("Introdueix una nota");
         }
 
         System.out.println("La suma de les notes vàlides és " + sumaNotes);
