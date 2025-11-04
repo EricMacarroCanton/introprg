@@ -13,7 +13,7 @@ public class QuantsParells {
         int valor;
 
         while (true) {
-            System.out.println("Introdueix un valor:");
+            System.out.println("Introdueix un valor");
             valor = Integer.parseInt(Entrada.readLine());
 
             // Si és negatiu, sortim del bucle
@@ -27,7 +27,7 @@ public class QuantsParells {
             }
         }
 
-        System.out.println("Has introduït " + comptadorParells + " valors parells.");
+        System.out.println("Nombre de parells introduïts " + comptadorParells);
     }
 }
 
