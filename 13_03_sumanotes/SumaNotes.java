@@ -10,25 +10,22 @@
  */
 public class SumaNotes {
     public static void main(String[] args) {
-        int sumaNotes = 0;
-        int nota;
 
-        while (true) {
-            System.out.println("Introdueix una nota");
-            nota = Integer.parseInt(Entrada.readLine());
+        int totalNotes = 0;       // suma → totalNotes
+        int notaActual = 0;       // nota → notaActual
 
-            // Si la nota és negativa, sortim del bucle
-            if (nota < 0) {
-                break;
-            }
+        // Demanem la primera nota
+        System.out.println("Introdueix una nota:");
+        notaActual = Integer.parseInt(Entrada.readLine());
 
-            // Només sumem les notes vàlides (0–100)
-            if (nota <= 100) {
-                sumaNotes += nota;
-            }
+        while (notaActual >= 0 && notaActual <= 100) {
+            totalNotes = totalNotes + notaActual;
+
+            System.out.println("Introdueix una nota:");
+            notaActual = Integer.parseInt(Entrada.readLine());
         }
 
-        System.out.println("La suma de les notes vàlides és " + sumaNotes);
+        System.out.println("La suma de les notes vàlides és " + totalNotes);
     }
 }
 
