@@ -46,7 +46,7 @@ public class AnalitzaCaracter {
             } else if (Character.isDigit(simbol)) {
                 System.out.println("'" + simbol + "' és un dígit");
             } else {
-                System.out.println("'" + simbol + "' és un altre caràcter");
+                System.out.println("'" + simbol + "' és una altra cosa");
             }
         }
     }
