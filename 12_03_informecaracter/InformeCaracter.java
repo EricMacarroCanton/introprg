@@ -14,7 +14,7 @@ public class InformeCaracter {
         String text = Entrada.readLine();
 
         if (text.isEmpty()) {
-            System.out.println("Error: text buit.");
+            System.out.println("Error");
         } else {
             System.out.println("Posició?");
             int posicio = Integer.parseInt(Entrada.readLine());
