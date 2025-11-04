@@ -1,6 +1,11 @@
+
 /*
-En aquest exercici crearem un programa que llegeixi una cadena de numeros i la transformi en una hora.
-*/
+ * Programa Hora
+ * Llegeix una cadena numèrica introduïda per l’usuari i la converteix en una hora amb format hh:mm:ss.
+ * Comprova que la cadena només contingui dígits i que representi una hora vàlida (hores < 24, minuts < 60, segons < 60).
+ * Si hi ha algun error de format o valors incorrectes, mostra "ERROR".
+ *ERUIC MACARRO
+ */
 public class Hora {
     public static void main(String[] args) {
 
