@@ -27,7 +27,7 @@ public class QuantsParells {
             }
         }
 
-        System.out.println("Nombre de parells introduïts " + comptadorParells);
+        System.out.println("Nombre de parells introduïts: " + comptadorParells);
     }
 }
 
