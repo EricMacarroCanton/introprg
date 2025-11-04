@@ -9,7 +9,7 @@
  *   - lletra majúscula
  *   - lletra minúscula
  *   - dígit
- *   - altre
+ *   - altres
  *
  * Autor: Eric Macarro
  */
@@ -19,7 +19,6 @@ public class AnalitzaCaracter {
         System.out.println("Text?");
         String cadena = Entrada.readLine();
 
-        // Comprovació si el text és buit
         if (cadena.isBlank()) {
             System.out.println("Text buit");
         } else {
@@ -28,17 +27,11 @@ public class AnalitzaCaracter {
 
             int llargada = cadena.length();
 
-            // Ajustem la posició segons el valor introduït
-            if (index >= 0) {
-                index = index % llargada;  // si supera la longitud, torna a l'inici
-            } else {
-                index = llargada + (index % llargada);  // si és negativa, compta des del final
-                if (index < 0) index += llargada; // corregeix en cas de % negatiu
-            }
+            // Normalitzem la posició dins el rang [0, llargada-1]
+            index = ((index % llargada) + llargada) % llargada;
 
             char simbol = cadena.charAt(index);
 
-            // Classificació del caràcter
             if (Character.isUpperCase(simbol)) {
                 System.out.println("'" + simbol + "' és una lletra majúscula");
             } else if (Character.isLowerCase(simbol)) {
@@ -51,4 +44,5 @@ public class AnalitzaCaracter {
         }
     }
 }
+
 
