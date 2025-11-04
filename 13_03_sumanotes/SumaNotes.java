@@ -1,3 +1,13 @@
+/*
+ * Programa: SumaNotes
+ * Descripció: Aquest programa demana a l'usuari que introdueixi notes numèriques.
+ * - Si la nota és negativa o superior a 100, el programa finalitza.
+ * - Només s'acumulen les notes vàlides (entre 0 i 100).
+ * - Si la suma total arriba a 100 o més, el programa també finalitza.
+ * Finalment, mostra per pantalla la suma de les notes vàlides introduïdes.
+ *
+ * Autor: Eric Macarro
+ */
 public class SumaNotes {
     public static void main(String[] args) {
         int notafinal = 0;
@@ -6,17 +16,15 @@ public class SumaNotes {
             System.out.println("Introdueix una nota");
             int nota = Integer.parseInt(Entrada.readLine());
 
-            // si la nota és negativa, sortim del bucle
-            if (nota < 0) {
+            // Si la nota és negativa o superior a 100, sortim
+            if (nota < 0 || nota > 100) {
                 break;
             }
 
-            // només sumem notes vàlides (0-100)
-            if (nota <= 100) {
-                notafinal += nota;
-            }
+            // Suma les notes vàlides
+            notafinal += nota;
 
-            // si la suma arriba a 100 o més, sortim immediatament
+            // Si la suma arriba a 100 o més, sortim immediatament
             if (notafinal >= 100) {
                 break;
             }
