@@ -7,8 +7,8 @@ public class IniciaVocal {
         if (text.length() == 0 || !Character.isLetter(text.charAt(0))) {
             System.out.println("El text no té lletres");
         } else {
-            char primeraOriginal = text.charAt(0); // mantenim la lletra original
-            char primera = Character.toLowerCase(primeraOriginal); // només per comprovar la vocal
+            char primeraOriginal = text.charAt(0); 
+            char primera = Character.toLowerCase(primeraOriginal); 
 
             if (primera == 'a' || primera == 'e' || primera == 'i' || primera == 'o' || primera == 'u') {
                 System.out.println("\"" + text + "\" inicia amb la vocal '" + primeraOriginal + "'");
