@@ -15,7 +15,7 @@ public class SumaNotes {
         int notaActual = 0;       // nota → notaActual
 
         // Demanem la primera nota
-        System.out.println("Introdueix una nota:");
+        System.out.println("Introdueix una nota");
         notaActual = Integer.parseInt(Entrada.readLine());
 
         while (notaActual >= 0 && notaActual <= 100) {
