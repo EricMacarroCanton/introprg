@@ -20,7 +20,7 @@ public class InformeCaracter {
             int posicio = Integer.parseInt(Entrada.readLine());
             
             if (posicio < 0 || posicio >= text.length()) {
-                System.out.println("Error: la posició ha d'estar entre 0 i " + (text.length() - 1));
+                System.out.println("Fora de rang");
             } else {
                 char c = text.charAt(posicio);
             
