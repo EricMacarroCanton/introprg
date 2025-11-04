@@ -21,7 +21,7 @@ public class SumaNotes {
         while (notaActual >= 0 && notaActual <= 100) {
             totalNotes = totalNotes + notaActual;
 
-            System.out.println("Introdueix una nota:");
+            System.out.println("Introdueix una nota");
             notaActual = Integer.parseInt(Entrada.readLine());
         }
 
