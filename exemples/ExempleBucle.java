@@ -1,21 +1,25 @@
+
 public class ExempleBucle {
     public static void main(String[] args) {
-    
+        String paraula;
+        int comptador = 0;
 
-    String paraula;
-    int comptador = 0;
-    
-    while (true) {
-	System.out.println("Paraula?");
-	paraula = Entrada.readLine();
-	   if (paraula.isBlank()) {
-	break;
+        System.out.println("Paraula?");
+        paraula = Entrada.readLine();
+
+        while (!paraula.isBlank()) {
+            if (paraula.length() >= 2) {
+                char penultima = paraula.charAt(paraula.length() - 2);
+                if (penultima == 'a') {
+                    comptador++;
+                }
+            }
+
+            System.out.println("Paraula?");
+            paraula = Entrada.readLine();
+        }
+
+        System.out.println("Paraules amb penúltima lletra 'a' és " + comptador);
+    }
 }
 
-char penultima = text.charAt(text.length() - 2);
-if (penultima == "a")
-comptador++; {
-			}	
-		}
-	}
-}
