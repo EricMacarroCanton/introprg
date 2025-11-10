@@ -17,17 +17,17 @@ public class Mitjana {
 
         System.out.println("Introdueix un valor");
         int nota = Integer.parseInt(Entrada.readLine());
-
-      
-        while (nota >= 0) {
+ 
+        while (nota >= 0 && nota < 100) {
             suma = suma + nota;
             comptador++;
 
             System.out.println("Introdueix un valor");
             nota = Integer.parseInt(Entrada.readLine());
         }
-
-        if (comptador == 0) {
+        if (nota > 100) {
+        comptador++;
+       }else if (comptador == 0) {
             System.out.println("Cap nota vàlida introduïda");
         } else {
             double mitjana = (double) suma / comptador;
