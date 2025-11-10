@@ -9,20 +9,16 @@
 public class QuantsParells {
     public static void main(String[] args) {
 
-	int comptadorParells = 0; 
-        int valor;
+        int comptadorParells = 0;
+        int valor = 0; // inicialitzem per poder entrar al bucle
 
-while (true) {
-	System.out.println("Introdueix un valor");
-	valor = Integer.parseInt(Entrada.readLine());
+        // El bucle continua mentre el valor no sigui negatiu
+        while (valor >= 0) {
+            System.out.println("Introdueix un valor");
+            valor = Integer.parseInt(Entrada.readLine());
 
-            
-if (valor < 0) {
-	break;
-            }
-
-if (valor % 2 == 0) {
-	comptadorParells++;
+            if (valor >= 0 && valor % 2 == 0) {
+                comptadorParells++;
             }
         }
 

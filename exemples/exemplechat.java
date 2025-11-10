@@ -1,4 +1,4 @@
-public class ExempleVocals {
+public class exemplechat {
     public static void main(String[] args) {
 
         String paraula;
