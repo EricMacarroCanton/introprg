@@ -7,23 +7,23 @@
  * de totes les notes introduïdes fins aquell moment i finalitza l’execució.
  * 
  * Autor: (Eric Macarro)
-
+ * Data: 10/11/2025
  */
 public class Mitjana {
     public static void main(String[] args) {
 
         int suma = 0;
         int comptador = 0;
-        int nota;
 
-        System.out.println("Introdueix un valor");
-        nota = Integer.parseInt(Entrada.readLine());
+        System.out.println("Introdueix un valor:");
+        int nota = Integer.parseInt(Entrada.readLine());
 
+      
         while (nota >= 0) {
             suma = suma + nota;
             comptador++;
 
-            System.out.println("Introdueix un valor");
+            System.out.println("Introdueix un valor:");
             nota = Integer.parseInt(Entrada.readLine());
         }
 
