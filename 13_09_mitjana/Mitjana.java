@@ -29,7 +29,7 @@ public class Mitjana {
             System.out.println("Cap nota vàlida introduïda");
         } else {
             double mitjana = (double) suma / comptador;
-            System.out.println("La mitjana de notes vàlides és " + mitjana);
+            System.out.println("La mitjana de les notes vàlides és " + mitjana);
         }
     }
 }
