@@ -16,14 +16,14 @@ public class Mitjana {
         int comptador = 0;
         int nota;
 
-        System.out.println("Introdueix un valor:");
+        System.out.println("Introdueix un valor");
         nota = Integer.parseInt(Entrada.readLine());
 
         while (nota >= 0) {
             suma = suma + nota;
             comptador++;
 
-            System.out.println("Introdueix un valor:");
+            System.out.println("Introdueix un valor");
             nota = Integer.parseInt(Entrada.readLine());
         }
 
