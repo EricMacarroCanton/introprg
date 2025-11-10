@@ -1,4 +1,11 @@
-public class DiaSetmana {
+/**
+ * Exercici: DiaSetmana
+ *
+ * Descripció:
+ * Aquest programa rep un número enter com a argument (del 1 al 7) i mostra
+ * pel terminal el dia de la setmana corresponent.
+ */
+ public class DiaSetmana {
     public static void main(String[] args) {
         int dia = Integer.parseInt(args[0]);
 
