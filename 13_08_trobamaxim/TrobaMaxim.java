@@ -12,7 +12,7 @@
         int maxim = 0;
         int valor;
 
-        System.out.println("Introdueix un valor:");
+        System.out.println("Introdueix un valor");
         valor = Integer.parseInt(Entrada.readLine());
 
         while (valor >= 0) {
@@ -21,11 +21,11 @@
                 maxim = valor;
             }
 
-            System.out.println("Introdueix un valor:");
+            System.out.println("Introdueix un valor");
             valor = Integer.parseInt(Entrada.readLine());
         }
 
-        System.out.println("El màxim és" + maxim);
+        System.out.println("El màxim és " + maxim);
     }
 }
 
