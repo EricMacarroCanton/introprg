@@ -24,9 +24,6 @@ String color = Entrada.readLine();
     }
 
 
-
-
-
 }
 }
  
