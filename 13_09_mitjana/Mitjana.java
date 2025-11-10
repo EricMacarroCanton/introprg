@@ -25,9 +25,7 @@ public class Mitjana {
             System.out.println("Introdueix un valor");
             nota = Integer.parseInt(Entrada.readLine());
         }
-        if (nota > 100) {
-        comptador++;
-       }else if (comptador == 0) {
+      if (comptador == 0) {
             System.out.println("Cap nota vàlida introduïda");
         } else {
             double mitjana = (double) suma / comptador;
