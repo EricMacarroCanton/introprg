@@ -15,7 +15,7 @@ public class Mitjana {
         int suma = 0;
         int comptador = 0;
 
-        System.out.println("Introdueix un valor:");
+        System.out.println("Introdueix un valor");
         int nota = Integer.parseInt(Entrada.readLine());
 
       
@@ -23,7 +23,7 @@ public class Mitjana {
             suma = suma + nota;
             comptador++;
 
-            System.out.println("Introdueix un valor:");
+            System.out.println("Introdueix un valor");
             nota = Integer.parseInt(Entrada.readLine());
         }
 
