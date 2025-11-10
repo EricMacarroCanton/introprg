@@ -17,7 +17,7 @@ public class Estadistiques {
         int maxim = 0;
         int minim = 0;
 
-        System.out.println("Introdueix un valor:");
+        System.out.println("Introdueix un valor");
         int valor = Integer.parseInt(Entrada.readLine());
 
         if (valor >= 0) {
@@ -36,7 +36,7 @@ public class Estadistiques {
                 minim = valor;
             }
 
-            System.out.println("Introdueix un valor:");
+            System.out.println("Introdueix un valor");
             valor = Integer.parseInt(Entrada.readLine());
         }
 
