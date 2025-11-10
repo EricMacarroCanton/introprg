@@ -15,11 +15,13 @@ public static void main (String [] args) {
    int valor;
    double mitjana;
    int comptador = 0;
+   int suma = 0;
         System.out.println("Introdueix un valor");
         valor = Integer.parseInt(Entrada.readLine());
 
         while (valor >= 0) {
-
+            suma = suma + valor;
+            comptador++;
             if (valor > maxim) {
                 maxim = valor;           
            }
@@ -30,7 +32,7 @@ public static void main (String [] args) {
             valor = Integer.parseInt(Entrada.readLine());
             comptador++;
         }
-  double mitjana = (double) suma / comptador;
+        mitjana = (double) suma / comptador;
         System.out.println("El màxim és " + maxim);
         System.out.println("El mínim és " + minim);
         System.out.println("La mitjana de les notes vàlides és " + mitjana);
