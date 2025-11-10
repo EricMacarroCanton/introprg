@@ -7,28 +7,32 @@
  * de totes les notes introduïdes fins aquell moment i finalitza l’execució.
  * 
  * Autor: (Eric Macarro)
+
  */
 public class Mitjana {
-public static void main(String[] args) {
- 
-        int sumanotes = 0;
-        int valor;
-	double mitjana;
-	int contador = 0;
-        System.out.println("Introdueix un valor");
-        valor = Integer.parseInt(Entrada.readLine());
-        sumanotes = sumanotes + valor;
-        contador++;
-if (valor < 0 )
-System.out.println("Cap nota vàlida introduïda");
-contador--;
-while (sumanotes < 100 ) {
-System.out.println("Introdueix un valor");
-	valor = Integer.parseInt(Entrada.readLine());
-	sumanotes = sumanotes + valor;
-	contador++;
-			}
-		mitjana = sumanotes / contador;
- System.out.println("La mitjana de les notes vàlides és " + mitjana);
-		}
+    public static void main(String[] args) {
+
+        int suma = 0;
+        int comptador = 0;
+        int nota;
+
+        System.out.println("Introdueix un valor:");
+        nota = Integer.parseInt(Entrada.readLine());
+
+        while (nota >= 0) {
+            suma = suma + nota;
+            comptador++;
+
+            System.out.println("Introdueix un valor:");
+            nota = Integer.parseInt(Entrada.readLine());
+        }
+
+        if (comptador == 0) {
+            System.out.println("Cap nota vàlida introduïda");
+        } else {
+            double mitjana = (double) suma / comptador;
+            System.out.println("La nota mitjana és: " + mitjana);
+        }
+    }
 }
+
