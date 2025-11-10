@@ -10,19 +10,25 @@
  */
 public class Mitjana {
 public static void main(String[] args) {
-
-        int sumanotes;
+ 
+        int sumanotes = 0;
         int valor;
-
+	double mitjana;
+	int contador = 0;
         System.out.println("Introdueix un valor");
         valor = Integer.parseInt(Entrada.readLine());
-        sumanotes = sumanotes + valor
+        sumanotes = sumanotes + valor;
+        contador++;
 if (valor < 0 )
-System.out.println("Cap nota vàlida introduïda")
+System.out.println("Cap nota vàlida introduïda");
+contador--;
 while (sumanotes < 100 ) {
 System.out.println("Introdueix un valor");
 	valor = Integer.parseInt(Entrada.readLine());
-	sumanotes = sumanotes + valor
+	sumanotes = sumanotes + valor;
+	contador++;
 			}
+		mitjana = sumanotes / contador;
+ System.out.println("La mitjana de les notes vàlides és " + mitjana);
 		}
 }
