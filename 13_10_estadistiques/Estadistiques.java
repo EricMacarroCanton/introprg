@@ -45,11 +45,9 @@ public class Estadistiques {
             System.out.println("Cap valor vàlid introduït");
         } else {
             double mitjana = (double) suma / comptador;
-            System.out.println("Nombre de valors: " + comptador);
-            System.out.println("Suma total: " + suma);
-            System.out.println("Valor màxim: " + maxim);
-            System.out.println("Valor mínim: " + minim);
-            System.out.println("Mitjana: " + mitjana);
+            System.out.println("El mínim és: " + minim);
+            System.out.println("La mitjana és: " + mitjana);
+            System.out.println("El màxim és: " + maxim);
         }
     }
 }
