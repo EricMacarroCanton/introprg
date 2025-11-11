@@ -1,4 +1,13 @@
-public class SequenciaCreixent {
+/**
+ * SequenciaCreixent
+ * 
+ * Programa que demana nombres enters creixents per entrada estàndard
+ * i es para quan s'introdueix un nombre que no és més gran que l'anterior.
+ * Finalment, mostra la longitud de la seqüència creixent introduïda.
+ *
+ * Autor: [Eric Macarro]
+ */
+ public class SequenciaCreixent {
     public static void main(String[] args) {
         int numeroAnterior;
         int numeroActual;
