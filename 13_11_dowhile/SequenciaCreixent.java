@@ -1,12 +1,10 @@
 class SequenciaCreixent {
     public static void main(String[] args) {
-        int numeroAnterior;
+        int numeroAnterior = 0;
         int numeroActual;
         int comptador = 0;
 
-        System.out.println("Introdueix un valor:");
-        numeroAnterior = Integer.parseInt(Entrada.readLine());
-        comptador++;
+       
 
         do {
             System.out.println("Introdueix un valor:");
