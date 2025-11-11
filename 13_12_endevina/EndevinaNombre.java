@@ -11,7 +11,7 @@ public class EndevinaNombre {
         intent = Integer.parseInt(Entrada.readLine());
         if (intent > nombrePensat) {
         System.out.println("És més petit que " + intent);
-        } else if (intent < nombrePensat) {
+        } else if (intent < nombrePensat && intent < 100) {
         	System.out.println("És més gran que " + intent);
         } else if (intent > 100 ) {
         	System.out.println("Com a màxim 100");
