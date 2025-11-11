@@ -15,12 +15,13 @@ public class EndevinaNombre {
         	System.out.println("És més petit que " + intent);
         } else if (intent > 100 ) {
         	System.out.println("Com a màxim 100");
-       }  else if (intent == nombrePensat){
-        System.out.println("Has encertat!"); 
+       }  
+        
 			}
+System.out.println("Has encertat!"); 
 		}
        }
-}
+
     
         
         
