@@ -1,4 +1,14 @@
-public class EndevinaNombre {
+/**
+ * Nom del programa: EndevinaNombre
+ * 
+ * Descripció:
+ * Aquest programa és un joc d'endevinalles en què l'usuari ha d'introduir nombres enters
+ * entre 1 i 100 fins que encerti el nombre que el programa "ha pensat". 
+ * El programa indica si el nombre introduït és més gran o més petit que el nombre pensat,
+ * i comprova també si l'entrada supera el valor màxim de 100.
+ Autor:Eric Macarro
+ **/
+ public class EndevinaNombre {
     public static void main(String[] args) {
         int nombrePensat = Integer.parseInt(args[0]);
         int intent;
