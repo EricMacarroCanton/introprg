@@ -1,4 +1,4 @@
-class SequenciaCreixent {
+public class SequenciaCreixent {
     public static void main(String[] args) {
         int numeroAnterior;
         int numeroActual;
