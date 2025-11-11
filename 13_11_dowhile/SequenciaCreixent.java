@@ -8,6 +8,8 @@ class SequenciaCreixent {
         numeroAnterior = Integer.parseInt(Entrada.readLine());
         comptador++;
 
+        boolean bucle = true;
+
         do {
             System.out.println("Introdueix un valor:");
             numeroActual = Integer.parseInt(Entrada.readLine());
@@ -15,10 +17,11 @@ class SequenciaCreixent {
             if (numeroActual > numeroAnterior) {
                 comptador++;
                 numeroAnterior = numeroActual; // només actualitzem si segueix creixent
+            } else {
+                bucle = false; // el bucle acabarà
             }
 
-            // Si numeroActual <= numeroAnterior, el bucle acabarà
-        } while (numeroActual > numeroAnterior);
+        } while (bucle); // <-- tanca aquí el do-while
 
         System.out.println("Longitud de la seqüència creixent: " + comptador);
     }
