@@ -13,8 +13,7 @@ class SequenciaCreixent {
             if (numeroActual > numeroAnterior) {
                 comptador++;
                 numeroAnterior = numeroActual; 
-            } else {
-               
+    
             }
         } while (numeroActual > numeroAnterior);
 
