@@ -15,6 +15,8 @@ class SequenciaCreixent {
 
             if (numeroActual > numeroAnterior) {
                 comptador++;
+                System.out.println("Introdueix un valor:");
+            numeroActual = Integer.parseInt(Entrada.readLine());
             }
 
  
