@@ -8,6 +8,7 @@ class SequenciaCreixent {
         numeroAnterior = Integer.parseInt(Entrada.readLine());
         comptador++;
 
+        // Bucle do-while amb condició
         do {
             System.out.println("Introdueix un valor:");
             numeroActual = Integer.parseInt(Entrada.readLine());
@@ -16,7 +17,7 @@ class SequenciaCreixent {
                 comptador++;
             }
 
-            // Actualitzem el valor anterior per a la següent iteració
+            // Actualitzem numeroAnterior només si la seqüència continua
             numeroAnterior = numeroActual;
 
         } while (numeroActual > numeroAnterior);
