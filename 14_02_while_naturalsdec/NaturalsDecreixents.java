@@ -15,14 +15,12 @@ public class NaturalsDecreixents {
       
 
         int n = Integer.parseInt(args[0]);
-        
-            System.out.println("Has d'introduir un número com a argument.");
       
         if (n < 1) {
             System.out.println("Cap valor decreixent entre " + n + " i 1");
         } else {
             int i = n;
-            while (i >= 1) {
+        while (i >= 1) {
                 System.out.println(i);
                 i--;
             }
