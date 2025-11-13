@@ -6,7 +6,7 @@ public static void main (String [] args) {
 
         
         if (n < 1) {
-            System.out.println("Cap valor creixent entre 1 i " + n);
+            System.out.println("Cap valor parell entre 1 i " + n);
         } else {
             int i = 1;
             while (i <= n) {
