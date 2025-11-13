@@ -8,7 +8,7 @@
  * Autor: [Eric Macarro]
  */
 
-public class NaturalsDecreixent {
+public class NaturalsDecreixents {
     public static void main(String[] args) {
         
 
