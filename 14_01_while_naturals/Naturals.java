@@ -5,7 +5,7 @@ public class Naturals {
 public static void main (String [] args) {
         
       
-            System.out.println("Has d'introduir un número com a argument.");
+        
            
         
 
