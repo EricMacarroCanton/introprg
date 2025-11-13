@@ -13,8 +13,11 @@ public static void main (String [] args) {
                 if ( i % 2 == 0 ) {
                 System.out.println(i);
                 i++;
-              }  
+              } else {
+                     System.out.println("Cap valor parell creixent entre 1 i " + n);
+                     }
+              	}  
             }
         }
     }
-}
+
