@@ -1,23 +1,23 @@
 public class NaturalsParells {
-public static void main (String [] args) {
-        
- 
+    public static void main(String[] args) {
+
         int n = Integer.parseInt(args[0]);
 
-        
-        if (n < 1) {
-            System.out.println("Cap valor parell creixent entre 1 i " + n);
-        } else {
-            int i = 1;
-            while (i <= n) {
-                if ( i % 2 == 0 ) {
+        boolean hiHaParells = false;
+
+        for (int i = 1; i <= n; i++) {
+            if (i % 2 == 0) {
                 System.out.println(i);
-                i++;
-              } else {
-                     System.out.println("Cap valor parell creixent entre 1 i " + n);
-                     }
-              	}  
+                hiHaParells = true;
             }
         }
+
+   
+        if (!hiHaParells) {
+            System.out.println("Cap valor parell creixent entre 1 i " + n);
+        }
     }
+}
+
+
 
