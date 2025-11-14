@@ -1,3 +1,11 @@
+/*
+ * Rep un nombre n per paràmetre.
+ * Mostra tots els nombres parells entre 1 i n.
+ * Controla si no n’hi ha cap i ho indica.
+ * Funciona només amb n ≥ 1; altrament mostra missatge informatiu.
+ * Recorre els valors incrementant d’1 en 1.
+ Eric Macarro
+ */
 public class NaturalsParells {
     public static void main(String[] args) {
 

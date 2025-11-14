@@ -1,3 +1,11 @@
+/*
+ * Llegeix un valor inicial, un final i un salt.
+ * Comprova que tots siguin vàlids; si no, mostra error.
+ * Si hi ha cap error, el programa s'atura sense demanar més entrades.
+ * Si són correctes, imprimeix els nombres entre inicial i final.
+ * Avança els valors utilitzant el salt indicat.
+ * Eric Macarro
+ */
 public class NaturalsEntre {
     public static void main(String[] args) {
 
@@ -33,7 +41,7 @@ public class NaturalsEntre {
             }
         }
 
-        // Només imprimeix si NO hi ha error
+     
         if (!error) {
             int valor = inicial;
             while (valor <= finalValor) {
