@@ -1,40 +1,45 @@
 public class NaturalsEntre {
     public static void main(String[] args) {
 
+        boolean error = false;
 
         System.out.println("Valor inicial?");
         int inicial = Integer.parseInt(Entrada.readLine());
 
-    
         if (inicial < 0) {
             System.out.println("Valor no vàlid");
-            
+            error = true;
         }
 
-        System.out.println("Valor final?");
-        int finalValor = Integer.parseInt(Entrada.readLine());
+        int finalValor = 0;
+        if (!error) {
+            System.out.println("Valor final?");
+            finalValor = Integer.parseInt(Entrada.readLine());
 
-       
-        if (finalValor < 0 || finalValor < inicial) {
-            System.out.println("Valor no vàlid");
-           
+            if (finalValor < 0 || finalValor < inicial) {
+                System.out.println("Valor no vàlid");
+                error = true;
+            }
         }
 
-        System.out.println("Salt?");
-        int salt = Integer.parseInt(Entrada.readLine());
+        int salt = 0;
+        if (!error) {
+            System.out.println("Salt?");
+            salt = Integer.parseInt(Entrada.readLine());
 
-       
-        if (salt <= 0) {
-            System.out.println("Valor no vàlid");
-          
+            if (salt <= 0) {
+                System.out.println("Valor no vàlid");
+                error = true;
+            }
         }
 
-        // Si tot és correcte, imprimim els valors
-        int valor = inicial;
-        while (valor <= finalValor) {
-            
-            System.out.println(valor);
-     	 valor += salt;
+        // Només imprimeix si NO hi ha error
+        if (!error) {
+            int valor = inicial;
+            while (valor <= finalValor) {
+                System.out.println(valor);
+                valor += salt;
+            }
         }
     }
 }
