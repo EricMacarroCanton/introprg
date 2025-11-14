@@ -11,7 +11,9 @@ public class NaturalsParells {
                 System.out.println(i);
                 hiHaParells = true;
                 i++;
-            }
+              } else {
+               i++;
+                            }
         }
 
         // Si no n'hi ha cap
