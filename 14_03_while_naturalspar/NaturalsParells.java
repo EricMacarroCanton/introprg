@@ -13,11 +13,9 @@ public class NaturalsParells {
         }
 
    
-        if (!hiHaParells) {
-            System.out.println("Cap valor parell creixent entre 1 i " + n);
         }
     }
-}
+
 
 
 
