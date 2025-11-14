@@ -5,10 +5,6 @@
  *              i mostra tots els valors enters positius entre 1 i aquest número,
  *              ambdós inclosos. Si el número és menor que 1, mostra un missatge
  *              indicant que no hi ha cap valor creixent entre 1 i el número introduït.
- * Ús: java Naturals <número>
- * Exemple:
- *     java Naturals 10
- *     --> mostrarà els números de l’1 al 10
  * Autor: [Eric Macarro]
  */
 
