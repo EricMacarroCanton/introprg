@@ -3,19 +3,11 @@ public class NaturalsParells {
 
         int n = Integer.parseInt(args[0]);
 
-        boolean hiHaParells = false;
-
-        for (int i = 1; i <= n; i++) {
-            if (i % 2 == 0) {
-                System.out.println(i);
-                hiHaParells = true;
-            }
-        }
-
-   
+        int i = 2;              // el primer número parell
+        while (i <= n) {
+            System.out.println(i);
+            i += 2;             // passem al següent parell
         }
     }
-
-
-
+}
 
