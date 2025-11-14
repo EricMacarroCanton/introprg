@@ -3,10 +3,12 @@ public class NaturalsParells {
 
         int n = Integer.parseInt(args[0]);
 
-        int i = 2;              // el primer número parell
+        int i = 1;
         while (i <= n) {
-            System.out.println(i);
-            i += 2;             // passem al següent parell
+            if (i % 2 == 0) {
+                System.out.println(i);
+            }
+            i++;   
         }
     }
 }
