@@ -17,7 +17,7 @@ public class NaturalsParells {
         }
 
         // Si no n'hi ha cap
-        if (!hiHaParells) {
+        if (n < 1) {
             System.out.println("Cap valor parell creixent entre 1 i " + n);
         }
     }
