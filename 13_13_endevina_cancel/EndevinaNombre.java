@@ -1,4 +1,5 @@
-import java.io.*;
+/* exercici on el usuari ha de posar numeros aleatoris fins adivinar el numero exacte
+Eric Macarro */
 
 public class EndevinaNombre {
     public static void main(String[] args) {
