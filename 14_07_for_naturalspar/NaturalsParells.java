@@ -11,7 +11,7 @@ public class NaturalsParells {
         int n = Integer.parseInt(args[0]);
 
         if (n < 1) {
-            System.out.println("Cap valor parell creixent entre 1 i -1");
+            System.out.println("Cap valor parell creixent entre 1 i " + n);
         } else {
             boolean hiHaParells = false;
 
