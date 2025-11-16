@@ -8,28 +8,23 @@
 
 public class NaturalsParells {
     public static void main(String[] args) {
-
         int n = Integer.parseInt(args[0]);
 
-        // Si n és menor que 1
         if (n < 1) {
-            System.out.println("Cap valor parell creixent entre 1 i " + n);
-            return;
-        }
+            System.out.println("El nombre ha de ser ≥ 1.");
+        } else {
+            boolean hiHaParells = false;
 
-        boolean hiHaParells = false;
-
-        // Bucle for 
-        for (int i = 1; i <= n; i++) {
-            if (i % 2 == 0) {
-                System.out.println(i);
-                hiHaParells = true;
+            for (int i = 1; i <= n; i++) {
+                if (i % 2 == 0) {
+                    System.out.println(i);
+                    hiHaParells = true;
+                }
             }
-        }
 
-        // Si no hi ha cap parell
-        if (!hiHaParells) {
-            System.out.println("Cap valor parell creixent entre 1 i " + n);
+            if (!hiHaParells) {
+                System.out.println("No hi ha cap nombre parell entre 1 i " + n);
+            }
         }
     }
 }
