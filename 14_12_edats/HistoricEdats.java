@@ -9,23 +9,24 @@ public class HistoricEdats {
         System.out.println("any actual?");
         int anyActual = Integer.parseInt(Entrada.readLine());
 
-   
+      
         if (nom.isEmpty() || edat < 0 || anyActual < 1971) {
             System.out.println("Entrada incorrecta");
            
         }
 
-        int anyNaixement = anyActual - edat;
-
+    
         if (edat == 0) {
             System.out.println("Adéu " + nom);
             
         }
 
-     
-        System.out.println("El " + (anyNaixement) + " vau néixer");
+        int anyNaixement = anyActual - edat;
 
+       
+        System.out.println("El " + anyNaixement + " vau néixer");
 
+    
         for (int i = 1; i < edat; i++) {
             int any = anyNaixement + i;
             int anyEdat = i;
@@ -36,4 +37,5 @@ public class HistoricEdats {
         System.out.println("Adéu " + nom);
     }
 }
+
 
