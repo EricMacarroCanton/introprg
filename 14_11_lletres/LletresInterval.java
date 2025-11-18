@@ -13,7 +13,7 @@ public class LletresInterval {
 
      
         if (!Character.isLetter(lletra)) {
-            System.out.println("Error: No és una lletra vàlida");
+            System.out.println("Error: " + lletra + " no és una lletra vàlida.");
             return;
         }
 
