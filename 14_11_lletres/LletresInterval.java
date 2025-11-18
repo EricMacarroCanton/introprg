@@ -1,24 +1,33 @@
 public class LletresInterval {
     public static void main(String[] args) {
         System.out.println("lletra?");
-      String lletra = Entrada.readLine(); 
+        String entradaLletra = Entrada.readLine();
 
-   if (entradaLletra.length() != 1) {
+   
+        if (entradaLletra.length() != 1) {
             System.out.println("Error: Cal introduir exactament una lletra");
-            
-               char lletra = entradaLletra.charAt(0);
+            return;
+        }
 
-       
+        char lletra = entradaLletra.charAt(0);
+
+     
         if (!Character.isLetter(lletra)) {
             System.out.println("Error: No és una lletra vàlida");
+            return;
+        }
 
         System.out.println("quantes?");
-        int numero = Integer.parseInt(Entrada.readLine());
+        int quantes = Integer.parseInt(Entrada.readLine());
 
+      
         if (quantes < 1) {
             System.out.println("Error: El nombre de lletres ha de ser almenys 1");
-           
-   char inici;
+            return;
+        }
+
+
+        char inici;
         boolean esMinuscula = Character.isLowerCase(lletra);
         if (esMinuscula) {
             inici = 'a';
@@ -26,6 +35,7 @@ public class LletresInterval {
             inici = 'A';
         }
 
+      
         for (int i = 0; i < quantes; i++) {
             char actual = (char)(lletra + i);
             // Ajustar si sobrepassa la 'z' o 'Z'
@@ -39,3 +49,4 @@ public class LletresInterval {
         System.out.println();
     }
 }
+
