@@ -16,7 +16,7 @@ System.out.println(variable);
 }
 
 }  
-if (inici > finals)
+else if (inici > finals)
 for (int variable = finals; variable > finals; variable--) {
 System.out.println(variable);
 			}
