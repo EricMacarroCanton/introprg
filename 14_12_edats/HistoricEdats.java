@@ -15,7 +15,7 @@ public class HistoricEdats {
         int anyActual = Integer.parseInt(Entrada.readLine());
 
         // Comprovacions d'entrada
-        if (nom.trim().isEmpty() || edat < 0 || anyActual < 1971) {
+        if (nom.isEmpty() || edat < 0 || anyActual < 1971) {
             System.out.println("Entrada incorrecta");
         } else {
             // Només seguim si l'entrada és correcta
