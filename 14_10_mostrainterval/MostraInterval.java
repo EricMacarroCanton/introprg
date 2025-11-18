@@ -5,19 +5,19 @@ public class MostraInterval {
 public static void main (String [] args) {
 
 System.out.println("inici?");
-int inici = Integer.parseInt(Entrada.readLine();
+int inici = Integer.parseInt(Entrada.readLine());
 
 System.out.println("inici?");
-int finals = Integer.parseInt(Entrada.readLine();
+int finals = Integer.parseInt(Entrada.readLine());
 if (inici <= finals ) {
 
-for (int variable=inici; variable <= finals; vairable++ ) {
+for (int variable=inici; variable <= finals; variable++ ) {
 System.out.println(variable);
 }
 
 } else {
 
-for (int variable=inici; variable >= finals; vairable++ ) {
+for (int variable=inici; variable >= finals; variable++ ) {
 System.out.println(variable);
 			}
 		}
