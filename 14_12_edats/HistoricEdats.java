@@ -23,10 +23,10 @@ public class HistoricEdats {
         }
 
      
-        System.out.println("El " + (anyNaixement - 1) + " vau néixer");
+        System.out.println("El " + (anyNaixement) + " vau néixer");
 
 
-        for (int i = 0; i < edat; i++) {
+        for (int i = 1; i < edat; i++) {
             int any = anyNaixement + i - 1;
             int anyEdat = i;
             System.out.println("El " + any + " teníeu " + anyEdat + (anyEdat == 1 ? " any" : " anys"));
