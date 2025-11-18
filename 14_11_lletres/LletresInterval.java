@@ -1,53 +1,57 @@
-public class LletresInterval {
+/*
+Aquest programa mostra un interval de lletres començant des d'una inicial
+i mostrant la quantitat indicada per l'usuari.
+*/
+public class MostraLletres {
     public static void main(String[] args) {
-        System.out.println("lletra?");
-        String entradaLletra = Entrada.readLine();
 
-   
-        if (entradaLletra.length() != 1) {
-            System.out.println("ERROR: cal especificar una única lletra.");
-            return;
-        }
+        System.out.println("inicial?");
+        String liniaEntrada = Entrada.readLine();
 
-        char lletra = entradaLletra.charAt(0);
-if (!Character.isLetter(lletra)) {
- System.out.println("ERROR: '" + lletra + "' no és una lletra vàlida.");
- }
-     
-        if (!((lletra >= 'a' && lletra <= 'z') || (lletra >= 'A' && lletra <= 'Z'))) {
-            System.out.println("ERROR: '" + lletra + "' no és una lletra vàlida.");
-        }
+        if (liniaEntrada.length() != 1) {
+            System.out.println("ERROR: cal introduir només una lletra.");
 
-        System.out.println("quantes?");
-        int quantes = Integer.parseInt(Entrada.readLine());
-
-      
-        if (quantes < 1) {
-            System.out.println("Error: El nombre de lletres ha de ser almenys 1");
-            return;
-        }
-
-
-        char inici;
-        boolean esMinuscula = Character.isLowerCase(lletra);
-        if (esMinuscula) {
-            inici = 'a';
         } else {
-            inici = 'A';
-        }
 
-      
-        for (int i = 0; i < quantes; i++) {
-            char actual = (char)(lletra + i);
-            // Ajustar si sobrepassa la 'z' o 'Z'
-            if (esMinuscula && actual > 'z') {
-                actual = (char)(inici + (actual - 'z' - 1));
-            } else if (!esMinuscula && actual > 'Z') {
-                actual = (char)(inici + (actual - 'Z' - 1));
+            char car = liniaEntrada.charAt(0);
+
+            
+            boolean minus = car >= 'a' && car <= 'z';
+            boolean majus = car >= 'A' && car <= 'Z';
+
+            if (!minus && !majus) {
+                System.out.println("ERROR: '" + car + "' no és una lletra vàlida.");
+
+            } else {
+
+                System.out.println("quant?");
+                int total = Integer.parseInt(Entrada.readLine());
+
+        
+                if (total < 1) {
+                    System.out.println("ERROR: cal indicar almenys 1");
+
+                } else {
+
+                    // Mostrem les lletres
+                    for (int i = 0; i < total; i++) {
+                        char lletraActual = (char)(car + i);
+
+                        if (minus) {
+                            lletraActual = (char)('a' + (lletraActual - 'a') % 26);
+                        }
+                        if (majus) {
+                            lletraActual = (char)('A' + (lletraActual - 'A') % 26);
+                        }
+                        System.out.print(lletraActual);
+                    }
+                    System.out.println();
+                }
             }
-            System.out.print(actual);
         }
-        System.out.println();
+    }
+}
+
     }
 }
 
