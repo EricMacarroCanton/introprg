@@ -16,7 +16,17 @@ public class HistoricEdats {
 
         boolean correcte = true;
 
-        if (nom == null || nom.length() == 0 || edat < 0 || anyActual < 1971) {
+        boolean nomInvalid = true;
+        if (nom.length() > 0) {
+            nomInvalid = true;
+            for (int i = 0; i < nom.length(); i++) {
+                if (nom.charAt(i) != ' ') {
+                    nomInvalid = false;
+                }
+            }
+        }
+
+        if (nom.length() == 0 || nomInvalid || edat < 0 || anyActual < 1971) {
             System.out.println("Entrada incorrecta");
             correcte = false;
         }
