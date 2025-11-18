@@ -13,7 +13,7 @@ public class LloroVocalIniFi {
         // El bucle continua mentre la línia no sigui buida o només espais
         while (!paraula.isEmpty()) {
 
-            String text = paraula.trim().toLowerCase();
+            String text = paraula.toLowerCase();
 
             char primera = text.charAt(0);
             char darrera = text.charAt(text.length() - 1);
