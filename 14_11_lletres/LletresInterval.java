@@ -5,7 +5,7 @@ i mostrant la quantitat indicada per l'usuari.
 public class LletresInterval {
     public static void main(String[] args) {
 
-        System.out.println("inicial?");
+        System.out.println("lletra?");
         String liniaEntrada = Entrada.readLine();
 
         if (liniaEntrada.length() != 1) {
@@ -24,7 +24,7 @@ public class LletresInterval {
 
             } else {
 
-                System.out.println("quant?");
+                System.out.println("quantes?");
                 int total = Integer.parseInt(Entrada.readLine());
 
         
