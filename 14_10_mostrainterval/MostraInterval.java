@@ -9,9 +9,9 @@ int inici = Integer.parseInt(Entrada.readLine());
 
 System.out.println("final?");
 int finals = Integer.parseInt(Entrada.readLine());
-if (inici <= finals ) {
+if (inici < finals ) {
 
-for (int variable=inici; variable <= finals; variable++ ) {
+for (int variable=inici; variable < finals; variable++ ) {
 System.out.println(variable);
 }
 
