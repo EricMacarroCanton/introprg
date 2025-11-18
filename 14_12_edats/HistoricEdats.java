@@ -27,7 +27,7 @@ public class HistoricEdats {
 
 
         for (int i = 1; i < edat; i++) {
-            int any = anyNaixement + i - 1;
+            int any = anyNaixement + i;
             int anyEdat = i;
             System.out.println("El " + any + " teníeu " + anyEdat + (anyEdat == 1 ? " any" : " anys"));
         }
