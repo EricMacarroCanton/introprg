@@ -6,7 +6,7 @@
  * Controla casos límits per garantir una sortida coherent.
  Eric Macarro
  */
-public class Naturals {
+public class Naturals { 
     public static void main(String[] args) {
 
         int n = Integer.parseInt(args[0]);
@@ -14,10 +14,8 @@ public class Naturals {
         if (n < 1) {
             System.out.println("Cap valor creixent entre 1 i " + n);
         } else {
-            int i = 1;
-            while (i <= n) {  // només la condició aquí
+            for (int i = 1; i <= n; i++) { 
                 System.out.println(i);
-                i++;          
             }
         }
     }
