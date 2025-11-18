@@ -1,55 +1,56 @@
 /*
-Aquest programa mostra un interval de lletres començant des d'una inicial
-i mostrant la quantitat indicada per l'usuari.
+En aquest exercici crearem un programa que demanarà la lletra inicial i quantes lletres ha de mostrar.
 */
 public class LletresInterval {
     public static void main(String[] args) {
 
         System.out.println("lletra?");
-        String liniaEntrada = Entrada.readLine();
+        String linia = Entrada.readLine();
 
-        if (liniaEntrada.length() != 1) {
-            System.out.println("ERROR: cal introduir només una lletra.");
+    
+        if (linia.length() != 1) {
+            System.out.println("ERROR: cal especificar una única lletra.");
 
         } else {
 
-            char car = liniaEntrada.charAt(0);
+            char caracter = linia.charAt(0);
 
-            
-            boolean minus = car >= 'a' && car <= 'z';
-            boolean majus = car >= 'A' && car <= 'Z';
+            boolean minuscula = caracter >= 'a' && caracter <= 'z';
+            boolean majuscula = caracter >= 'A' && caracter <= 'Z';
 
-            if (!minus && !majus) {
-                System.out.println("ERROR: '" + car + "' no és una lletra vàlida.");
+            if (!minuscula && !majuscula) {
+                System.out.println("ERROR: '" + caracter + "' no és una lletra vàlida.");
 
             } else {
 
                 System.out.println("quantes?");
-                int total = Integer.parseInt(Entrada.readLine());
+                int quant = Integer.parseInt(Entrada.readLine());
 
-        
-                if (total < 1) {
-                    System.out.println("ERROR: cal indicar almenys 1");
+              
+                if (quant < 1) {
+                    System.out.println("ERROR: una com a mínim");
 
                 } else {
 
-                    // Mostrem les lletres
-                    for (int i = 0; i < total; i++) {
-                        char lletraActual = (char)(car + i);
+             
+                    for (int i = 0; i < quant; i++) {
+                        char actual = (char)(caracter + i);
 
-                        if (minus) {
-                            lletraActual = (char)('a' + (lletraActual - 'a') % 26);
+                        if (minuscula) {
+                            actual = (char)('a' + (actual - 'a') % 26);
                         }
-                        if (majus) {
-                            lletraActual = (char)('A' + (lletraActual - 'A') % 26);
+
+                        if (majuscula) {
+                            actual = (char)('A' + (actual - 'A') % 26);
                         }
-                        System.out.print(lletraActual);
+                        System.out.print(actual);
                     }
-                    System.out.println();
+                    System.out.println("");
                 }
             }
         }
     }
 }
+
 
 
