@@ -15,11 +15,11 @@ for (int variable=inici; variable <= finals; variable++ ) {
 System.out.println(variable);
 }
 
-} else {
+}  
 if (inici >= finals)
 for (int variable = finals; variable >= finals; variable--) {
 System.out.println(variable);
 			}
 		}
 	}
-}
+
