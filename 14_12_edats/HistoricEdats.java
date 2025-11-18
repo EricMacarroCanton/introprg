@@ -16,7 +16,7 @@ public class HistoricEdats {
 
         boolean correcte = true;
 
-        if (nom.length() == 0 || edat < 0 || anyActual < 1971) {
+        if (nom == null || nom.length() == 0 || edat < 0 || anyActual < 1971) {
             System.out.println("Entrada incorrecta");
             correcte = false;
         }
@@ -29,8 +29,7 @@ public class HistoricEdats {
                 System.out.println("El " + anyNaixement + " vau néixer");
                 for (int i = 1; i < edat; i++) {
                     int any = anyNaixement + i;
-                    int edatAny = i;
-                    System.out.println("El " + any + " teníeu " + edatAny + (edatAny == 1 ? " any" : " anys"));
+                    System.out.println("El " + any + " teníeu " + i + (i == 1 ? " any" : " anys"));
                 }
                 System.out.println("Adéu " + nom);
             }
