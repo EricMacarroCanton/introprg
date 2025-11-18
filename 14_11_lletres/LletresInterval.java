@@ -10,7 +10,9 @@ public class LletresInterval {
         }
 
         char lletra = entradaLletra.charAt(0);
-
+if (!Character.isLetter(lletra)) {
+ System.out.println("ERROR: '" + lletra + "' no és una lletra vàlida.");
+ }
      
         if (!((lletra >= 'a' && lletra <= 'z') || (lletra >= 'A' && lletra <= 'Z'))) {
             System.out.println("ERROR: '" + lletra + "' no és una lletra vàlida.");
