@@ -2,7 +2,7 @@
 Aquest programa mostra un interval de lletres començant des d'una inicial
 i mostrant la quantitat indicada per l'usuari.
 */
-public class MostraLletres {
+public class LletresInterval {
     public static void main(String[] args) {
 
         System.out.println("inicial?");
@@ -52,6 +52,4 @@ public class MostraLletres {
     }
 }
 
-    }
-}
 
