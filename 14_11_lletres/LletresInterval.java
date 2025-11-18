@@ -5,7 +5,7 @@ public class LletresInterval {
 
    
         if (entradaLletra.length() != 1) {
-            System.out.println("ERROR: Cal especificar una única lletra");
+            System.out.println("ERROR: cal especificar una única lletra.");
             return;
         }
 
