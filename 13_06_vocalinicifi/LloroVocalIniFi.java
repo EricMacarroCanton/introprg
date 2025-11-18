@@ -3,6 +3,7 @@
  * Demana paraules i només repeteix aquelles que comencen i acaben amb la mateixa vocal
  * (a, e, i, o, u), sense distingir majúscules ni minúscules.
  * Finalitza quan s’introdueix una cadena buida o només amb espais.
+ Eric Macarro
  */
 public class LloroVocalIniFi {
     public static void main(String[] args) {
