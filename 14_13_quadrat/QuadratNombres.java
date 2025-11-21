@@ -10,7 +10,7 @@ public class QuadratNombres {
         } else {
             for (int fila = 0; fila < finals; fila++) {
                 for (int columna = 0; columna < finals; columna++) {
-                    System.out.print((columna + 1) + " ");
+                    System.out.print((columna + 1) + "");
                 }
                 System.out.println();
             }
