@@ -12,7 +12,7 @@ public class TriangleNombres {
         if (finals < 1 || finals > 9) {
             System.out.println("Valor inadequat");
         } else {
-            for (int fila = 1 ; fila < finals; fila++) {
+            for (int fila = 1 ; fila <= finals; fila++) {
                 for (int columna = 1; columna >= 1; columna--) {
                     System.out.print(columna);
                 }
