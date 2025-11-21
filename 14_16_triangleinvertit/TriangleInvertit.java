@@ -17,7 +17,7 @@ public class TriangleInvertit {
             for (int fila = n; fila >= 1; fila--) {
                 for (int col = 1; col <= fila; col++) {
                     System.out.print(col);
-                    if (col != fila) { // posa coma només si no és l'últim número
+                    if (col != fila) { 
                         System.out.print(", ");
                     }
                 }
