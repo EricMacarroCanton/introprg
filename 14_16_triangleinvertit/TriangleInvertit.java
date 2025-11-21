@@ -3,24 +3,27 @@
    (és a dir, decreixentment). A cada línia escriurà tots els nombres des del nombre
    corresponent a la línia fins al 1.
 */
+
 public class TriangleInvertit {
     public static void main(String[] args) {
+        
 
         System.out.println("Nombre?");
-        int finals = Integer.parseInt(Entrada.readLine());
+        int n = Integer.parseInt(Entrada.readLine());
 
-        if (finals < 1) {
+        if (n < 1 || n > 9) {
             System.out.println("Valor inadequat");
         } else {
-
-            for (int fila = finals ; fila >= 1; fila--)
-                for (int columna = fila; columna >= 1; columna--) {
-                    System.out.print(columna);
+            for (int fila = n; fila >= 1; fila--) {
+                for (int col = 1; col <= fila; col++) {
+                    System.out.print(col);
+                    if (col != fila) { // posa coma només si no és l'últim número
+                        System.out.print(", ");
+                    }
                 }
-
                 System.out.println();
             }
         }
-    }
+}
 }
 
