@@ -1,4 +1,4 @@
-/* programa on hem de fer un programa  que demani un enter entre el 1 i el 9.
+/* exercici on hem de fer un programa  que demani un enter entre el 1 i el 9.
    El programa escriurà una línia per nombre entre el 1 i el nombre introduït 
    (és a dir, decreixentment). A cada línia escriurà tots els nombres des del nombre
    corresponent a la línia fins al 1.
