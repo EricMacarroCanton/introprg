@@ -7,38 +7,39 @@
  public class SumaPositius {
     public static void main(String[] args) {
 
-	int suma = 0;
+        int suma = 0;
         int valor;
+        boolean finalitzar = false;
 
-      
-System.out.println("Introdueix el primer valor");
-valor = Integer.parseInt(Entrada.readLine());
-if (valor < 0) {
-	System.out.println("La suma és " + suma);	
-	return; 
+        System.out.println("Introdueix el primer valor");
+        valor = Integer.parseInt(Entrada.readLine());
+        if (valor < 0) {
+            finalitzar = true;
+        } else {
+            suma = suma + valor;
         }
-        suma = suma + valor;
 
-        
-System.out.println("Introdueix el segon valor");
-valor = Integer.parseInt(Entrada.readLine());
-if (valor < 0) {
-	System.out.println("La suma és " + suma);
-        return;
+        if (!finalitzar) {
+            System.out.println("Introdueix el segon valor");
+            valor = Integer.parseInt(Entrada.readLine());
+            if (valor < 0) {
+                finalitzar = true;
+            } else {
+                suma = suma + valor;
+            }
         }
-suma = suma + valor;
 
-        
-System.out.println("Introdueix el tercer valor");
-valor = Integer.parseInt(Entrada.readLine());
-if (valor < 0) {
+        if (!finalitzar) {
+            System.out.println("Introdueix el tercer valor");
+            valor = Integer.parseInt(Entrada.readLine());
+            if (valor < 0) {
+                finalitzar = true;
+            } else {
+                suma = suma + valor;
+            }
+        }
+
         System.out.println("La suma és " + suma);
-        return;
-        }
-        suma = suma + valor;
-
-       
-System.out.println("La suma és " + suma);
     }
 }
 

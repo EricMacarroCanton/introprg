@@ -3,7 +3,7 @@
  * Descripció: Programa que demana enters positius de manera repetida.
  *              Quan l’usuari introdueix un nombre negatiu, el programa
  *              mostra quants dels valors introduïts són parells i finalitza.
- * Autor: (Eric Macarro)
+ * Autor: (Eric Macarro) 
  * Data: 04/11/2025
  */
 public class QuantsParells {
