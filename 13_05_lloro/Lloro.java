@@ -2,7 +2,7 @@
  * Programa Lloro
  * Demana paraules a l'usuari i les repeteix fins que s'introdueix una línia buida o amb espais.
  * Quan passa això, mostra "Adéu" i acaba el programa.
- * [Eric Macarro]
+ * [Eric Macarro] 
  */
 public class Lloro {
     public static void main(String[] args) {
