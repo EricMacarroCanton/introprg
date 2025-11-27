@@ -1,3 +1,6 @@
+//* exercici on hem de fer un programa que demani un nombre enter positiu i dibuixi tants rombos com se li indiqui
+
+
 public class Rombos {
 
     public static void main(String[] args) {
