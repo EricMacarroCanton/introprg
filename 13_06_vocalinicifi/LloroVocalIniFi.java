@@ -14,8 +14,7 @@ public class LloroVocalIniFi {
             char primera = paraula.charAt(0); 
             char darrera = paraula.charAt(paraula.length() - 1); 
 
-            boolean mateixaVocal = 
-                (primera == 'a' && (darrera == 'a' || darrera == 'A')) ||
+            boolean mateixaVocal = (primera == 'a' && (darrera == 'a' || darrera == 'A')) ||
                 (primera == 'A' && (darrera == 'a' || darrera == 'A')) ||
                 (primera == 'e' && (darrera == 'e' || darrera == 'E')) ||
                 (primera == 'E' && (darrera == 'e' || darrera == 'E')) ||
