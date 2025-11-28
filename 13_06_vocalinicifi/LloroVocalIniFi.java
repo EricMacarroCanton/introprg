@@ -6,25 +6,35 @@
  Eric Macarro
  */
 public class LloroVocalIniFi { 
-public static void main(String[] args) { 
-System.out.println("Paraula?"); 
-String paraula = Entrada.readLine(); 
+    public static void main(String[] args) { 
+        System.out.println("Paraula?"); 
+        String paraula = Entrada.readLine(); 
 
-	while (!paraula.isEmpty()) { 
-	
-        String text = paraula;
-	char primera = text.charAt(0); 
-	char darrera = text.charAt(text.length() - 1); 
-	
-		if ((primera == 'a' || primera == 'e' || primera == 'i' || primera == 'o' || primera == 'u'|| primera == 'A' || primera == 'E' || primera == 'I' || primera == 'O' || primera == 'U' || darrera == 'a' || darrera == 'e' || darrera == 'i' || darrera == 'o' || darrera == 'u' || darrera == 'A' || darrera == 'E' || darrera == 'I' || darrera == 'O' || darrera == 'U' )&& primera == darrera) { 
-		
-		System.out.println("Repeteixo: " + text); 
-		} 
-		
-		System.out.println("Paraula?"); 
-		
-		paraula = Entrada.readLine(); } 
-		
-System.out.println("Adéu"); 
-} 
+        while (!paraula.isEmpty()) { 
+            char primera = paraula.charAt(0); 
+            char darrera = paraula.charAt(paraula.length() - 1); 
+
+            boolean mateixaVocal = 
+                (primera == 'a' && (darrera == 'a' || darrera == 'A')) ||
+                (primera == 'A' && (darrera == 'a' || darrera == 'A')) ||
+                (primera == 'e' && (darrera == 'e' || darrera == 'E')) ||
+                (primera == 'E' && (darrera == 'e' || darrera == 'E')) ||
+                (primera == 'i' && (darrera == 'i' || darrera == 'I')) ||
+                (primera == 'I' && (darrera == 'i' || darrera == 'I')) ||
+                (primera == 'o' && (darrera == 'o' || darrera == 'O')) ||
+                (primera == 'O' && (darrera == 'o' || darrera == 'O')) ||
+                (primera == 'u' && (darrera == 'u' || darrera == 'U')) ||
+                (primera == 'U' && (darrera == 'u' || darrera == 'U'));
+
+            if (mateixaVocal) {
+                System.out.println("Repeteixo: " + paraula); 
+            } 
+
+            System.out.println("Paraula?"); 
+            paraula = Entrada.readLine(); 
+        } 
+
+        System.out.println("Adéu"); 
+    } 
 }
+
