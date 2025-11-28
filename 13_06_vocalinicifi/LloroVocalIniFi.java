@@ -16,8 +16,10 @@ String paraula = Entrada.readLine();
 	char primera = text.charAt(0); 
 	char darrera = text.charAt(text.length() - 1); 
 	
-		if ((primera == 'a' || primera == 'e' || primera == 'i' || primera == 'o' || primera == 'u'|| primera == 'A' || primera == 'E' || primera == 'I' || primera == 'O' || primera == 'U' )&& primera == darrera) { 
-		System.out.println("Repeteixo: " + text); } 
+		if ((primera == 'a' || primera == 'e' || primera == 'i' || primera == 'o' || primera == 'u'|| primera == 'A' || primera == 'E' || primera == 'I' || primera == 'O' || primera == 'U' || darrera == 'a' || darrera == 'e' || darrera == 'i' || darrera == 'o' || darrera == 'u' || darrera == 'A' || darrera == 'E' || darrera == 'I' || darrera == 'O' || darrera == 'U' )&& primera == darrera) { 
+		
+		System.out.println("Repeteixo: " + text); 
+		} 
 		
 		System.out.println("Paraula?"); 
 		
