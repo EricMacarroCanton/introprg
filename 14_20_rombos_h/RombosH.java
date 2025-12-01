@@ -4,55 +4,41 @@ public class RombosH {
 
         System.out.println("quants?");
         int n = Integer.parseInt(Entrada.readLine());
+        int h = 9;
 
-        for (int r = 0; r < n; r++) {
+        for (int fila = -h; fila <= h; fila++) {
 
-     
-            for (int lin = 1; lin <= 10; lin++) {
+            int espacios = (fila < 0) ? -fila : fila;
+            int largo = h - espacios;
 
-           
-                for (int j = 0; j <= 9 - lin; j++)
-                    System.out.print(".");
+            // només imprimim si largo > 0 (així eliminem la fila superior i inferior)
+            if (largo > 0) {
 
-           
-                for (int j = 10 - lin; j < 10; j++)
-                    System.out.print(j);
+                for (int r = 0; r < n; r++) {
 
-                
-                for (int j = 8; j >= 10 - lin; j--)
-                    System.out.print(j);
+                    int primer = 10 - largo;
 
-            
-                for (int j = 0; j <= 9 - lin; j++)
-                    System.out.print(".");
+                    // punts esquerra
+                    for (int i = 0; i <= espacios; i++)
+                        System.out.print(".");
 
-                System.out.print();
+                    // números creixents
+                    for (int i = primer; i <= 9; i++)
+                        System.out.print(i);
+
+                    // números decreixents
+                    for (int i = 8; i >= primer; i--)
+                        System.out.print(i);
+
+                    // punts dreta
+                    for (int i = 0; i < espacios; i++)
+                        System.out.print(".");
+
+                }
+
+                System.out.println();
             }
-
-        
-        
-            for (int lin = 9; lin >= 1; lin--) {
-
-          
-                for (int j = 0; j <= 9 - lin; j++)
-                    System.out.print(".");
-
-   
-                for (int j = 10 - lin; j < 10; j++)
-                    System.out.print(j);
-
-                
-                for (int j = 8; j >= 10 - lin; j--)
-                    System.out.print(j);
-
-              
-                for (int j = 0; j <= 9 - lin; j++)
-                    System.out.print(".");
-
-                System.out.print();
-           
-
         }
     }
 }
-}
+
