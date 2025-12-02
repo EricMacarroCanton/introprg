@@ -1,43 +1,79 @@
 public class RombosH {
-
     public static void main(String[] args) {
-
         System.out.println("quants?");
-        int n = Integer.parseInt(Entrada.readLine());
-        int h = 9;
+        int quants = Integer.parseInt(Entrada.readLine());
+        if (quants >= 1) {
 
-        for (int fila = -h; fila <= h; fila++) {
+            // PARTE SUPERIOR
+            for (int linea = 1; linea <= 10; linea++) { // Linea
+                for (int cop = 1; cop <= quants; cop++) { // n de repeticiones
 
-            int espacios = (fila < 0) ? -fila : fila;
-            int largo = h - espacios;
+                    // Puntos Izquierda
+                    for (int j = 0; j <= 9 - linea; j++) {
+                        if (cop != 1 && j == 0) {
+                            // compartimos el 0 central
+                        } else {
+                            System.out.print(".");
+                        }
+                    }
 
-            // només imprimim si largo > 0 (així eliminem la fila superior i inferior)
-            if (largo > 0) {
+                    // Numeros Izquierda
+                    for (int j = 10 - linea; j < 10; j++) {
+                        if (cop != 1 && j == 0) {
+                            // compartimos el 0 central
+                        } else {
+                            System.out.print(j);
+                        }
+                    }
 
-                for (int r = 0; r < n; r++) {
+                    // Numeros Derecha
+                    for (int j = 8; j >= 10 - linea; j--) {
+                        System.out.print(j);
+                    }
 
-                    int primer = 10 - largo;
-
-                    // punts esquerra
-                    for (int i = 0; i <= espacios; i++)
+                    // Puntos Derecha
+                    for (int j = 0; j <= 9 - linea; j++) {
                         System.out.print(".");
-
-                    // números creixents
-                    for (int i = primer; i <= 9; i++)
-                        System.out.print(i);
-
-                    // números decreixents
-                    for (int i = 8; i >= primer; i--)
-                        System.out.print(i);
-
-                    // punts dreta
-                    for (int i = 0; i < espacios; i++)
-                        System.out.print(".");
-
+                    }
                 }
-
                 System.out.println();
             }
+
+            // PARTE INFERIOR (copiada literal de la superior, invertida, sin repetir la línea central)
+            for (int linea = 9; linea >= 1; linea--) { // empezamos en 9 para no repetir la línea 10
+                for (int cop = 1; cop <= quants; cop++) {
+
+                    // Puntos Izquierda
+                    for (int j = 0; j <= 9 - linea; j++) {
+                        if (cop != 1 && j == 0) {
+                            // compartimos el 0 central
+                        } else {
+                            System.out.print(".");
+                        }
+                    }
+
+                    // Numeros Izquierda
+                    for (int j = 10 - linea; j < 10; j++) {
+                        if (cop != 1 && j == 0) {
+                            // compartimos el 0 central
+                        } else {
+                            System.out.print(j);
+                        }
+                    }
+
+                    // Numeros Derecha
+                    for (int j = 8; j >= 10 - linea; j--) {
+                        System.out.print(j);
+                    }
+
+                    // Puntos Derecha
+                    for (int j = 0; j <= 9 - linea; j++) {
+                        System.out.print(".");
+                    }
+                }
+                System.out.println();
+            }
+
         }
     }
 }
