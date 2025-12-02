@@ -2,34 +2,38 @@
 public class TaulaMultiplicar {
     public static void main(String[] args) {
 
+        boolean continuar = true;
+
         if (args.length < 4) {
             System.out.println("Si us plau, introdueix 4 arguments: valorInicialPrimerOperand, valorFinalPrimerOperand, valorInicialSegonOperand, valorFinalSegonOperand");
-            return;
+            continuar = false;   // no sortim amb return, només indiquem que no toca continuar
         }
 
- 
-        int primerInici = Integer.parseInt(args[0]);
-        int primerFinal = Integer.parseInt(args[1]);
-        int segonInici = Integer.parseInt(args[2]);
-        int segonFinal = Integer.parseInt(args[3]);
+        if (continuar) {
 
-     
-        if (primerInici > primerFinal) {
-            int tmp = primerInici;
-            primerInici = primerFinal;
-            primerFinal = tmp;
-        }
+            int primerInici = Integer.parseInt(args[0]);
+            int primerFinal = Integer.parseInt(args[1]);
+            int segonInici = Integer.parseInt(args[2]);
+            int segonFinal = Integer.parseInt(args[3]);
 
-        if (segonInici > segonFinal) {
-            int tmp = segonInici;
-            segonInici = segonFinal;
-            segonFinal = tmp;
-        }
+            // Intercanvi si cal
+            if (primerInici > primerFinal) {
+                int tmp = primerInici;
+                primerInici = primerFinal;
+                primerFinal = tmp;
+            }
 
-     
-        for (int i = primerInici; i <= primerFinal; i++) {
-            for (int j = segonInici; j <= segonFinal; j++) {
-                System.out.println(i + " x " + j + " = " + (i * j));
+            if (segonInici > segonFinal) {
+                int tmp = segonInici;
+                segonInici = segonFinal;
+                segonFinal = tmp;
+            }
+
+            // Mostrar taula
+            for (int i = primerInici; i <= primerFinal; i++) {
+                for (int j = segonInici; j <= segonFinal; j++) {
+                    System.out.println(i + " x " + j + " = " + (i * j));
+                }
             }
         }
     }
