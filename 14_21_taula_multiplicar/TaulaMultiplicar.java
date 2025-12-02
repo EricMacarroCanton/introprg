@@ -1,3 +1,4 @@
+//* exercicici on hem de fer un programa que permeti construir taules de multiplicar personalitzades.
 public class TaulaMultiplicar {
     public static void main(String[] args) {
 
