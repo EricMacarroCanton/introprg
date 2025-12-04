@@ -1,3 +1,4 @@
+//* exercici on hem de fer un programa que demani un text i mostri cada lletra entre parèntesis. La resta de caràcters es mantindran sense canvis
 public class Parentitza {
     public static void main(String[] args) {
         
