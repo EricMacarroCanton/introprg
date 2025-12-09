@@ -1,3 +1,4 @@
+// programa on hem de que implementar un lloro amb finalització una cadena buida. Finalment "printejarem" les vocalscatalanes, consonants simbols i nombres.
 public class Distribuidor {
     public static void main(String[] args) {
         System.out.println("Introduïu texts (INTRO per finalitzar)");
@@ -62,9 +63,9 @@ public class Distribuidor {
 
         if (!consonantsT.isBlank()) {
     String consonantsTMayus = "";
-    for (int i = 0; i < consonantsT.length(); i++) {
-        char c = consonantsT.charAt(i);
-        if (c == 'ß') {
+    		for (int i = 0; i < consonantsT.length(); i++) {
+        		char c = consonantsT.charAt(i);
+        			if (c == 'ß') {
             consonantsTMayus += c;  // Deixar ß tal qual
         } else {
             consonantsTMayus += Character.toUpperCase(c);
