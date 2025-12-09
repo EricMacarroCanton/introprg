@@ -19,18 +19,17 @@ public class MostraInterval {
         if (inici >= finals) {
             for (int x = inici; x >= finals; x--) {
                 char c = text.charAt(x);
-                if (c != ' ') {  // Ometre espais
+                
                     System.out.println(c);
                 }
             }
         } else {
             for (int x = inici; x <= finals; x++) {
                 char c = text.charAt(x);
-                if (c != ' ') {  // Ometre espais
+             
                     System.out.println(c);
                 }
             }
         }
-    }
-}
+  
 
