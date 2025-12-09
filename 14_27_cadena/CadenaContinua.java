@@ -9,7 +9,7 @@ public class CadenaContinua {
         int longi = text.length();
         int numcops = nombre / longi;
         int residu = nombre % longi;
-        if (nombre < 0) {
+        if (nombre < 0 || longi < 0) {
 
                 System.out.println();
 
