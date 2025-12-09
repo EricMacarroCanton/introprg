@@ -6,7 +6,7 @@ public class CadenaContinua {
 
       
         if (text.isBlank()) {
-            System.out.println("Error: text buit.");
+            System.out.println("ERROR: el text no conté caràcters no blancs");
         } else { 
             System.out.println("Nombre?");
             int nombre = Integer.parseInt(Entrada.readLine());
