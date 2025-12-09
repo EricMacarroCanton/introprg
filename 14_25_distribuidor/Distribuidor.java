@@ -22,7 +22,7 @@ public class Distribuidor {
             for (int i = 0; i < textMin.length(); i++) {
                 char c = textMin.charAt(i);
                 boolean repetida = false;
-                boolean esVocal = vc.indexOf(c) >= 0;
+                boolean esVocal = false;
 
                 // Lletres
                 if (Character.isLetter(c) || c == 'ß') {
