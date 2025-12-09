@@ -10,34 +10,27 @@ public class MostraInterval {
 	        
         System.out.println("final?");
 	        int finals = Integer.parseInt(Entrada.readLine());
-	 if (inici < 0 || inici >= text.length() || finals < 0 || finals >= text.length()) {
-            System.out.println("Índex fora de rang!");
-            }        
-	        
-	 if (inici >= finals) {
+	   if (inici < 0) inici = 0;
+        if (inici >= text.length()) inici = text.length() - 1;
+        if (finals < 0) finals = 0;
+        if (finals >= text.length()) finals = text.length() - 1;
+
+        // Recórrer l'interval
+        if (inici >= finals) {
             for (int x = inici; x >= finals; x--) {
                 char c = text.charAt(x);
-                if (c != ' ') {  
+                if (c != ' ') {  // Ometre espais
                     System.out.println(c);
                 }
             }
         } else {
             for (int x = inici; x <= finals; x++) {
                 char c = text.charAt(x);
-                if (c != ' ') {  
+                if (c != ' ') {  // Ometre espais
                     System.out.println(c);
                 }
             }
         }
     }
 }
-
-
-
-
-
-
-
-
-
 
