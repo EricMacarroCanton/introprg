@@ -1,4 +1,4 @@
-publpublic class Distribuidor {
+public class Distribuidor {
     public static void main(String[] args) {
         System.out.println("Introduïu texts (INTRO per finalitzar)");
         String text = "a";
