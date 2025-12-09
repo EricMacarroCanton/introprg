@@ -1,3 +1,4 @@
+//exercici on hem de fer un programa que demani un text i un nombre enter, i mostri tants caràcters del text com indiqui el nombre enters, començant pel primer y en cas que en faltin, el programa tornarà a mostrar el text a partir del primer caràcter fins que hagi aconseguit tots els caràcters demanats.
 public class CadenaContinua {
     public static void main(String[] args) {
 
