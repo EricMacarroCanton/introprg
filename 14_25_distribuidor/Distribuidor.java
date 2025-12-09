@@ -15,7 +15,7 @@ public class Distribuidor {
 
         while (!text.isBlank()) {
             text = Entrada.readLine();
-            
+           
 
             String textMin = text.toLowerCase();
 
@@ -26,7 +26,13 @@ public class Distribuidor {
 
                 // Lletres
                 if (Character.isLetter(c) || c == 'ß') {
-                    if (esVocal) {
+                    for (int j = 0; j < vc.length(); j++) { // recórrer vocals catalanes
+                        if (c == vc.charAt(j)) {
+                            esVocal = true;
+                        }
+                    }
+
+                    if (esVocal) { // és vocal
                         for (int k = 0; k < vocalsT.length(); k++) {
                             if (c == vocalsT.charAt(k)) repetida = true;
                         }
@@ -57,28 +63,31 @@ public class Distribuidor {
             }
         }
 
+        // Mostrar vocals
         if (!vocalsT.isBlank()) {
             System.out.println("Vocals: " + vocalsT.toUpperCase());
         }
 
+        // Mostrar consonants amb ß intacte
         if (!consonantsT.isBlank()) {
-    String consonantsTMayus = "";
-    		for (int i = 0; i < consonantsT.length(); i++) {
-        		char c = consonantsT.charAt(i);
-        			if (c == 'ß') {
-            consonantsTMayus += c;  // Deixar ß tal qual
-        } else {
-            consonantsTMayus += Character.toUpperCase(c);
+            String consonantsTMayus = "";
+            for (int i = 0; i < consonantsT.length(); i++) {
+                char c = consonantsT.charAt(i);
+                if (c == 'ß') {
+                    consonantsTMayus += c; // Deixar ß tal qual
+                } else {
+                    consonantsTMayus += Character.toUpperCase(c);
+                }
+            }
+            System.out.println("Consonants: " + consonantsTMayus);
         }
-    }
-    System.out.println("Consonants: " + consonantsTMayus);
-}
 
-
+        // Mostrar nombres
         if (!nombresT.isBlank()) {
             System.out.println("Nombres: " + nombresT);
         }
 
+        // Mostrar símbols
         if (!simbolsT.isBlank()) {
             System.out.println("Símbols: " + simbolsT);
         }
