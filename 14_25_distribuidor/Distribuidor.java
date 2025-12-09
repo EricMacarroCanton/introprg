@@ -14,7 +14,7 @@ public class Distribuidor {
 
         while (!text.isBlank()) {
             text = Entrada.readLine();
-            if (text.isBlank()) break;
+            
 
             String textMin = text.toLowerCase();
 
@@ -61,8 +61,18 @@ public class Distribuidor {
         }
 
         if (!consonantsT.isBlank()) {
-            System.out.println("Consonants: " + consonantsT.toUpperCase());
+    String consonantsTMayus = "";
+    for (int i = 0; i < consonantsT.length(); i++) {
+        char c = consonantsT.charAt(i);
+        if (c == 'ß') {
+            consonantsTMayus += c;  // Deixar ß tal qual
+        } else {
+            consonantsTMayus += Character.toUpperCase(c);
         }
+    }
+    System.out.println("Consonants: " + consonantsTMayus);
+}
+
 
         if (!nombresT.isBlank()) {
             System.out.println("Nombres: " + nombresT);
