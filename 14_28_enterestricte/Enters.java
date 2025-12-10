@@ -1,3 +1,4 @@
+// programa on hem de fer que vagi demanant texts fins rebre la cadena buida i per cada text no buit que rebi, indicarà si correspon o no a un nombre enter escrit amb dígits.
 public class Enters {
     public static void main(String[] args) {
 
@@ -8,7 +9,7 @@ public class Enters {
         while (seguit) {
             String enter = Entrada.readLine();
 
-            // Si només prem Enter → acabar
+           
             if (enter.length() == 0) {
                 System.out.println("Adéu");
                 seguit = false;
@@ -16,7 +17,7 @@ public class Enters {
                 boolean esEnter = true;
                 int start = 0;
 
-                // Comprovar si només hi ha espais
+        
                 boolean nomesEspais = true;
                 for (int i = 0; i < enter.length(); i++) {
                     if (enter.charAt(i) != ' ') {
@@ -37,7 +38,7 @@ public class Enters {
                     }
                 }
 
-                // Recorregut sense break
+                // Recorregut
                 for (int i = start; i < enter.length(); i++) {
                     esEnter = esEnter && Character.isDigit(enter.charAt(i));
                 }
