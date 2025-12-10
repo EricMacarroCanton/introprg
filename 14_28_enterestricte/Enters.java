@@ -1,4 +1,4 @@
-public class Enter {
+public class Enters {
     public static void main(String[] args) {
 
         System.out.println("Introdueix els texts a analitzar:");
@@ -21,3 +21,5 @@ public class Enter {
         } else {
             System.out.println("\" " + enter + "\" no és enter");
         }
+   }
+}
