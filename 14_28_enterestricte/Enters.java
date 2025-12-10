@@ -1,16 +1,17 @@
 public class Enters {
     public static void main(String[] args) {
 
+        System.out.println("Introdueix els texts a analitzar:");
+
         boolean seguit = true;
 
         while (seguit) {
-            System.out.println("Introdueix els texts a analitzar:");
             String enter = Entrada.readLine();
 
-            // Si només prem Enter → sortir
+            // Si només prem Enter → acabar
             if (enter.length() == 0) {
                 System.out.println("Adéu");
-                seguit = false;  // finalitzar bucle
+                seguit = false;
             } else {
                 boolean esEnter = true;
                 int start = 0;
@@ -41,15 +42,16 @@ public class Enters {
                     esEnter = esEnter && Character.isDigit(enter.charAt(i));
                 }
 
-                // Mostrar resultat
+                // Mostrar resultat amb cometes
                 if (esEnter) {
-                    System.out.println("→ " + enter + " és enter");
+                    System.out.println("\"" + enter + "\" és enter");
                 } else {
-                    System.out.println("→ " + enter + " no és enter");
+                    System.out.println("\"" + enter + "\" no és enter");
                 }
             }
         }
     }
 }
+
 
 
