@@ -1,47 +1,55 @@
 public class Enters {
     public static void main(String[] args) {
 
-        System.out.println("Introdueix els texts a analitzar:");
-        String enter = Entrada.readLine();
+        boolean seguit = true;
 
-        boolean esEnter = true;
-        int start = 0;
+        while (seguit) {
+            System.out.println("Introdueix els texts a analitzar:");
+            String enter = Entrada.readLine();
 
-        // 1. Comprovar si només hi ha espais o està buit
-        boolean nomesEspais = true;
-        for (int i = 0; i < enter.length(); i++) {
-            if (enter.charAt(i) != ' ') {
-                nomesEspais = false;
-            }
-        }
-
-        if (enter.length() == 0 || nomesEspais) {
-            esEnter = false;
-        }
-
-        // 2. Comprovar signe inicial (només si encara és vàlid)
-        if (esEnter && (enter.startsWith("-") || enter.startsWith("+"))) {
-            if (enter.length() == 1) {
-                esEnter = false; // Només hi ha el signe
+            // Si només prem Enter → sortir
+            if (enter.length() == 0) {
+                System.out.println("Adéu");
+                seguit = false;  // finalitzar bucle
             } else {
-                start = 1;
+                boolean esEnter = true;
+                int start = 0;
+
+                // Comprovar si només hi ha espais
+                boolean nomesEspais = true;
+                for (int i = 0; i < enter.length(); i++) {
+                    if (enter.charAt(i) != ' ') {
+                        nomesEspais = false;
+                    }
+                }
+
+                if (nomesEspais) {
+                    esEnter = false;
+                }
+
+                // Comprovar signe inicial
+                if (esEnter && (enter.startsWith("-") || enter.startsWith("+"))) {
+                    if (enter.length() == 1) {
+                        esEnter = false;
+                    } else {
+                        start = 1;
+                    }
+                }
+
+                // Recorregut sense break
+                for (int i = start; i < enter.length(); i++) {
+                    esEnter = esEnter && Character.isDigit(enter.charAt(i));
+                }
+
+                // Mostrar resultat
+                if (esEnter) {
+                    System.out.println("→ " + enter + " és enter");
+                } else {
+                    System.out.println("→ " + enter + " no és enter");
+                }
             }
-        }
-
-        // 3. Recorregut sense break
-        for (int i = start; i < enter.length(); i++) {
-            char c = enter.charAt(i);
-
-            // Només és vàlid si és dígit
-            esEnter = esEnter && Character.isDigit(c);
-        }
-
-        // 4. Resultat
-        if (esEnter) {
-            System.out.println("→ " + enter + " és enter");
-        } else {
-            System.out.println("→ " + enter + " no és enter");
         }
     }
 }
+
 
