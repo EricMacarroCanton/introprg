@@ -30,13 +30,19 @@ public class Enters {
                 }
 
                 // Comprovar signe inicial
-                if (esEnter && (enter.startsWith("-") || enter.startsWith("+"))) {
-                    if (enter.length() == 1) {
-                        esEnter = false;
-                    } else {
-                        start = 1;
-                    }
-                }
+                for (int g = 0; g < 1; g++) {
+   			 char c = enter.charAt(g);
+    
+if (esEnter && (c == '+' || c == '-')) {
+
+     			   if (enter.length() == 1) {
+            			esEnter = false;
+      			  } else {
+        			    start = 1;
+        }
+    }
+}
+
 
                 // Recorregut
                 for (int i = start; i < enter.length(); i++) {
