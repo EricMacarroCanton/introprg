@@ -15,26 +15,24 @@ public class Enters {
             } else {
 
                 boolean esEnter = true;
-                boolean nomesEspais = true;
-                boolean signeTrobat = false;
                 boolean digitTrobat = false;
+                boolean signeTrobat = false;
+                boolean haComencat = false;
 
                 for (int i = 0; i < text.length(); i++) {
                     char c = text.charAt(i);
 
-                    // Comprovar si hi ha alguna cosa que no sigui espai
-                    if (c != ' ') {
-                        nomesEspais = false;
-                    }
-
-                    // Ignorar espais
-                    if (c == ' ') {
+                    // Espais abans de començar: OK
+                    if (!haComencat && c == ' ') {
                         continue;
                     }
 
-                    // Signe només permès al principi i només un
+                    // Marquem que ja hem començat
+                    haComencat = true;
+
+                    // Signe: només un i abans de qualsevol dígit
                     if (c == '+' || c == '-') {
-                        if (i != 0 || signeTrobat) {
+                        if (signeTrobat || digitTrobat) {
                             esEnter = false;
                             break;
                         }
@@ -48,13 +46,24 @@ public class Enters {
                         continue;
                     }
 
+                    // Espais finals: permetre’ls
+                    if (c == ' ') {
+                        // però només si ja hi ha hagut algun dígit
+                        for (int j = i; j < text.length(); j++) {
+                            if (text.charAt(j) != ' ') {
+                                esEnter = false;
+                            }
+                        }
+                        break;
+                    }
+
                     // Qualsevol altra cosa → no és enter
                     esEnter = false;
                     break;
                 }
 
-                // Només espais o cap dígit → no és enter
-                if (nomesEspais || !digitTrobat) {
+                // Ha de tenir almenys un dígit
+                if (!digitTrobat) {
                     esEnter = false;
                 }
 
@@ -67,5 +76,4 @@ public class Enters {
         }
     }
 }
-
 
