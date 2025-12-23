@@ -21,8 +21,8 @@ public class Enters {
                 for (int i = 0; i < text.length(); i++) {
                     char c = text.charAt(i);
 
-                    // Ignorar espais completament
-                    if (c == ' ') {
+                    // Ignorar espais i punts
+                    if (c == ' ' || c == '.') {
                         continue;
                     }
 
