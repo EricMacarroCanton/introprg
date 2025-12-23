@@ -1,40 +1,45 @@
-public class Enters {
-    public static void main(String[] args) {
+boolean esEnter = true;
+boolean nomesEspais = true;
+boolean signeTrobat = false;
+boolean digitTrobat = false;
 
-        System.out.println("Introdueix els texts a analitzar:");
+for (int i = 0; i < text.length(); i++) {
+    char c = text.charAt(i);
 
-        boolean seguit = true;
+    if (c != ' ') {
+        nomesEspais = false;
+    }
 
-        while (seguit) {
-            String text = Entrada.readLine();
+    // Ignorar espais
+    if (c == ' ') {
+        continue;
+    }
 
-            // Sortir amb línia buida
-            if (text.length() == 0) {
-                System.out.println("Adéu");
-                seguit = false;
-            } else {
+    // Signe només permès al principi i només un
+    if (c == '+' || c == '-') {
+        if (i != 0 || signeTrobat) {
+            esEnter = false;
+            break;
+        }
+        signeTrobat = true;
+        continue;
+    }
 
-                boolean esEnter = true;
-                boolean nomesEspais = true;
+    // Dígit
+    if (c >= '0' && c <= '9') {
+        digitTrobat = true;
+        continue;
+    }
 
-                for (int i = 0; i < text.length(); i++) {
-                    char c = text.charAt(i);
+    // Qualsevol altra cosa → no és enter
+    esEnter = false;
+    break;
+}
 
-                    // Si hi ha una lletra → NO és enter
-                    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
-                        esEnter = false;
-                    }
-
-                    // Si trobem alguna cosa que no sigui espai
-                    if (c != ' ') {
-                        nomesEspais = false;
-                    }
-                }
-
-                // Si és només espais → NO és enter
-                if (nomesEspais) {
-                    esEnter = false;
-                }
+// Només espais o cap dígit → no és enter
+if (nomesEspais || !digitTrobat) {
+    esEnter = false;
+}
 
                 if (esEnter) {
                     System.out.println("\"" + text + "\" és enter");
