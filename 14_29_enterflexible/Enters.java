@@ -8,25 +8,25 @@ public class Enters {
         while (seguit) {
             String text = Entrada.readLine();
 
-            // Sortir amb línia buida
             if (text.length() == 0) {
                 System.out.println("Adéu");
                 seguit = false;
             } else {
 
                 boolean esEnter = true;
-                boolean signeTrobat = false;
                 boolean digitTrobat = false;
+                boolean signeTrobat = false;
+                boolean esperantDigit = true; // per controlar separadors
 
                 for (int i = 0; i < text.length(); i++) {
                     char c = text.charAt(i);
 
-                    // Ignorar espais i punts
-                    if (c == ' ' || c == '.') {
+                    // Espais sempre ignorables
+                    if (c == ' ') {
                         continue;
                     }
 
-                    // Signe opcional (només un i abans dels dígits)
+                    // Signe opcional
                     if (c == '+' || c == '-') {
                         if (signeTrobat || digitTrobat) {
                             esEnter = false;
@@ -39,16 +39,27 @@ public class Enters {
                     // Dígit
                     if (c >= '0' && c <= '9') {
                         digitTrobat = true;
+                        esperantDigit = false;
                         continue;
                     }
 
-                    // Qualsevol altra cosa invalida
+                    // Separadors permesos només ENTRE dígits
+                    if (c == '.' || c == '_') {
+                        if (esperantDigit || !digitTrobat) {
+                            esEnter = false;
+                            break;
+                        }
+                        esperantDigit = true;
+                        continue;
+                    }
+
+                    // Qualsevol altre caràcter
                     esEnter = false;
                     break;
                 }
 
-                // Sense cap dígit no és enter
-                if (!digitTrobat) {
+                // No pot acabar esperant un dígit ni sense cap dígit
+                if (!digitTrobat || esperantDigit) {
                     esEnter = false;
                 }
 
