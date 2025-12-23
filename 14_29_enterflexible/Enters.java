@@ -15,22 +15,18 @@ public class Enters {
             } else {
 
                 boolean esEnter = true;
-                boolean digitTrobat = false;
                 boolean signeTrobat = false;
-                boolean haComencat = false;
+                boolean digitTrobat = false;
 
                 for (int i = 0; i < text.length(); i++) {
                     char c = text.charAt(i);
 
-                    // Espais abans de començar: OK
-                    if (!haComencat && c == ' ') {
+                    // Ignorar espais completament
+                    if (c == ' ') {
                         continue;
                     }
 
-                    // Marquem que ja hem començat
-                    haComencat = true;
-
-                    // Signe: només un i abans de qualsevol dígit
+                    // Signe opcional (només un i abans dels dígits)
                     if (c == '+' || c == '-') {
                         if (signeTrobat || digitTrobat) {
                             esEnter = false;
@@ -46,23 +42,12 @@ public class Enters {
                         continue;
                     }
 
-                    // Espais finals: permetre’ls
-                    if (c == ' ') {
-                        // però només si ja hi ha hagut algun dígit
-                        for (int j = i; j < text.length(); j++) {
-                            if (text.charAt(j) != ' ') {
-                                esEnter = false;
-                            }
-                        }
-                        break;
-                    }
-
-                    // Qualsevol altra cosa → no és enter
+                    // Qualsevol altra cosa invalida
                     esEnter = false;
                     break;
                 }
 
-                // Ha de tenir almenys un dígit
+                // Sense cap dígit no és enter
                 if (!digitTrobat) {
                     esEnter = false;
                 }
