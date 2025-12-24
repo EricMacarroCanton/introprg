@@ -31,7 +31,7 @@ public class Password {
             }
         }
         if (!teMajuscula) {
-            System.out.println("Falta majúscula");
+            System.out.println("El password ha de contenir com a mínim una lletra majúscula.");
             return;
         }
 
@@ -45,7 +45,7 @@ public class Password {
             }
         }
         if (!teMinuscula) {
-            System.out.println("Falta minúscula");
+            System.out.println("El password ha de contenir com a mínim una lletra minúscula.");
             return;
         }
 
@@ -59,7 +59,7 @@ public class Password {
             }
         }
         if (!teSimbol) {
-            System.out.println("Falta símbol");
+            System.out.println("El password ha de contenir com a mínim un símbol.");
             return;
         }
 
