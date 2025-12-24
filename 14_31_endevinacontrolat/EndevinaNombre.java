@@ -5,10 +5,10 @@ public class EndevinaNombre {
         int nombrePensat = Integer.parseInt(args[0]);
         int intent = -1;
 
-        System.out.println("Nombre?");
+        
 
         while (true) {
-          
+          System.out.println("Nombre?");
             String linia = Entrada.readLine();
 
             // Cancel·lat amb línia buida
