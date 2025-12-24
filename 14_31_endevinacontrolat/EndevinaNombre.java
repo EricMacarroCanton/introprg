@@ -2,60 +2,35 @@
 public class EndevinaNombre {
     public static void main(String[] args) {
 
-        int nombrePensat = (int)(Math.random() * 100) + 1;
+        int nombrePensat = Integer.parseInt(args[0]);
+        int intent = -1;
 
-        System.out.println("Nombre?");
+        System.out.println("Ves introduint enters entre 1 i 100 fins que encertis el que jo he pensat");
 
         while (true) {
+            System.out.println("Introdueix un valor");
             String linia = Entrada.readLine();
 
-            // Cancel·lar
+            // Cancel·lat amb línia buida
             if (linia.length() == 0) {
                 System.out.println("Cancel·lat!");
                 break;
             }
 
-            boolean esNombre = true;
-            int intent = 0;
-
-            // Comprovar que només hi ha dígits
-            for (int i = 0; i < linia.length(); i++) {
-                char c = linia.charAt(i);
-                if (c < '0' || c > '9') {
-                    esNombre = false;
-                    break;
-                }
-            }
-
-            if (!esNombre) {
-                System.out.println("Només nombres");
-                System.out.println("Nombre?");
-                continue;
-            }
-
             // Convertir a enter
-            for (int i = 0; i < linia.length(); i++) {
-                intent = intent * 10 + (linia.charAt(i) - '0');
-            }
+            intent = Integer.parseInt(linia);
 
-            // Comprovar rang
-            if (intent < 1 || intent > 100) {
-                System.out.println("Fora de rang");
-                System.out.println("Nombre?");
-                continue;
-            }
-
-            // Comparar
+            // Comparar amb el nombre secret
             if (intent > nombrePensat) {
-                System.out.println("Massa gran");
+                System.out.println("És més petit que " + intent);
+                continue; // tornar al principi del bucle
             } else if (intent < nombrePensat) {
-                System.out.println("Massa petit");
+                System.out.println("És més gran que " + intent);
+                continue; // tornar al principi del bucle
             } else {
-                System.out.println("Correcte!");
-                break;
+                System.out.println("Has encertat!");
+                break; // finalitzar el bucle
             }
-
-            System.out.println("Nombre?");
         }
     }
 }
