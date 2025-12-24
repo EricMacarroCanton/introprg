@@ -1,3 +1,4 @@
+// programa on hem de desenvolupar una nova versió del programa anterior enters estrictes. En aquesta ocasió implementarem una interpretació més flexible dels enters.
 public class Enters {
     public static void main(String[] args) {
 
@@ -17,45 +18,34 @@ public class Enters {
                 boolean digitTrobat = false;
                 boolean signeTrobat = false;
                 boolean esperantDigit = true; // per controlar separadors
+                boolean continuar = true;
 
-                for (int i = 0; i < text.length(); i++) {
+                for (int i = 0; i < text.length() && continuar; i++) {
                     char c = text.charAt(i);
 
-                    // Espais sempre ignorables
                     if (c == ' ') {
-                        continue;
-                    }
-
-                    // Signe opcional
-                    if (c == '+' || c == '-') {
+                        // no fem res
+                    } else if (c == '+' || c == '-') {
                         if (signeTrobat || digitTrobat) {
                             esEnter = false;
-                            break;
+                            continuar = false;
+                        } else {
+                            signeTrobat = true;
                         }
-                        signeTrobat = true;
-                        continue;
-                    }
-
-                    // Dígit
-                    if (c >= '0' && c <= '9') {
+                    } else if (c >= '0' && c <= '9') {
                         digitTrobat = true;
                         esperantDigit = false;
-                        continue;
-                    }
-
-                    // Separadors permesos només ENTRE dígits
-                    if (c == '.' || c == '_') {
+                    } else if (c == '.' || c == '_') {
                         if (esperantDigit || !digitTrobat) {
                             esEnter = false;
-                            break;
+                            continuar = false;
+                        } else {
+                            esperantDigit = true;
                         }
-                        esperantDigit = true;
-                        continue;
+                    } else {
+                        esEnter = false;
+                        continuar = false;
                     }
-
-                    // Qualsevol altre caràcter
-                    esEnter = false;
-                    break;
                 }
 
                 // No pot acabar esperant un dígit ni sense cap dígit
