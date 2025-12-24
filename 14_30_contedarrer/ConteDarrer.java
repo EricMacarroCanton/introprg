@@ -5,21 +5,22 @@ public class ConteDarrer {
         System.out.println("Introdueix texts (enter sol per finalitzar)");
 
         boolean seguit = true;
-        char ultim = 0; // Guardarà l'últim caràcter de la línia anterior
-        boolean primera = true; // Per controlar la primera línia
+        boolean primera = true;
+        char ultim = 0;
 
         while (seguit) {
             String actual = Entrada.readLine();
 
-            // Sortir amb línia buida
+            // Finalitzar amb línia buida
             if (actual.length() == 0) {
                 System.out.println("Adéu");
                 seguit = false;
                 continue;
             }
 
+            // Primera línia: acceptada sempre
             if (primera) {
-                // La primera línia s'accepta automàticament
+                System.out.println("bé");
                 ultim = actual.charAt(actual.length() - 1);
                 primera = false;
                 continue;
@@ -27,7 +28,7 @@ public class ConteDarrer {
 
             boolean trobat = false;
 
-            // Cercar només fins trobar el caràcter
+            // Cercar el caràcter anterior
             for (int i = 0; i < actual.length(); i++) {
                 if (actual.charAt(i) == ultim) {
                     trobat = true;
@@ -36,7 +37,7 @@ public class ConteDarrer {
             }
 
             if (trobat) {
-                // Acceptada, actualitzem l'últim caràcter
+                System.out.println("bé");
                 ultim = actual.charAt(actual.length() - 1);
             } else {
                 System.out.println("Adéu");
