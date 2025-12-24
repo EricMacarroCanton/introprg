@@ -15,13 +15,31 @@ public class EndevinaNombre {
                 break;
             }
 
+            // Comprovar que només hi ha dígits
+            boolean esNombre = true;
+            for (int i = 0; i < linia.length(); i++) {
+                char c = linia.charAt(i);
+                if (c < '0' || c > '9') {
+                    esNombre = false;
+                    break;
+                }
+            }
+
+            if (!esNombre) {
+                System.out.println("Només nombres");
+                continue; // tornar a demanar un valor
+            }
+
             // Convertir a enter
-            intent = Integer.parseInt(linia);
+            intent = 0;
+            for (int i = 0; i < linia.length(); i++) {
+                intent = intent * 10 + (linia.charAt(i) - '0');
+            }
 
             // Comprovar rang
             if (intent < 1 || intent > 100) {
                 System.out.println("Fora de rang");
-                continue; // tornar al principi del bucle
+                continue;
             }
 
             // Comparar amb el nombre secret
