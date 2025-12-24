@@ -5,7 +5,7 @@ public class EndevinaNombre {
         int nombrePensat = Integer.parseInt(args[0]);
         int intent = -1;
 
-        System.out.println("Ves introduint enters entre 1 i 100 fins que encertis el que jo he pensat");
+        System.out.println("Nombre?");
 
         while (true) {
             System.out.println("Introdueix un valor");
@@ -28,7 +28,7 @@ public class EndevinaNombre {
                 System.out.println("És més gran que " + intent);
                 continue; // tornar al principi del bucle
             } else {
-                System.out.println("Has encertat!");
+                System.out.println("Encertat!");
                 break; // finalitzar el bucle
             }
         }
