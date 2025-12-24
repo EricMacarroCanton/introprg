@@ -5,10 +5,8 @@ public class EndevinaNombre {
         int nombrePensat = Integer.parseInt(args[0]);
         int intent = -1;
 
-        
-
         while (true) {
-          System.out.println("Nombre?");
+            System.out.println("Nombre?");
             String linia = Entrada.readLine();
 
             // Cancel·lat amb línia buida
@@ -20,16 +18,22 @@ public class EndevinaNombre {
             // Convertir a enter
             intent = Integer.parseInt(linia);
 
+            // Comprovar rang
+            if (intent < 1 || intent > 100) {
+                System.out.println("Fora de rang");
+                continue; // tornar al principi del bucle
+            }
+
             // Comparar amb el nombre secret
             if (intent > nombrePensat) {
                 System.out.println("Massa gran");
-                continue; // tornar al principi del bucle
+                continue;
             } else if (intent < nombrePensat) {
                 System.out.println("Massa petit");
-                continue; // tornar al principi del bucle
+                continue;
             } else {
                 System.out.println("Encertat!");
-                break; // finalitzar el bucle
+                break;
             }
         }
     }
