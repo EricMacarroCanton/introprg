@@ -8,7 +8,7 @@ public class EndevinaNombre {
         System.out.println("Nombre?");
 
         while (true) {
-            System.out.println("Introdueix un valor");
+          
             String linia = Entrada.readLine();
 
             // Cancel·lat amb línia buida
