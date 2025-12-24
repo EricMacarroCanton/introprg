@@ -21,16 +21,18 @@ public class ConteDarrer {
             // Primera línia: acceptada sempre
             if (primera) {
                 System.out.println("bé");
-                ultim = actual.charAt(actual.length() - 1);
+                ultim = Character.toLowerCase(
+                        actual.charAt(actual.length() - 1));
                 primera = false;
                 continue;
             }
 
             boolean trobat = false;
 
-            // Cercar el caràcter anterior
+            // Cercar el caràcter (sense distingir majúscules/minúscules)
             for (int i = 0; i < actual.length(); i++) {
-                if (actual.charAt(i) == ultim) {
+                char c = Character.toLowerCase(actual.charAt(i));
+                if (c == ultim) {
                     trobat = true;
                     break; // no cal seguir cercant
                 }
@@ -38,7 +40,8 @@ public class ConteDarrer {
 
             if (trobat) {
                 System.out.println("bé");
-                ultim = actual.charAt(actual.length() - 1);
+                ultim = Character.toLowerCase(
+                        actual.charAt(actual.length() - 1));
             } else {
                 System.out.println("Adéu");
                 seguit = false;
