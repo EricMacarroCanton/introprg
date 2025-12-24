@@ -1,12 +1,11 @@
 //programa on hem de desenvolupar un programa anomenat Password que demani una contrasenya i digui si és vàlida o no segons els criteris
 public class Password {
     public static void main(String[] args) {
-        System.out.println("Introdueix la contrasenya:");
         String pwd = Entrada.readLine();
 
         // 1. Comprovar longitud
         if (pwd.length() < 8 || pwd.length() > 16) {
-            System.out.println("Longitud incorrecta");
+            System.out.println("El password ha de tenir entre 8 i 16 caràcters.");
             return;
         }
 
