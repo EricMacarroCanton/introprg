@@ -18,7 +18,7 @@ public class Password {
             }
         }
         if (!teNumero) {
-            System.out.println("El password ha de contenir com a mínim un numero");
+            System.out.println("El password ha de contenir com a mínim un numero.");
             return;
         }
 
