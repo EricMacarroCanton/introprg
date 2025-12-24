@@ -3,7 +3,7 @@ public class EndevinaNombre {
     public static void main(String[] args) {
 
         int nombrePensat = Integer.parseInt(args[0]);
-        int intent = -1;
+        int intent = 0;
 
         while (true) {
             System.out.println("Nombre?");
@@ -15,9 +15,14 @@ public class EndevinaNombre {
                 break;
             }
 
-            // Comprovar que només hi ha dígits
+            // Comprovar si és número enter (pot començar amb '-')
             boolean esNombre = true;
-            for (int i = 0; i < linia.length(); i++) {
+            int start = 0;
+            if (linia.charAt(0) == '-') {
+                start = 1; // permetre signe negatiu
+            }
+
+            for (int i = start; i < linia.length(); i++) {
                 char c = linia.charAt(i);
                 if (c < '0' || c > '9') {
                     esNombre = false;
@@ -27,16 +32,19 @@ public class EndevinaNombre {
 
             if (!esNombre) {
                 System.out.println("Només nombres");
-                continue; // tornar a demanar un valor
+                continue;
             }
 
-            // Convertir a enter
+            // Convertir a enter manualment
             intent = 0;
-            for (int i = 0; i < linia.length(); i++) {
+            for (int i = start; i < linia.length(); i++) {
                 intent = intent * 10 + (linia.charAt(i) - '0');
             }
+            if (start == 1) {
+                intent = -intent; // aplicar signe
+            }
 
-            // Comprovar rang
+            // Comprovar rang 1-100
             if (intent < 1 || intent > 100) {
                 System.out.println("Fora de rang");
                 continue;
