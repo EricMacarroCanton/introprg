@@ -71,7 +71,7 @@ public class Password {
             else if (c >= 'a' && c <= 'z') min++;
         }
         if (maj < min) {
-            System.out.println("Majúscules insuficients");
+            System.out.println("El password no pot contenir menys majúscules que minúscules.");
             return;
         }
 
