@@ -22,10 +22,10 @@ public class EndevinaNombre {
 
             // Comparar amb el nombre secret
             if (intent > nombrePensat) {
-                System.out.println("És més petit que " + intent);
+                System.out.println("Massa gran");
                 continue; // tornar al principi del bucle
             } else if (intent < nombrePensat) {
-                System.out.println("És més gran que " + intent);
+                System.out.println("Massa petit");
                 continue; // tornar al principi del bucle
             } else {
                 System.out.println("Encertat!");
