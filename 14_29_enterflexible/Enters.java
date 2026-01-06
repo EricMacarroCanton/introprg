@@ -20,7 +20,12 @@ public class Enters {
                 boolean esperantDigit = true; // per controlar separadors
                 boolean continuar = true;
 
-                for (int i = 0; i < text.length() && continuar; i++) {
+                for (int i = 0; i < text.length(); i++) {
+
+                    if (!continuar) {
+                        break;
+                    }
+
                     char c = text.charAt(i);
 
                     if (c == ' ') {
