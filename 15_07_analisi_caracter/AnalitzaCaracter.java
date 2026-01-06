@@ -52,8 +52,8 @@ public class AnalitzaCaracter {
         categoria = "dígit";
         article = "un";
     } else {
-        categoria = "altre";
-        article = "un";
+        categoria = "altra cosa";
+        article = "una";
     }
 
     System.out.println("'" + caracter + "' és " + article + " " + categoria);
