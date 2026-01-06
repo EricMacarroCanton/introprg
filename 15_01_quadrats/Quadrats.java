@@ -5,6 +5,7 @@
  public class Quadrats {
 
     public static void main(String[] args) {
+    System.out.println("Quants?");
         int quants = Integer.parseInt(Entrada.readLine());
         dibuixaQuadrats(quants);
     }
