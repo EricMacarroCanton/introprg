@@ -48,7 +48,7 @@ public class AnalitzaCaracter {
         } else if (Character.isDigit(caracter)) {
             categoria = "dígit";
         } else {
-            categoria = "altre";
+            categoria = "altra cosa";
         }
 
         System.out.println("'" + caracter + "' és una " + categoria);
