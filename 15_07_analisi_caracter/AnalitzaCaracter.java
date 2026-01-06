@@ -38,20 +38,25 @@ public class AnalitzaCaracter {
     }
 
     // Analitza el caràcter i mostra la seva categoria
-    public static void analitzaCaracter(char caracter) {
-        String categoria;
+   public static void analitzaCaracter(char caracter) {
+    String categoria;
+    String article;
 
-        if (Character.isUpperCase(caracter)) {
-            categoria = "lletra majúscula";
-        } else if (Character.isLowerCase(caracter)) {
-            categoria = "lletra minúscula";
-        } else if (Character.isDigit(caracter)) {
-            categoria = "dígit";
-        } else {
-            categoria = "altra cosa";
-        }
-
-        System.out.println("'" + caracter + "' és una " + categoria);
+    if (Character.isUpperCase(caracter)) {
+        categoria = "lletra majúscula";
+        article = "una";
+    } else if (Character.isLowerCase(caracter)) {
+        categoria = "lletra minúscula";
+        article = "una";
+    } else if (Character.isDigit(caracter)) {
+        categoria = "dígit";
+        article = "un";
+    } else {
+        categoria = "altre";
+        article = "un";
     }
+
+    System.out.println("'" + caracter + "' és " + article + " " + categoria);
+}
 }
 
