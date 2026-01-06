@@ -36,7 +36,7 @@
     // Dibuixa una fila del quadrat
     public static void dibuixaFila() {
         for (int col = 0; col < 5; col++) {
-            System.out.print("X");
+            System.out.print(" X");
             if (col < 4) {
                 System.out.print(" ");
             }
