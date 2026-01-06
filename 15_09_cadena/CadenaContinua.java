@@ -14,7 +14,7 @@ public class CadenaContinua {
         String text = Entrada.readLine();
 
         if (text.trim().isEmpty()) { // text buit o només espais
-            System.out.println("Text buit o només espais");
+            System.out.println("ERROR: el text no conté caràcters no blancs");
             return;
         }
 
