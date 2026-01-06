@@ -15,7 +15,7 @@ public class TriangleLletresInvertit {
 
     // Dibuixa totes les línies del triangle invertit
     public static void dibuixaTriangleInvertit(String text) {
-        for (int i = text.length(); i > 0; i--) {
+        for (int i = 0; i < text.length(); i++) {
             dibuixaLiniaInvertida(text, i);
         }
     }
@@ -24,9 +24,9 @@ public class TriangleLletresInvertit {
     public static void dibuixaLiniaInvertida(String text, int linia) {
         int llargada = text.length();
 
-        for (int i = 0; i < linia; i++) {
+        for (int i = linia; i < llargada; i++) {
             System.out.print(text.charAt(llargada - 1 - i));
-            if (i < linia - 1) {
+            if (i < llargada - 1) {
                 System.out.print(", ");
             }
         }
