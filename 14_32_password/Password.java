@@ -35,11 +35,10 @@ public class Password {
             return;
         }
 
-        // 4. Comprovar mínim una minúscula
+        // 4. Comprovar mínim una minúscula (CORREGIT)
         boolean teMinuscula = false;
         for (int i = 0; i < pwd.length(); i++) {
-            char c = pwd.charAt(i);
-            if ((c >= 'a' && c <= 'z') || (!Character.isUpperCase(c) && Character.isLetter(c))) {
+            if (Character.isLowerCase(pwd.charAt(i))) {
                 teMinuscula = true;
                 break;
             }
@@ -49,11 +48,11 @@ public class Password {
             return;
         }
 
-        // 5. Comprovar mínim un símbol
+        // 5. Comprovar mínim un símbol (SENSE comptar espais)
         boolean teSimbol = false;
         for (int i = 0; i < pwd.length(); i++) {
             char c = pwd.charAt(i);
-            if (!Character.isLetterOrDigit(c)) {
+            if (!Character.isLetterOrDigit(c) && c != ' ') {
                 teSimbol = true;
                 break;
             }
@@ -63,12 +62,12 @@ public class Password {
             return;
         }
 
-        // 6. Comprovar majúscules >= minúscules
+        // 6. Comprovar majúscules >= minúscules (CORREGIT)
         int maj = 0, min = 0;
         for (int i = 0; i < pwd.length(); i++) {
             char c = pwd.charAt(i);
-            if (c >= 'A' && c <= 'Z') maj++;
-            else if (c >= 'a' && c <= 'z') min++;
+            if (Character.isUpperCase(c)) maj++;
+            else if (Character.isLowerCase(c)) min++;
         }
         if (maj < min) {
             System.out.println("El password no pot contenir menys majúscules que minúscules.");
@@ -100,18 +99,16 @@ public class Password {
         for (int i = 1; i < pwd.length(); i++) {
             char tipusAnterior, tipusActual;
 
-            // Determinar tipus anterior
             char c = pwd.charAt(i - 1);
             if (c >= '0' && c <= '9') tipusAnterior = 'N';
             else if (c >= 'A' && c <= 'Z') tipusAnterior = 'M';
-            else if (c >= 'a' && c <= 'z') tipusAnterior = 'm';
+            else if (Character.isLowerCase(c)) tipusAnterior = 'm';
             else tipusAnterior = 'S';
 
-            // Determinar tipus actual
             c = pwd.charAt(i);
             if (c >= '0' && c <= '9') tipusActual = 'N';
             else if (c >= 'A' && c <= 'Z') tipusActual = 'M';
-            else if (c >= 'a' && c <= 'z') tipusActual = 'm';
+            else if (Character.isLowerCase(c)) tipusActual = 'm';
             else tipusActual = 'S';
 
             if (tipusActual == tipusAnterior) {
