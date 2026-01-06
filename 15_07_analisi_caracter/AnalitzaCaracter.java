@@ -18,45 +18,36 @@ public class AnalitzaCaracter {
         System.out.println("Posició?");
         int posicio = Integer.parseInt(Entrada.readLine());
 
-        // Calcular la posició efectiva
         int llargada = text.length();
-        int index;
 
-        if (posicio >= 0) {
-            index = posicio % llargada; // si supera el text, compta des de l'inici
-        } else {
-            index = llargada + (posicio % llargada); // posicions negatives compten des del final
-            if (index < 0) {
-                index += llargada; // ajustar si cal
-            }
-        }
+        // Càlcul correcte de l'índex amb posicions negatives i majors que la llargada
+        int index = ((posicio % llargada) + llargada) % llargada;
 
         char caracter = text.charAt(index);
 
-        // Passar el caràcter al mòdul d’anàlisi
         analitzaCaracter(caracter);
     }
 
     // Analitza el caràcter i mostra la seva categoria
-   public static void analitzaCaracter(char caracter) {
-    String categoria;
-    String article;
+    public static void analitzaCaracter(char caracter) {
+        String categoria;
+        String article;
 
-    if (Character.isUpperCase(caracter)) {
-        categoria = "lletra majúscula";
-        article = "una";
-    } else if (Character.isLowerCase(caracter)) {
-        categoria = "lletra minúscula";
-        article = "una";
-    } else if (Character.isDigit(caracter)) {
-        categoria = "dígit";
-        article = "un";
-    } else {
-        categoria = "altra cosa";
-        article = "una";
+        if (Character.isUpperCase(caracter)) {
+            categoria = "lletra majúscula";
+            article = "una";
+        } else if (Character.isLowerCase(caracter)) {
+            categoria = "lletra minúscula";
+            article = "una";
+        } else if (Character.isDigit(caracter)) {
+            categoria = "dígit";
+            article = "un";
+        } else {
+            categoria = "altra cosa";
+            article = "una";
+        }
+
+        System.out.println("'" + caracter + "' és " + article + " " + categoria);
     }
-
-    System.out.println("'" + caracter + "' és " + article + " " + categoria);
-}
 }
 
