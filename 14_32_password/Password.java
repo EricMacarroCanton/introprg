@@ -1,144 +1,154 @@
-//programa on hem de desenvolupar un programa anomenat Password que demani una contrasenya i digui si és vàlida o no segons els criteris
+/*
+En aquest exercici crearem un programa on es rebi una entrada que sigui una contrasenya i detecti si passa els criteris especificats al codi.
+*/
 public class Password {
     public static void main(String[] args) {
-        String pwd = Entrada.readLine();
 
-        // 1. Comprovar longitud
-        if (pwd.length() < 8 || pwd.length() > 16) {
+        String entradaPassword = Entrada.readLine();
+
+        //variables
+        int midaPassword = entradaPassword.length();
+
+        //Llargaria
+        if (midaPassword < 8 || midaPassword > 16) {
             System.out.println("El password ha de tenir entre 8 i 16 caràcters.");
             return;
         }
 
-        // 2. Comprovar mínim un número
-        boolean teNumero = false;
-        for (int i = 0; i < pwd.length(); i++) {
-            if (pwd.charAt(i) >= '0' && pwd.charAt(i) <= '9') {
-                teNumero = true;
+        //Minim un numero
+        boolean conteNumero = false;
+        for (int idx = 0; idx < midaPassword; idx++) {
+            if (Character.isDigit(entradaPassword.charAt(idx))) {
+                conteNumero = true;
                 break;
             }
         }
-        if (!teNumero) {
+        if (!conteNumero) {
             System.out.println("El password ha de contenir com a mínim un numero.");
             return;
         }
 
-        // 3. Comprovar mínim una majúscula
-        boolean teMajuscula = false;
-        for (int i = 0; i < pwd.length(); i++) {
-            if (pwd.charAt(i) >= 'A' && pwd.charAt(i) <= 'Z') {
-                teMajuscula = true;
+        //Majuscula
+        boolean conteMajuscula = false;
+        for (int idx = 0; idx < midaPassword; idx++) {
+            if (Character.isUpperCase(entradaPassword.charAt(idx))) {
+                conteMajuscula = true;
                 break;
             }
         }
-        if (!teMajuscula) {
+        if (!conteMajuscula) {
             System.out.println("El password ha de contenir com a mínim una lletra majúscula.");
             return;
         }
 
-        // 4. Comprovar mínim una minúscula (CORREGIT)
-        boolean teMinuscula = false;
-        for (int i = 0; i < pwd.length(); i++) {
-            if (Character.isLowerCase(pwd.charAt(i))) {
-                teMinuscula = true;
+        //Minuscula
+        boolean conteMinuscula = false;
+        for (int idx = 0; idx < midaPassword; idx++) {
+            if (Character.isLowerCase(entradaPassword.charAt(idx))) {
+                conteMinuscula = true;
                 break;
             }
         }
-        if (!teMinuscula) {
+        if (!conteMinuscula) {
             System.out.println("El password ha de contenir com a mínim una lletra minúscula.");
             return;
         }
 
-        // 5. Comprovar mínim un símbol (SENSE comptar espais)
-        boolean teSimbol = false;
-        for (int i = 0; i < pwd.length(); i++) {
-            char c = pwd.charAt(i);
-            if (!Character.isLetterOrDigit(c) && c != ' ') {
-                teSimbol = true;
+        //Simbol
+        boolean conteSimbol = false;
+        for (int idx = 0; idx < midaPassword; idx++) {
+            if (!Character.isLetterOrDigit(entradaPassword.charAt(idx))) {
+                conteSimbol = true;
                 break;
             }
         }
-        if (!teSimbol) {
+        if (!conteSimbol) {
             System.out.println("El password ha de contenir com a mínim un símbol.");
             return;
         }
 
-        // 6. Comprovar majúscules >= minúscules (CORREGIT)
-        int maj = 0, min = 0;
-        for (int i = 0; i < pwd.length(); i++) {
-            char c = pwd.charAt(i);
-            if (Character.isUpperCase(c)) maj++;
-            else if (Character.isLowerCase(c)) min++;
+        //Majuscules >= Minuscules
+        int comptaMajus = 0;
+        int comptaMinus = 0;
+        for (int idx = 0; idx < midaPassword; idx++) {
+            char car = entradaPassword.charAt(idx);
+            if (Character.isUpperCase(car)) comptaMajus++;
+            else if (Character.isLowerCase(car)) comptaMinus++;
         }
-        if (maj < min) {
+        if (comptaMajus < comptaMinus) {
             System.out.println("El password no pot contenir menys majúscules que minúscules.");
             return;
         }
 
-        // 7. Comprovar espais
-        for (int i = 0; i < pwd.length(); i++) {
-            if (pwd.charAt(i) == ' ') {
-                System.out.println("No pot contenir espais");
-                return;
+        //Espais en blanc
+        boolean conteEspai = false;
+        for (int idx = 0; idx < midaPassword; idx++) {
+            if (entradaPassword.charAt(idx) == ' ') {
+                conteEspai = true;
+                break;
             }
         }
+        if (conteEspai) {
+            System.out.println("El password no pot contenir espais en blanc.");
+            return;
+        }
 
-        // 8. Comprovar repeticions (excepte vocals)
-        for (int i = 0; i < pwd.length(); i++) {
-            char c = pwd.charAt(i);
-            if ("aeiou".indexOf(Character.toLowerCase(c)) >= 0) continue;
-            for (int j = i + 1; j < pwd.length(); j++) {
-                if (c == pwd.charAt(j)) {
-                    System.out.println("Caràcter repetit");
+        //Caracters repetits
+        for (int i = 0; i < midaPassword; i++) {
+            char car = entradaPassword.charAt(i);
+
+            boolean esVocal = car == 'a' || car == 'e' || car == 'i' || car == 'o' || car == 'u' || car == 'A' || car == 'E' || car == 'I' || car == 'O' || car == 'U';
+
+            if (esVocal) continue;
+            for (int j = i + 1; j < midaPassword; j++) {
+                if (entradaPassword.charAt(j) == car) {
+                    System.out.println("El password no pot contenir caràcters repetits.");
                     return;
                 }
             }
         }
 
-        // 9. Comprovar 4 caràcters seguits del mateix tipus
-        int count = 1;
-        for (int i = 1; i < pwd.length(); i++) {
-            char tipusAnterior, tipusActual;
+        //4 caracters seguits del mateix tipus
+        int comptaMateixTipus = 1;
+        for (int idx = 1; idx < midaPassword; idx++) {
+            char prevCar = entradaPassword.charAt(idx - 1);
+            char currCar = entradaPassword.charAt(idx);
 
-            char c = pwd.charAt(i - 1);
-            if (c >= '0' && c <= '9') tipusAnterior = 'N';
-            else if (c >= 'A' && c <= 'Z') tipusAnterior = 'M';
-            else if (Character.isLowerCase(c)) tipusAnterior = 'm';
-            else tipusAnterior = 'S';
+            boolean mateixTipus = (Character.isDigit(prevCar) && Character.isDigit(currCar))
+                    | (Character.isUpperCase(prevCar) && Character.isUpperCase(currCar))
+                    || (Character.isLetter(prevCar) && !Character.isUpperCase(prevCar) && Character.isLetter(currCar) && !Character.isUpperCase(currCar))
+                    || (!Character.isLetterOrDigit(prevCar) && !Character.isLetterOrDigit(currCar));
 
-            c = pwd.charAt(i);
-            if (c >= '0' && c <= '9') tipusActual = 'N';
-            else if (c >= 'A' && c <= 'Z') tipusActual = 'M';
-            else if (Character.isLowerCase(c)) tipusActual = 'm';
-            else tipusActual = 'S';
-
-            if (tipusActual == tipusAnterior) {
-                count++;
-                if (count > 4) {
-                    System.out.println("Més de 4 caràcters seguits del mateix tipus");
-                    return;
-                }
-            } else {
-                count = 1;
-            }
-        }
-
-        // 10. Comprovar més de 3 números consecutius
-        int consecutius = 1;
-        for (int i = 1; i < pwd.length(); i++) {
-            char a = pwd.charAt(i - 1);
-            char b = pwd.charAt(i);
-            if (Character.isDigit(a) && Character.isDigit(b) && (b - a == 1)) {
-                consecutius++;
-                if (consecutius > 3) {
-                    System.out.println("Més de 3 números consecutius");
+            if (mateixTipus) {
+                comptaMateixTipus++;
+                if (comptaMateixTipus > 4) {
+                    System.out.println("El password no pot contenir més de 4 caràcters seguits del mateix tipus.");
                     return;
                 }
             } else {
-                consecutius = 1;
+                comptaMateixTipus = 1;
             }
         }
 
-        System.out.println("Password vàlida");
+        //3 numeros consecutius
+        int comptaConsecutius = 1;
+        for (int idx = 1; idx < midaPassword; idx++) {
+            char prevCar = entradaPassword.charAt(idx - 1);
+            char currCar = entradaPassword.charAt(idx);
+
+            if (Character.isDigit(prevCar) && Character.isDigit(currCar) && (currCar == prevCar + 1 || currCar == prevCar - 1)) {
+                comptaConsecutius++;
+                if (comptaConsecutius > 3) {
+                    System.out.println("El password no pot contenir més de 3 números consecutius.");
+                    return;
+                }
+            } else {
+                comptaConsecutius = 1;
+            }
+        }
+
+        //Contrasenya correcte
+        System.out.println("El maleït password és vàlid!");
     }
 }
 
