@@ -21,9 +21,9 @@ public class LloroQuadrat {
                 break;
             }
 
-            if (text.equalsIgnoreCase("dibuixa quadrat")) {
+            if (!text.equals("dibuixa quadrat")) {
                 dibuixaQuadrat();
-            } else if (text.equalsIgnoreCase("dibuixa rectangle")) {
+            } else if (!text.equals("dibuixa rectangle")) {
                 dibuixaRectangle();
             } else {
                 System.out.println("El lloro repeteix: " + text);
