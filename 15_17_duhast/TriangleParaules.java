@@ -26,7 +26,7 @@ public class TriangleParaules {
             }
         }
 
-        // última línia: tot el text
+
         System.out.println(text);
     }
 }
