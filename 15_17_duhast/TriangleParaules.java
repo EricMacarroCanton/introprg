@@ -13,22 +13,21 @@ public class TriangleParaules {
         mostraTriangle(text);
     }
 
-    // Mostra el triangle de paraules sense split
     public static void mostraTriangle(String text) {
         int llargada = text.length();
 
         for (int i = 0; i < llargada; i++) {
-
-
-            for (int j = 0; j <= i; j++) {
-                System.out.print(text.charAt(j));
-            }
-
-
-            if (i == llargada - 1 || text.charAt(i) == ' ') {
+            if (text.charAt(i) == ' ') {
+                // imprimir fins abans de l'espai
+                for (int j = 0; j < i; j++) {
+                    System.out.print(text.charAt(j));
+                }
                 System.out.println();
             }
         }
+
+        // última línia: tot el text
+        System.out.println(text);
     }
 }
 
