@@ -17,13 +17,13 @@ public class Semafor {
         mostrarConsell();
     }
 
-    comprova si l'usuari és major d'edat
+    // MÒDUL: comprova si l'usuari és major d'edat
     public static boolean comprovarMajorEdat() {
         System.out.println("Ets major d'edat?");
         return UtilitatsConfirmacio.respostaABoolean();
     }
 
-
+    // MÒDUL: gestiona el semàfor
     public static void mostrarConsell() {
         System.out.println("Color?");
         String color = Entrada.readLine();
