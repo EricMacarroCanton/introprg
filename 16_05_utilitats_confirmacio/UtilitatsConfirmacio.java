@@ -1,10 +1,11 @@
-// Mètode que processa la resposta de l'usuari 
+// Comparació exacta sense ignoreCase
 public class UtilitatsConfirmacio {
 
-    // Mètode que processa la resposta de l'usuari
     public static boolean respostaABoolean(String resposta) {
-        // Comparació sense trim()
-        return resposta.equalsIgnoreCase("sí") || resposta.equalsIgnoreCase("si");
+        // Comparació exacta sense ignoreCase
+        return resposta.equals("sí") 
+            || resposta.equals("si") 
+            || resposta.equals("s");
     }
 }
 

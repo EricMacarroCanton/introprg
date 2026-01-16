@@ -2,24 +2,20 @@
 public class Semafor {
 
     public static void main(String[] args) {
-        // Comprovació de majoria d'edat
         if (!esMajorEdat()) {
             System.out.println("No pots fer servir aquest programa sense supervisió");
             return;
         }
 
-        // Assessorament segons el color del semàfor
         assessoraSemafor();
     }
 
-    // Funció que comprova si l'usuari és major d'edat
     public static boolean esMajorEdat() {
         System.out.println("Ets major d'edat?");
         String resposta = Entrada.readLine();
         return UtilitatsConfirmacio.respostaABoolean(resposta);
     }
 
-    // Funció que demana el color i dona el consell
     public static void assessoraSemafor() {
         System.out.println("Color?");
         String color = Entrada.readLine();
@@ -35,7 +31,4 @@ public class Semafor {
         }
     }
 }
-
-
-
 
