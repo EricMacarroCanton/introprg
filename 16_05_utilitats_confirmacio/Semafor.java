@@ -15,7 +15,7 @@ public class Semafor {
     public static boolean esMajorEdat() {
         System.out.println("Ets major d'edat?");
         String resposta = Entrada.readLine();
-        return respostaABoolean(resposta);
+        return UtilitatsConfirmacio.respostaABoolean(resposta);
     }
 
     // Funció que demana el color i dona el consell
@@ -33,13 +33,18 @@ public class Semafor {
             System.out.println("ves a l'oculista");
         }
     }
+}
 
-    // Funció que processa la resposta de majoria d'edat
+// Classe auxiliar dins del mateix fitxer
+class UtilitatsConfirmacio {
+
+    // Mètode que processa la resposta de l'usuari
     public static boolean respostaABoolean(String resposta) {
         resposta = resposta.trim(); // eliminem espais al principi i al final
         return resposta.equalsIgnoreCase("sí") || resposta.equalsIgnoreCase("si");
     }
 }
+
 
 
 
