@@ -1,3 +1,4 @@
+// exercici on hem de Desenvolupa una versió de l'exercici del Semàfor de manera que abans de donar el consell, se n'asseguri que els usuaris són majors d'edat
 public class Semafor {
 
     public static void main(String[] args) {
@@ -34,18 +35,6 @@ public class Semafor {
         }
     }
 }
-
-// Classe auxiliar dins del mateix fitxer
-class UtilitatsConfirmacio {
-
-    // Mètode que processa la resposta de l'usuari
-    public static boolean respostaABoolean(String resposta) {
-        resposta = resposta.trim(); // eliminem espais al principi i al final
-        return resposta.equalsIgnoreCase("sí") || resposta.equalsIgnoreCase("si");
-    }
-}
-
-
 
 
 
