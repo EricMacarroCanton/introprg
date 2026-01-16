@@ -5,6 +5,7 @@ public class UtilitatsConfirmacio {
         return resposta.equals("Sí")
             || resposta.equals("sí")
             || resposta.equals("si")
+            || resposta.equals("yes")
             || resposta.equals("s");
     }
 }
