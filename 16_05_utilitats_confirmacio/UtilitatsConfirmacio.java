@@ -1,6 +1,6 @@
 // Comparació exacta Utilitats Confirmaicio 
 public class UtilitatsConfirmacio {
-public static boolean respostaBoolean (String resposta) {
+public static boolean respostaBoolean(String resposta) {
 
 String neta = "";
 int inici = 0;
