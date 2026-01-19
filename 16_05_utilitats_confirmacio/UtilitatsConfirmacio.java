@@ -1,5 +1,6 @@
 // Comparació exacta Utilitats Confirmaicio 
 // Classe d'utilitats per confirmar respostes tipus "sí"
+// Comparació exacta segons les especificacions del exercici
 public class UtilitatsConfirmacio {
 
     public static boolean respostaABoolean(String resposta) {
@@ -33,5 +34,4 @@ public class UtilitatsConfirmacio {
                 || resposta.equals("vale");
     }
 }
-
 
