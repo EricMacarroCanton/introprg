@@ -21,11 +21,13 @@ public class UtilitatsConfirmacio {
         // Convertim a minúscules per ignorar majúscules/minúscules
         neta = neta.toLowerCase();
 
-        return neta.equals("sí")
-            || neta.equals("si")
-            || neta.equals("s")
-            || neta.equals("yes")
-            || neta.equals("vale");
-    }
+         return resposta.equals("si")
+                || resposta.equals("s")
+                || resposta.equals("sí")
+                || resposta.equals("yes")
+                || resposta.equals("yeah")
+                || resposta.equals("y")
+                || resposta.equals("vale");
+                
 }
-
+}
