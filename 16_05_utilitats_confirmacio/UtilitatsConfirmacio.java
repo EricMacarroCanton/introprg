@@ -2,7 +2,7 @@
 // Classe d'utilitats per confirmar respostes tipus "sí"
 public class UtilitatsConfirmacio {
 
-    public static boolean respostaBoolean(String resposta) {
+    public static boolean respostaABoolean(String resposta) {
         String neta = "";
         int inici = 0;
         int fi = resposta.length() - 1;
@@ -33,4 +33,5 @@ public class UtilitatsConfirmacio {
                 || resposta.equals("vale");
     }
 }
+
 
