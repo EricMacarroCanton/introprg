@@ -1,4 +1,4 @@
-// Comparació exacta sense ignoreCase
+// Comparació exacta Utilitats Confirmaicio 
 public class UtilitatsConfirmacio {
 
     public static boolean respostaABoolean(String resposta) {
@@ -12,6 +12,10 @@ public class UtilitatsConfirmacio {
         while (resposta.length() > 0 && resposta.charAt(resposta.length() - 1) == ' ') {
             resposta = resposta.substring(0, resposta.length() - 1);
         }
+
+
+        resposta = resposta.toLowerCase();
+
 
         return resposta.equals("Sí")
             || resposta.equals("sí")
