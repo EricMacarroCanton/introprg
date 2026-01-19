@@ -4,7 +4,7 @@ public class UtilitatsConfirmacio {
 
     public static boolean respostaABoolean(String resposta) {
         String neta = "";
-        boolean començat = false; 
+        boolean començat = false; // indica si hem trobat el primer caràcter no blanc
 
         for (int i = 0; i < resposta.length(); i++) {
             char c = resposta.charAt(i);
@@ -20,6 +20,7 @@ public class UtilitatsConfirmacio {
 
         // Convertim a minúscules per ignorar majúscules/minúscules
         neta = neta.toLowerCase();
+
 
          return resposta.equals("si")
                 || resposta.equals("s")
