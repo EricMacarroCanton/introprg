@@ -18,7 +18,8 @@ public class UtilitatsConfirmacio {
             || resposta.equals("si")
             || resposta.equals("s")
             || resposta.equals("yes")
-             || resposta.equals("yeah")
+            || resposta.equals("yeah")
+            || resposta.equals("y")
             || resposta.equals("vale");
     }
 }
