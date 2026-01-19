@@ -16,8 +16,9 @@ public class UtilitatsConfirmacio {
         return resposta.equals("Sí")
             || resposta.equals("sí")
             || resposta.equals("si")
+            || resposta.equals("s")
             || resposta.equals("yes")
-            || resposta.equals("s");
+            || resposta.equals("vale");
     }
 }
 
