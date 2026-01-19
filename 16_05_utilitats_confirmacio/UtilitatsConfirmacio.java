@@ -1,37 +1,31 @@
 // Comparació exacta Utilitats Confirmaicio 
 // Classe d'utilitats per confirmar respostes tipus "sí"
-// Comparació exacta segons les especificacions del exercici
 public class UtilitatsConfirmacio {
 
     public static boolean respostaABoolean(String resposta) {
         String neta = "";
-        int inici = 0;
-        int fi = resposta.length() - 1;
+        boolean començat = false; 
 
-        // Ignorar espais inicials
-        while (inici <= fi && resposta.charAt(inici) == ' ') {
-            inici++;
+        for (int i = 0; i < resposta.length(); i++) {
+            char c = resposta.charAt(i);
+
+            if (!Character.isWhitespace(c)) {
+                neta += c;  // afegeix caràcter
+                començat = true;
+            } else if (començat) {
+                // si ja hem començat i trobem un blanc, podem aturar el for per ignorar els blancs finals
+                // però també podem continuar i ignorar tots els blancs finals automàticament després
+            }
         }
 
-        // Ignorar espais finals
-        while (fi >= inici && resposta.charAt(fi) == ' ') {
-            fi--;
-        }
+        // Convertim a minúscules per ignorar majúscules/minúscules
+        neta = neta.toLowerCase();
 
-        // Construir la nova resposta sense espais
-        for (int i = inici; i <= fi; i++) {
-            neta += resposta.charAt(i);
-        }
-
-        resposta = neta.toLowerCase();
-
-        return resposta.equals("si")
-                || resposta.equals("s")
-                || resposta.equals("sí")
-                || resposta.equals("yes")
-                || resposta.equals("yeah")
-                || resposta.equals("y")
-                || resposta.equals("vale");
+        return neta.equals("sí")
+            || neta.equals("si")
+            || neta.equals("s")
+            || neta.equals("yes")
+            || neta.equals("vale");
     }
 }
 
