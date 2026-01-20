@@ -7,7 +7,7 @@ public class VocalsMajuscules {
         System.out.println("Text?");
         String text = Entrada.readLine();
 
-        // Normalització a minúscules AQUÍ
+        // Normalització a minúscules 
         text = text.toLowerCase();
 
         System.out.println(majusculitzaVocals(text));
