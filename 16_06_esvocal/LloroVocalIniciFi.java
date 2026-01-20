@@ -10,6 +10,7 @@ public class LloroVocalIniciFi {
 
             // Si l'usuari no escriu res, sortim
             if (text.isEmpty()) {
+             System.out.println("Sortir");
                 System.out.println("Adéu");
                 break;
             }
