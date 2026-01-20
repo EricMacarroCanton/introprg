@@ -1,40 +1,50 @@
+/*
+*
+*
+*Considerarem com a vocals totes les variants d'accents i dièresis de les vocals catalanes. Recorda que aquests variants són, a banda de les cinc habituals, à, è, é, í, ï, ò, ó, ú i ü.
+*
+*
+*/
 public class LloroVocalIniciFi {
-
     public static void main(String[] args) {
+        
+        int contador = 1;    
+        boolean seguir = true;
+        String entrada = "g";
 
-        int comptador = 0;
-        boolean continuar = true;
+        
 
-        while (continuar) {
+        while (seguir) {
+             
             System.out.println("Text?");
-            String text = Entrada.readLine();
+            entrada = Entrada.readLine();
 
-            // Només accedim a charAt si hi ha text
-            if (!text.isEmpty()) {
-                char primer = text.charAt(0);
-                char ultim = text.charAt(text.length() - 1);
-
-                if (UtilString.esVocal(primer) || UtilString.esVocal(ultim)) {
-                    comptador++;
-                    if (comptador < 10) {
-                        System.out.println("  " + comptador + ": \"" + text + "\"");
-                    } else {
-                        System.out.println(" " + comptador + ": \"" + text + "\"");
-                    }
+            if (entrada.isBlank()) {
+                System.out.println("Sortir?");
+                entrada = Entrada.readLine();
+                if (UtilitatsConfirmacio.respostaABoolean(entrada)) {
+                    System.out.println("Adéu");
+                    return;
                 }
+            } else {
+                char primer = entrada.charAt(0);
+                char ultim = entrada.charAt(entrada.length() - 1);
+           
+                
+                if (UtilString.esVocal(primer) || UtilString.esVocal(ultim)) {
+                    System.out.printf(" %2d: \"%s\"%n", contador, entrada);
+                    contador++;
+                }
+        
             }
+   
+            
 
-            // Preguntar sortir sempre
-            System.out.println("Sortir?");
-            String sortir = Entrada.readLine();
-
-            // Si la resposta és afirmativa → acabem el bucle
-            if (UtilitatsConfirmacio.respostaABoolean(sortir)) {
-                System.out.println("Adéu");
-                continuar = false; // s'atura abans de tornar a preguntar Text?
-            }
+            
+        
         }
+    
     }
+
+
 }
-
-
