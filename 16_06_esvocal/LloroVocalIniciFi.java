@@ -3,8 +3,9 @@ public class LloroVocalIniciFi {
     public static void main(String[] args) {
 
         int comptador = 0;
+        boolean continuar = true;
 
-        while (true) {
+        while (continuar) {
             System.out.println("Text?");
             String text = Entrada.readLine();
 
@@ -15,7 +16,6 @@ public class LloroVocalIniciFi {
 
                 if (UtilString.esVocal(primer) || UtilString.esVocal(ultim)) {
                     comptador++;
-                    // Ajustem espais segons la longitud del comptador
                     if (comptador < 10) {
                         System.out.println("  " + comptador + ": \"" + text + "\"");
                     } else {
@@ -24,14 +24,14 @@ public class LloroVocalIniciFi {
                 }
             }
 
-            // Preguntar sortir sempre (IF queda al mateix lloc que en el teu codi)
+            // Preguntar sortir sempre
             System.out.println("Sortir?");
             String sortir = Entrada.readLine();
 
-            // Substituïm la comprovació manual per la funció de confirmació
+            // Si la resposta és afirmativa → acabem el bucle
             if (UtilitatsConfirmacio.respostaABoolean(sortir)) {
                 System.out.println("Adéu");
-                break;
+                continuar = false; // s'atura abans de tornar a preguntar Text?
             }
         }
     }
