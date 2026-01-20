@@ -1,0 +1,160 @@
+1. Variable externalLinked (línia 366)
+
+Quin tipus de dades guardarà?
+TMXEntry.ExternalLinked (enumeració)
+
+És un paràmetre?
+No
+
+És una constant?
+No
+
+Respecta la convenció camelCase?
+Sí
+
+Indica un mòdul pel que aquesta variable sigui global
+Cap (no és atribut de classe)
+
+Indica un mòdul pel que aquesta variable sigui local
+El mètode on està declarada (mètode que processa l’entrada TMX, al voltant de la línia 330–380)
+
+Indica un mòdul pel que aquesta variable sigui inaccessible
+exportTMX() (línia 162)
+
+2. Variable id (línia 330)
+
+Quin tipus de dades guardarà?
+String
+
+És un paràmetre?
+No
+
+És una constant?
+No
+
+Respecta la convenció camelCase?
+Sí
+
+Indica un mòdul pel que aquesta variable sigui global
+Cap
+
+Indica un mòdul pel que aquesta variable sigui local
+El bloc de codi dins del mètode de càrrega/processament del TMX (entorn de la línia 300)
+
+Indica un mòdul pel que aquesta variable sigui inaccessible
+save() (línia 127)
+
+3. Variable levelTwo (línia 162)
+
+Quin tipus de dades guardarà?
+boolean
+
+És un paràmetre?
+Sí
+
+És una constant?
+No
+
+Respecta la convenció camelCase?
+Sí
+
+Indica un mòdul pel que aquesta variable sigui global
+Cap
+
+Indica un mòdul pel que aquesta variable sigui local
+exportTMX() (línia 162)
+
+Indica un mòdul pel que aquesta variable sigui inaccessible
+save() (línia 127)
+
+4. Variable PROP_FILE (línia 61)
+
+Quin tipus de dades guardarà?
+String
+
+És un paràmetre?
+No
+
+És una constant?
+Sí (static final)
+
+Respecta la convenció camelCase?
+No (usa MAJÚSCULES, correcte per a constants)
+
+Indica un mòdul pel que aquesta variable sigui global
+Qualsevol mètode de la classe ProjectTMX
+
+Indica un mòdul pel que aquesta variable sigui local
+Cap (no és local a cap mètode)
+
+Indica un mòdul pel que aquesta variable sigui inaccessible
+Qualsevol classe externa que no hereti de ProjectTMX ni estigui al mateix paquet
+
+5. Variable segmentSource (línia 317)
+
+Quin tipus de dades guardarà?
+String
+
+És un paràmetre?
+No
+
+És una constant?
+No
+
+Respecta la convenció camelCase?
+Sí
+
+Indica un mòdul pel que aquesta variable sigui global
+Cap
+
+Indica un mòdul pel que aquesta variable sigui local
+El bucle for dins del mètode que prepara les entrades TMX (línia 315–320)
+
+Indica un mòdul pel que aquesta variable sigui inaccessible
+exportTMX() (línia 162)
+
+6. Variable sourceLang (línia 278)
+
+Quin tipus de dades guardarà?
+Language
+
+És un paràmetre?
+No
+
+És una constant?
+No (tot i ser final, no és static final)
+
+Respecta la convenció camelCase?
+Sí
+
+Indica un mòdul pel que aquesta variable sigui global
+Qualsevol mètode de la classe interna Loader
+
+Indica un mòdul pel que aquesta variable sigui local
+Cap (és un atribut, no una variable local)
+
+Indica un mòdul pel que aquesta variable sigui inaccessible
+Qualsevol mètode de ProjectTMX fora de la classe Loader
+
+7. Variable translationUpdatedByUser (línia 127)
+
+Quin tipus de dades guardarà?
+boolean
+
+És un paràmetre?
+Sí
+
+És una constant?
+No
+
+Respecta la convenció camelCase?
+Sí
+
+Indica un mòdul pel que aquesta variable sigui global
+Cap
+
+Indica un mòdul pel que aquesta variable sigui local
+save() (línia 127)
+
+Indica un mòdul pel que aquesta variable sigui inaccessible
+exportTMX() (línia 162)
