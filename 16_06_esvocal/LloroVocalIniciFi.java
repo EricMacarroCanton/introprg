@@ -19,7 +19,7 @@ public class LloroVocalIniciFi {
 
             if (UtilString.esVocal(primer) || UtilString.esVocal(ultim)) {
                 comptador++;
-                System.out.println(" " + comptador + ": \"" + text + "\"");
+                System.out.println("  " + comptador + ": \"" + text + "\"");
             }
         }
     }
