@@ -1,3 +1,4 @@
+//exercici on comprovem si el usuari vol sortir o no i en cas de que si retornem un valoor boole true i si no un valor false
 public class UtilitatsConfirmacio {
 
     public static boolean respostaABoolean(String resposta) {

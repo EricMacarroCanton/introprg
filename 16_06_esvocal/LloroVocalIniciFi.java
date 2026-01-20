@@ -1,7 +1,7 @@
 /*
 *
 *
-*Considerarem com a vocals totes les variants d'accents i dièresis de les vocals catalanes. Recorda que aquests variants són, a banda de les cinc habituals, à, è, é, í, ï, ò, ó, ú i ü.
+*Considerarem com a vocals totes les variants d'accents i dièresis de les vocals catalanes. , à, è, é, í, ï, ò, ó, ú i ü.
 *
 *
 */

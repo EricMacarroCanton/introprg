@@ -1,4 +1,4 @@
-//
+//Modul on comprovem si son vocals o no i returnem un valor boolea true o false
 public class UtilString {
 
     public static boolean esVocal(char c) {
