@@ -20,7 +20,7 @@ public class LloroVocalIniciFi {
 
             char primer = text.charAt(0);
             char ultim = text.charAt(text.length() - 1);
-
+   if (!text.isEmpty()) {
             if (UtilString.esVocal(primer) || UtilString.esVocal(ultim)) {
                 comptador++;
                 // Ajustem espais segons la longitud del comptador
@@ -28,7 +28,8 @@ public class LloroVocalIniciFi {
                     System.out.println("  " + comptador + ": \"" + text + "\"");
                 } else {
                     System.out.println(" " + comptador + ": \"" + text + "\"");
-                }
+           	     }
+           	 }
             }
         }
     }
