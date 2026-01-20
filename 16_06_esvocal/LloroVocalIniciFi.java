@@ -13,15 +13,13 @@ public class LloroVocalIniciFi {
 
             if (UtilString.esVocal(primer) || UtilString.esVocal(ultim)) {
                 comptador++;
-                //  DOS espais abans del número
                 System.out.println("  " + comptador + ": \"" + text + "\"");
             }
 
-            System.out.println("Text?");
             System.out.println("Sortir?");
             String sortir = Entrada.readLine();
 
-            if (sortir.equals("s") || sortir.equals("sí") || sortir.equals("si")) {
+            if (sortir.equals("s") || sortir.equals("si") || sortir.equals("sí")) {
                 System.out.println("Adéu");
                 break;
             }
