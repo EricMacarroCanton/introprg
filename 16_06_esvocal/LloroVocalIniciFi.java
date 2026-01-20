@@ -8,10 +8,9 @@ public class LloroVocalIniciFi {
             System.out.println("Text?");
             String text = Entrada.readLine();
 
-            // Quan l'usuari introdueix línia buida → preguntar sortir
             if (text.isEmpty()) {
                 System.out.println("Sortir?");
-                String sortir = Entrada.readLine();
+                Entrada.readLine(); // llegim resposta del sortir
                 System.out.println("Adéu");
                 break;
             }
@@ -21,7 +20,12 @@ public class LloroVocalIniciFi {
 
             if (UtilString.esVocal(primer) || UtilString.esVocal(ultim)) {
                 comptador++;
-                System.out.println("  " + comptador + ": \"" + text + "\"");
+                // Ajustem espais segons la longitud del comptador
+                if (comptador < 10) {
+                    System.out.println("  " + comptador + ": \"" + text + "\"");
+                } else {
+                    System.out.println(" " + comptador + ": \"" + text + "\"");
+                }
             }
         }
     }
