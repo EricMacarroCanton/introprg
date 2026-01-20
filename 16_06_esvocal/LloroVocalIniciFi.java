@@ -8,15 +8,16 @@ public class LloroVocalIniciFi {
             System.out.println("Text?");
             String text = Entrada.readLine();
 
-            // Si l'usuari no escriu res, sortim
+            // Quan l'usuari introdueix línia buida → preguntar sortir
             if (text.isEmpty()) {
-             System.out.println("Sortir?");
+                System.out.println("Sortir?");
+                String sortir = Entrada.readLine();
                 System.out.println("Adéu");
                 break;
             }
 
-            char primer = Character.toLowerCase(text.charAt(0));
-            char ultim = Character.toLowerCase(text.charAt(text.length() - 1));
+            char primer = text.charAt(0);
+            char ultim = text.charAt(text.length() - 1);
 
             if (UtilString.esVocal(primer) || UtilString.esVocal(ultim)) {
                 comptador++;
