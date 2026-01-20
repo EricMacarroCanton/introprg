@@ -1,4 +1,4 @@
-//
+//d'aqui extreurem si cada lletra pertany o no a les vocals catalanes i retornarem valors booleans true/fals depenent si pertaynen o no
 public class UtilString {
 
     public static boolean esVocal(char c) {
