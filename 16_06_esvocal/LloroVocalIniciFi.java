@@ -8,20 +8,18 @@ public class LloroVocalIniciFi {
             System.out.println("Text?");
             String text = Entrada.readLine();
 
+            // Si l'usuari no escriu res, sortim
+            if (text.isEmpty()) {
+                System.out.println("Adéu");
+                break;
+            }
+
             char primer = Character.toLowerCase(text.charAt(0));
             char ultim = Character.toLowerCase(text.charAt(text.length() - 1));
 
             if (UtilString.esVocal(primer) || UtilString.esVocal(ultim)) {
                 comptador++;
-                System.out.println("  " + comptador + ": \"" + text + "\"");
-            }
-
-            System.out.println("Sortir?");
-            String sortir = Entrada.readLine();
-
-            if (sortir.equals("s") || sortir.equals("si") || sortir.equals("sí")) {
-                System.out.println("Adéu");
-                break;
+                System.out.println(comptador + ": \"" + text + "\"");
             }
         }
     }
