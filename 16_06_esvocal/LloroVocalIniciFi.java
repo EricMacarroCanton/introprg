@@ -15,6 +15,7 @@ public class LloroVocalIniciFi {
 
                 if (UtilString.esVocal(primer) || UtilString.esVocal(ultim)) {
                     comptador++;
+                    // Ajustem espais segons la longitud del comptador
                     if (comptador < 10) {
                         System.out.println("  " + comptador + ": \"" + text + "\"");
                     } else {
@@ -23,11 +24,11 @@ public class LloroVocalIniciFi {
                 }
             }
 
-            // Preguntar sortir sempre
+            // Preguntar sortir sempre (IF queda al mateix lloc que en el teu codi)
             System.out.println("Sortir?");
             String sortir = Entrada.readLine();
 
-            // Utilitzar la funció de confirmació
+            // Substituïm la comprovació manual per la funció de confirmació
             if (UtilitatsConfirmacio.respostaABoolean(sortir)) {
                 System.out.println("Adéu");
                 break;
