@@ -3,8 +3,9 @@ public class LloroVocalIniciFi {
     public static void main(String[] args) {
 
         int comptador = 0;
+        boolean continuar = true;
 
-        while (true) {
+        while (continuar) {
             System.out.println("Text?");
             String text = Entrada.readLine();
 
@@ -23,17 +24,17 @@ public class LloroVocalIniciFi {
                 }
             }
 
-            // Preguntar Sortir? només un cop per Text?
+            // Preguntar Sortir? només després d’haver processat Text?
             System.out.println("Sortir?");
             String sortir = Entrada.readLine();
 
+            // Si la resposta és afirmativa → acabem el bucle
             if (UtilitatsConfirmacio.respostaABoolean(sortir)) {
                 System.out.println("Adéu");
-                break;
+                continuar = false; // no tornem a fer un nou Text?
             }
         }
     }
 }
-
 
 
