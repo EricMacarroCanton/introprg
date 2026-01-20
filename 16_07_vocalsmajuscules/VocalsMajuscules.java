@@ -11,21 +11,20 @@ public class VocalsMajuscules {
         System.out.println(majusculitzaVocals(text));
     }
 
-    public static String majusculitzaVocals(String text) {
-        String textMinuscules = text.toLowerCase();
-        String resultat = "";
+   public static String majusculitzaVocals(String text) {
+    String resultat = "";
 
-        for (int i = 0; i < textMinuscules.length(); i++) {
-            char c = textMinuscules.charAt(i);
+    for (int i = 0; i < text.length(); i++) {
+        char c = text.charAt(i);
 
-            if (UtilString.esVocal(c)) {
-                resultat += Character.toUpperCase(c);
-            } else {
-                resultat += c;
-            }
+        if (UtilString.esVocal(c)) {
+            resultat += Character.toUpperCase(c);
+        } else {
+            resultat += c;
         }
-
-        return resultat;
     }
+
+    return resultat;
+}
 }
 
