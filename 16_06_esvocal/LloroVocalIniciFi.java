@@ -23,7 +23,7 @@ public class LloroVocalIniciFi {
                 }
             }
 
-            // Preguntar sempre Sortir? i utilitzar UtilitatsConfirmacio
+            // Preguntar Sortir? només un cop per Text?
             System.out.println("Sortir?");
             String sortir = Entrada.readLine();
 
@@ -34,5 +34,6 @@ public class LloroVocalIniciFi {
         }
     }
 }
+
 
 
