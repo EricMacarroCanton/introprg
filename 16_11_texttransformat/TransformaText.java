@@ -12,7 +12,7 @@ public class TransformaText {
         for (int i = 0; i < text.length(); i++) {
             char c = text.charAt(i);
 
-
+            // Lletres
             if (Character.isLetter(c)) {
                 if (UtilString.esVocal(c)) {
                     resultat += Character.toLowerCase(c);
@@ -20,7 +20,7 @@ public class TransformaText {
                     resultat += Character.toUpperCase(c);
                 }
 
-
+            // Nombres (no dígits sols)
             } else if (Character.isDigit(c)) {
                 String nombre = "" + c;
 
@@ -31,11 +31,11 @@ public class TransformaText {
 
                 resultat += "(" + nombre + ")";
 
-            
-            } else if (c == ' ') {
-                resultat += " ";
+            // BLANCS: espais, tabuladors, etc.
+            } else if (Character.isWhitespace(c)) {
+                resultat += c;
             }
-
+            // Altres caràcters desapareixen
         }
 
         return resultat;
