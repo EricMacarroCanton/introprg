@@ -3,7 +3,7 @@ public class TextReves {
     public static void main(String[] args) {
 
 
-        System.out.print("Text? ");
+        System.out.println("Text?");
         String text = Entrada.readLine();
 
        
