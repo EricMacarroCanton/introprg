@@ -22,25 +22,24 @@ public class Codifica {
 
     // Codifica el text amb un desplaçament donat
     public static String codifica(String text, int desplacament) {
-        String resultat = "";
+    if (desplacament == 0) return text; // no fa res si desplaçament = 0
+    String resultat = "";
 
-        for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
+    for (int i = 0; i < text.length(); i++) {
+        char c = text.charAt(i);
 
-            if (c >= 'a' && c <= 'z') {
-                char nova = (char) (c + desplacament);
-              if (c == 'z') {
-                    System.out.print('a'); 
-               } if (nova > 'z') {
-                    nova = (char) (nova - 26);
-                }
-                resultat += nova;
-            } else {
-                resultat += c;
+        if (c >= 'a' && c <= 'z') {
+            char nova = (char) (c + desplacament);
+            if (nova > 'z') {
+                nova = (char) (nova - 26);
             }
+            resultat += nova;
+        } else {
+            resultat += c;
         }
-
-        return resultat;
     }
+
+    return resultat;
+}
 }
 
