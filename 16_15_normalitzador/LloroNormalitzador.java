@@ -6,45 +6,21 @@ La ç apareixerà com a c.
 
 Per simplicitat, no tindrem en compte l'el·la geminada*/
 public class LloroNormalitzador {
-     public static void main(String[] args) {
+
+    public static void main(String[] args) {
      
-     }
-    public static String transformaText(String text) {
-        String resultat = "";
-        int i = 0;
 
-        while (i < text.length()) {
-            char c = text.charAt(i);
+        System.out.println("El lloro espera un text");
+        String text = Entrada.readLine();
 
-            if (Character.isLetter(c)) {
-                if (UtilString.esVocal(c)) {
-                    resultat = resultat + Character.toLowerCase(c);
-                } else {
-                    resultat = resultat + Character.toUpperCase(c);
-                }
-                i++;
-
-            } else if (Character.isDigit(c)) {
-                String nombre = "";
-
-                while (i < text.length() && Character.isDigit(text.charAt(i))) {
-                    nombre = nombre + text.charAt(i);
-                    i++;
-                }
-
-                resultat = resultat + "(" + nombre + ")";
-
-            } else if (c == ' ' || c == '\t') {
-                resultat = resultat + c;
-                i++;
-
-            } else {
-                // altres caràcters ignorats
-                i++;
-            }
+        while (!text.isEmpty()) {
+            System.out.println("El lloro respon: " + UtilString.normalitzaText(text));
+            System.out.println("El lloro espera un text");
+            text = Entrada.readLine();
         }
 
-        return resultat;
+        System.out.println();
+        System.out.println("El lloro s'acomiada atentament");
     }
 }
 
