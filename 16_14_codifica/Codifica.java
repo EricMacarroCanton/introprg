@@ -16,7 +16,7 @@ public class Codifica {
 
     // Mostra el text codificat
     public static void mostraCodificat(String text) {
-        String resultat = codifica(text, 1);
+        String resultat = codifica(text, 0);
         System.out.println(resultat);
     }
 
