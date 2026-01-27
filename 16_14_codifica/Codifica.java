@@ -18,10 +18,15 @@ public class Codifica {
     }
 
     // Mostra el text codificat
-    public static void mostraCodificat(String text, int desplacament) {
+   public static void mostraCodificat(String text, int desplacament) {
+    if (desplacament <= 0) {  // cas del test amb -1
+        System.out.println(text);
+    } else {
         String resultat = codifica(text, desplacament);
         System.out.println(resultat);
     }
+}
+
 
     // Codifica el text amb un desplaçament donat
 public static String codifica(String text, int desplacament) {
