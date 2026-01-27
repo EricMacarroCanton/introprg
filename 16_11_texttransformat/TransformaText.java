@@ -1,3 +1,10 @@
+/*exercici on hem de fer un programa que demani un text i mostri una versió transformada segons les següents regles:Les vocals (les catalanes) apareixeran en minúscules
+
+Les lletres no vocals apareixeran en majúscules
+
+Els nombres (atenció, no els dígits!) apareixeran entre parèntesis ()
+
+La resta de caràcters, excepte els blancs, desapareixen a la versió transformada */
 public class TransformaText {
 
     public static void main(String[] args) {
