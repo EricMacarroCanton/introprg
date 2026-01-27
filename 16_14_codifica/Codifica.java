@@ -16,19 +16,29 @@ public class Codifica {
 
     // Mostra el text codificat
     public static void mostraCodificat(String text) {
+        String resultat = codifica(text, 1);
+        System.out.println(resultat);
+    }
+
+    // Codifica el text amb un desplaçament donat
+    public static String codifica(String text, int desplacament) {
+        String resultat = "";
+
         for (int i = 0; i < text.length(); i++) {
             char c = text.charAt(i);
 
             if (c >= 'a' && c <= 'z') {
-                if (c == 'z') {
-                    System.out.print('a');
-                } else {
-                    System.out.print((char)(c + 1));
+                char nova = (char) (c + desplacament);
+                if (nova > 'z') {
+                    nova = (char) (nova - 26);
                 }
+                resultat += nova;
             } else {
-                System.out.print(c);
+                resultat += c;
             }
         }
-        System.out.println();
+
+        return resultat;
     }
 }
+
