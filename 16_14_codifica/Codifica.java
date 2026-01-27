@@ -9,15 +9,17 @@ public class Codifica {
 
     public static void main(String[] args) {
         System.out.println("Text?");
-        String text = Entrada.readLine();
+        String text = Entrada.readLine(); // Mantinguda tal qual
 
-        mostraCodificat(text);
+        // Llegim desplaçament del primer argument si existeix, sinó 1
+        int desplacament = Integer.parseInt(args[0]);
+       
+        mostraCodificat(text, desplacament);
     }
 
     // Mostra el text codificat
-    public static void mostraCodificat(String text) {
-        // Aplica desplaçament = 1 per codificar
-        String resultat = codifica(text, 1);
+    public static void mostraCodificat(String text, int desplacament) {
+        String resultat = codifica(text, desplacament);
         System.out.println(resultat);
     }
 
@@ -29,10 +31,13 @@ public class Codifica {
             char c = text.charAt(i);
 
             if (c >= 'a' && c <= 'z') {
-                // Desplaçament cíclic dins a-z
+                // Càlcul dins a-z
                 char nova = (char) (c + desplacament);
-                if (nova > 'z') {
+                while (nova > 'z') {
                     nova = (char) (nova - 26);
+                }
+                while (nova < 'a') { 
+                    nova = (char) (nova + 26);
                 }
                 resultat += nova;
             } else {
@@ -43,5 +48,6 @@ public class Codifica {
         return resultat;
     }
 }
+
 
 
