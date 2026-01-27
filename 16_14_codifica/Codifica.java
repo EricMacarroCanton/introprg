@@ -20,11 +20,13 @@ public class Codifica {
         System.out.println(resultat);
     }
 
-    // Codifica el text amb un desplaçament donat
-    public static String codifica(String text, int desplacament) {
-    if (desplacament == 0) return text; // no fa res si desplaçament = 0
-    String resultat = "";
 
+    public static String codifica(String text, int desplacament) {
+   
+    String resultat = "";
+	 if (desplacament == 0) {
+	 resultat = text;
+    return resultat; }
     for (int i = 0; i < text.length(); i++) {
         char c = text.charAt(i);
 
