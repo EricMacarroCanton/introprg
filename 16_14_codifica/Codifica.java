@@ -29,7 +29,9 @@ public class Codifica {
 
             if (c >= 'a' && c <= 'z') {
                 char nova = (char) (c + desplacament);
-                if (nova > 'z') {
+              if (c == 'z') {
+                    System.out.print('a'); 
+               } if (nova > 'z') {
                     nova = (char) (nova - 26);
                 }
                 resultat += nova;
