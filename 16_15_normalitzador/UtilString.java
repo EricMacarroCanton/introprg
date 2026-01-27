@@ -2,17 +2,17 @@
 public class UtilString {
 
     public static char normalitzaChar(char c) {
-        if (c == 'à' || c == 'á') return 'a';
-        if (c == 'è' || c == 'é') return 'e';
-        if (c == 'ì' || c == 'í') return 'i';
-        if (c == 'ò' || c == 'ó') return 'o';
-        if (c == 'ù' || c == 'ú') return 'u';
+        if (c == 'à' || c == 'á' || c == 'ä') return 'a';
+        if (c == 'è' || c == 'é' || c == 'ë') return 'e';
+        if (c == 'ì' || c == 'í' || c == 'ï') return 'i';
+        if (c == 'ò' || c == 'ó' || c == 'ö') return 'o';
+        if (c == 'ù' || c == 'ú' || c == 'ü') return 'u';
 
-        if (c == 'À' || c == 'Á') return 'A';
-        if (c == 'È' || c == 'É') return 'E';
-        if (c == 'Ì' || c == 'Í') return 'I';
-        if (c == 'Ò' || c == 'Ó') return 'O';
-        if (c == 'Ù' || c == 'Ú') return 'U';
+        if (c == 'À' || c == 'Á' || c == 'Ä') return 'A';
+        if (c == 'È' || c == 'É' || c == 'Ë') return 'E';
+        if (c == 'Ì' || c == 'Í' || c == 'Ï') return 'I';
+        if (c == 'Ò' || c == 'Ó' || c == 'Ö') return 'O';
+        if (c == 'Ù' || c == 'Ú' || c == 'Ü') return 'U';
 
         if (c == 'ç') return 'c';
         if (c == 'Ç') return 'C';
