@@ -30,6 +30,10 @@ public class Codifica {
 
     // Codifica el text amb un desplaçament donat
 public static String codifica(String text, int desplacament) {
+    if (desplacament <= 0) {
+        return text; // no modifiquem res
+    }
+
     String resultat = "";
 
     for (int i = 0; i < text.length(); i++) {
@@ -38,22 +42,22 @@ public static String codifica(String text, int desplacament) {
         if (c >= 'a' && c <= 'z') {
             char nova = (char) (c + desplacament);
             while (nova > 'z') nova -= 26;
-            while (nova < 'a') nova += 26;
             resultat += nova;
-        } else if (c >= 'A' && c <= 'Z') { // Majúscules
+        } else if (c >= 'A' && c <= 'Z') {
             char nova = (char) (c + desplacament);
             while (nova > 'Z') nova -= 26;
-            while (nova < 'A') nova += 26;
             resultat += nova;
         } else {
-            resultat += c; // la resta es manté igual
+            resultat += c;
         }
     }
 
     return resultat;
-}
 
 }
+}
+
+
 
 
 
