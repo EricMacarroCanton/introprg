@@ -6,7 +6,9 @@ La ç apareixerà com a c.
 
 Per simplicitat, no tindrem en compte l'el·la geminada*/
 public class LloroNormalitzador {
-
+     public static void main(String[] args) {
+     
+     }
     public static String transformaText(String text) {
         String resultat = "";
         int i = 0;
