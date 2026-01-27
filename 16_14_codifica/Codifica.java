@@ -16,32 +16,32 @@ public class Codifica {
 
     // Mostra el text codificat
     public static void mostraCodificat(String text) {
-        String resultat = codifica(text, 0);
+        // Aplica desplaçament = 1 per codificar
+        String resultat = codifica(text, 1);
         System.out.println(resultat);
     }
 
-
+    // Codifica el text amb un desplaçament donat
     public static String codifica(String text, int desplacament) {
-   
-    String resultat = "";
-	 if (desplacament == 0) {
-	 resultat = text;
-    return resultat; }
-    for (int i = 0; i < text.length(); i++) {
-        char c = text.charAt(i);
+        String resultat = "";
 
-        if (c >= 'a' && c <= 'z') {
-            char nova = (char) (c + desplacament);
-            if (nova > 'z') {
-                nova = (char) (nova - 26);
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+
+            if (c >= 'a' && c <= 'z') {
+                // Desplaçament cíclic dins a-z
+                char nova = (char) (c + desplacament);
+                if (nova > 'z') {
+                    nova = (char) (nova - 26);
+                }
+                resultat += nova;
+            } else {
+                resultat += c;
             }
-            resultat += nova;
-        } else {
-            resultat += c;
         }
-    }
 
-    return resultat;
+        return resultat;
+    }
 }
-}
+
 
