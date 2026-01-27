@@ -47,12 +47,17 @@ public static String codifica(String text, int desplacament) {
             char nova = (char) (c + desplacament);
             while (nova > 'Z') nova -= 26;
             resultat += nova;
+        } else if (c >= '0' && c <= '9') { // codifica dígits
+            char nova = (char) (c + desplacament);
+            while (nova > '9') nova -= 10;
+            resultat += nova;
         } else {
-            resultat += c;
+            resultat += c; // resta de caràcters es mantenen
         }
     }
 
     return resultat;
+
 
 }
 }
