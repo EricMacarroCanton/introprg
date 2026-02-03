@@ -12,7 +12,6 @@ public class EntersEntreComes {
             comptador++;
         }
 
-        System.out.println(numeros);
-
+  System.out.println(numeros[0] + "," + numeros[1] + "," + numeros[2] + "," + numeros[3] + "," + numeros[4]);
     }
 }
