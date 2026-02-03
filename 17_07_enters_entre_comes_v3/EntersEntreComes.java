@@ -6,6 +6,8 @@ public class EntersEntreComes {
 
         System.out.println("Quants?");
         int quants = Integer.parseInt(Entrada.readLine());
+        if (quants > 0) {
+              
 
         int[] numeros = new int[quants];
         int comptador = 1;
@@ -22,8 +24,12 @@ public class EntersEntreComes {
 
             if (i < numeros.length - 1) {
                 System.out.print(", ");
-            }
+            }   
+          }
         }
+        else {
+         System.out.println("Valors més grans de 0");
     }
+}
 }
 
