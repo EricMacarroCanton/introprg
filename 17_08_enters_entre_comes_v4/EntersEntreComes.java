@@ -5,15 +5,16 @@ public class EntersEntreComes {
 
     public static void main(String[] args) {
 
-      int quants = demanarEnter("Quants?");
+        int quants = demanarEnter("Quants?");
 
-if (quants < 0) {
-    quants = 0;
-}
+        // Si no hi ha valors, no demanem res més
+        if (quants <= 0) {
+            int[] buit = new int[0];
+            System.out.println(UtilString.entreComes(buit, ','));
+            return;
+        }
 
-int[] numeros = new int[quants];
-
-
+        int[] numeros = new int[quants];
         char separador = demanarSeparador();
 
         for (int i = 0; i < numeros.length; i++) {
@@ -23,8 +24,9 @@ int[] numeros = new int[quants];
         System.out.println(UtilString.entreComes(numeros, separador));
     }
 
- 
+    // Demana un enter fins que sigui correcte
     public static int demanarEnter(String missatge) {
+
         String text;
 
         System.out.println(missatge);
@@ -40,14 +42,15 @@ int[] numeros = new int[quants];
 
     // Demana el separador
     public static char demanarSeparador() {
+
         System.out.println("Separador?");
         String text = Entrada.readLine();
 
         if (text.length() == 0) {
             return ',';
-        } else {
-            return text.charAt(0);
         }
+
+        return text.charAt(0);
     }
 }
 
