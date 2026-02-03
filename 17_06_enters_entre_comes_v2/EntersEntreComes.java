@@ -5,10 +5,11 @@ Exercici on hauràs de reemplaçar els valors que apareixen pel contingut corres
 public class EntersEntreComes {
     public static void main(String[] args) {
         int[] numeros = new int[5];
-
+	int comptador = 1;
         for (int i = 0; i < numeros.length; i++) {
-            System.out.println("Valor" + i + "?");
+            System.out.println("Valor " + comptador + "?");
             numeros[i] = Integer.parseInt(Entrada.readLine());
+            comptador++;
         }
 
         System.out.println(numeros);
