@@ -28,7 +28,7 @@ public class EntersEntreComes {
           }
         }
         else {
-         System.out.println("Valors més grans de 0");
+         System.out.println("Res a fer");
     }
 }
 }
