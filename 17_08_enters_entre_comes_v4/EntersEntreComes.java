@@ -5,8 +5,14 @@ public class EntersEntreComes {
 
     public static void main(String[] args) {
 
-        int quants = demanarEnter("Quants?");
-        int[] numeros = new int[quants];
+      int quants = demanarEnter("Quants?");
+
+if (quants < 0) {
+    quants = 0;
+}
+
+int[] numeros = new int[quants];
+
 
         char separador = demanarSeparador();
 
