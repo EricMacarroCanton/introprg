@@ -4,7 +4,7 @@ Exercici on hauràs de reemplaçar els valors que apareixen pel contingut corres
 public class EntersEntreComes {
     public static void main(String[] args) {
 
-        System.out.println("Quants valors?");
+        System.out.println("Quants?");
         int quants = Integer.parseInt(Entrada.readLine());
 
         int[] numeros = new int[quants];
