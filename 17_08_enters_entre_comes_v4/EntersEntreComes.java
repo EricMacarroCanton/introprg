@@ -7,10 +7,8 @@ public class EntersEntreComes {
 
         int quants = demanarEnter("Quants?");
 
-        // Si no hi ha valors, no demanem res més
         if (quants <= 0) {
-            int[] buit = new int[0];
-            System.out.println(UtilString.entreComes(buit, ','));
+            System.out.println("Res a fer");
             return;
         }
 
@@ -24,7 +22,6 @@ public class EntersEntreComes {
         System.out.println(UtilString.entreComes(numeros, separador));
     }
 
-    // Demana un enter fins que sigui correcte
     public static int demanarEnter(String missatge) {
 
         String text;
@@ -40,7 +37,6 @@ public class EntersEntreComes {
         return Integer.parseInt(text);
     }
 
-    // Demana el separador
     public static char demanarSeparador() {
 
         System.out.println("Separador?");
