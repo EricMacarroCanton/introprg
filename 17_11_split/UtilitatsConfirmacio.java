@@ -2,14 +2,17 @@
 public class UtilitatsConfirmacio {
 
     public static boolean respostaABoolean(String resposta) {
-        if (resposta == null) return false;
 
-        resposta = resposta.toLowerCase();
+        if (resposta == null) {
+            return false;
+        }
 
-        return resposta.equals("si") ||
-               resposta.equals("sí") ||
-               resposta.equals("s") ||
-               resposta.equals("true");
+        resposta = resposta.trim();
+
+        return resposta.equalsIgnoreCase("si") ||
+               resposta.equalsIgnoreCase("sí") ||
+               resposta.equalsIgnoreCase("s") ||
+               resposta.equalsIgnoreCase("true");
     }
 }
 
