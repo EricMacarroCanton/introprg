@@ -7,12 +7,14 @@ public class UtilitatsConfirmacio {
             return false;
         }
 
-        resposta = resposta.trim();
+        resposta = resposta.trim().toLowerCase();
 
-        return resposta.equalsIgnoreCase("si") ||
-               resposta.equalsIgnoreCase("sí") ||
-               resposta.equalsIgnoreCase("s") ||
-               resposta.equalsIgnoreCase("true");
+        return resposta.equals("si") ||
+               resposta.equals("sí") ||
+               resposta.equals("s") ||
+               resposta.equals("true") ||
+               resposta.equals("yes") ||
+               resposta.equals("y");
     }
 }
 
