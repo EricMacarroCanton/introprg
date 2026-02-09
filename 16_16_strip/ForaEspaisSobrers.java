@@ -5,7 +5,6 @@ public class ForaEspaisSobrers {
             return "";
         }
 
-      
         text = text.strip();
 
         String resultat = "";
@@ -14,8 +13,7 @@ public class ForaEspaisSobrers {
         for (int i = 0; i < text.length(); i++) {
             char c = text.charAt(i);
 
-            if (Character.isWhite(c)) {
-        
+            if (c == ' ' || c == '\t') {
                 if (!ultimEraEspai) {
                     resultat += " ";
                     ultimEraEspai = true;
@@ -30,11 +28,10 @@ public class ForaEspaisSobrers {
     }
 
     public static void main(String[] args) {
-        
 
         while (true) {
             System.out.println("El lloro espera un text");
-            String text = entrada.readLine();
+            String text = Entrada.readLine();
 
             if (text.isBlank()) {
                 break;
@@ -45,7 +42,7 @@ public class ForaEspaisSobrers {
         }
 
         System.out.println("El lloro s'acomiada atentament");
-        entrada.close();
     }
 }
+
 
