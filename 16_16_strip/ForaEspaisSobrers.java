@@ -7,7 +7,7 @@ public class ForaEspaisSobrers {
             System.out.println("El lloro espera un text");
             String text = Entrada.readLine();
 
-            if (text.isBlank()) {
+            if (text == null) {
                 break;
             }
 
@@ -18,5 +18,4 @@ public class ForaEspaisSobrers {
         System.out.println("El lloro s'acomiada atentament");
     }
 }
-
 
