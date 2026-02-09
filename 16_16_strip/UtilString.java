@@ -2,30 +2,27 @@
 public class UtilString {
 
     public static String normalitzaBlancs(String text) {
-        if (text == null) {
-            return "";
-        }
-
-        text = text.strip();
-
         String resultat = "";
-        boolean ultimEraEspai = false;
+        boolean dinsText = false;
+        boolean espaiPendent = false;
 
         for (int i = 0; i < text.length(); i++) {
             char c = text.charAt(i);
 
             if (c == ' ' || c == '\t') {
-                if (!ultimEraEspai) {
-                    resultat += " ";
-                    ultimEraEspai = true;
+                if (dinsText) {
+                    espaiPendent = true; // no l'afegim encara
                 }
             } else {
-                resultat += c;
-                ultimEraEspai = false;
+                if (espaiPendent) {
+                    resultat = resultat + " ";
+                    espaiPendent = false;
+                }
+                resultat = resultat + c;
+                dinsText = true;
             }
         }
 
         return resultat;
     }
 }
-
