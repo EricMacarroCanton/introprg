@@ -4,12 +4,12 @@ public class EsEnter {
 
     public static void main(String[] args) {
 
-        boolean estricte;
-
         if (args.length == 0) {
-            System.out.println("1  → Modalitat no reconeguda");
+            System.out.println("Modalitat no reconeguda");
             return;
         }
+
+        boolean estricte;
 
         if (args[0].equals("estricte")) {
             estricte = true;
@@ -24,12 +24,7 @@ public class EsEnter {
 
         String text = Entrada.readLine();
 
-        if (text.equals("")) {
-            System.out.println("Adéu");
-            return;
-        }
-
-        while (!text.equals("Adéu") && !text.equals("")) {
+        while (!text.equals("") && !text.equals("Adéu")) {
 
             if (UtilString.esEnter(text, estricte)) {
                 System.out.println("\"" + text + "\" és enter");
@@ -44,3 +39,4 @@ public class EsEnter {
     }
 }
 
+        
