@@ -16,7 +16,7 @@ public class EsEnter {
         } else if (args[0].equals("flexible")) {
             estricte = false;
         } else {
-            System.out.println("1  → Modalitat no reconeguda");
+            System.out.println("Modalitat no reconeguda");
             return;
         }
 
