@@ -1,4 +1,6 @@
-//exercici 17_11 fet per eric macarro el 3/2 
+/*exercici 17_11 fet per eric macarro el 3/2 La versió que implementarem considerarà com a separador els caracters en blanc (Character.isWhitespace()) El resultat serà sempre un array de String i disposarà de dues modalitats que permetran decidir què fer amb els espais en blanc, si incloure'ls o no en el resultat.
+
+Les signatures a implementar són*/
 public class UtilitatsConfirmacio {
 
     public static boolean respostaABoolean(String resposta) {
@@ -7,7 +9,7 @@ public class UtilitatsConfirmacio {
             return false;
         }
 
-        resposta = resposta.trim().toLowerCase();
+        resposta = resposta.toLowerCase();
 
         return resposta.equals("si") ||
                resposta.equals("sí") ||

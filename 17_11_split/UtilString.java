@@ -46,7 +46,7 @@ public class UtilString {
 
             if (esBlanc != anteriorBlanc) {
                 if (inclouBlancs || dinsParaula) {
-                    resultat[index++] = text.substring(inici, i);
+                    
                 }
                 inici = i;
                 dinsParaula = !esBlanc;
