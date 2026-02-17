@@ -11,12 +11,16 @@ public class UtilitatsConfirmacio {
 
         resposta = resposta.toLowerCase();
 
-        return resposta.equals("si") ||
+        if (resposta.equals("si") ||
                resposta.equals("sí") ||
                resposta.equals("s") ||
                resposta.equals("true") ||
                resposta.equals("yes") ||
-               resposta.equals("y");
+               resposta.equals("y")) {
+            return true;
+        }
+
+        return false;
     }
 }
 

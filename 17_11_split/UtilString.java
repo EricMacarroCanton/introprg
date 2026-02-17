@@ -1,6 +1,7 @@
 //exercici on el resultat serà sempre un array de String i disposarà de dues modalitats que permetran decidir què fer amb els espais en blanc, si incloure'ls o no en el resultat.
 public class UtilString {
 
+    // Equival a separa(text, false)
     public static String[] separa(String text) {
         return separa(text, false);
     }
@@ -11,22 +12,29 @@ public class UtilString {
             return new String[0];
         }
 
-        // Primer comptem quants elements tindrà el resultat
         int comptador = 0;
-        boolean dinsParaula = !Character.isWhitespace(text.charAt(0));
+        int i = 0;
 
-        if (inclouBlancs || dinsParaula) {
-            comptador = 1;
-        }
+        // Primer recorregut: comptar quants elements hi haurà
+        while (i < text.length()) {
 
-        for (int i = 1; i < text.length(); i++) {
-            boolean esBlanc = Character.isWhitespace(text.charAt(i));
-            boolean anteriorBlanc = Character.isWhitespace(text.charAt(i - 1));
+            if (Character.isWhitespace(text.charAt(i))) {
 
-            if (esBlanc != anteriorBlanc) {
-                if (inclouBlancs || !esBlanc) {
+                while (i < text.length() && Character.isWhitespace(text.charAt(i))) {
+                    i++;
+                }
+
+                if (inclouBlancs) {
                     comptador++;
                 }
+
+            } else {
+
+                while (i < text.length() && !Character.isWhitespace(text.charAt(i))) {
+                    i++;
+                }
+
+                comptador++;
             }
         }
 
@@ -35,29 +43,43 @@ public class UtilString {
         }
 
         String[] resultat = new String[comptador];
+        i = 0;
+        int pos = 0;
 
-        int index = 0;
-        int inici = 0;
-        dinsParaula = !Character.isWhitespace(text.charAt(0));
+        // Segon recorregut: construir els blocs manualment
+        while (i < text.length()) {
 
-        for (int i = 1; i < text.length(); i++) {
-            boolean esBlanc = Character.isWhitespace(text.charAt(i));
-            boolean anteriorBlanc = Character.isWhitespace(text.charAt(i - 1));
+            if (Character.isWhitespace(text.charAt(i))) {
 
-            if (esBlanc != anteriorBlanc) {
-                if (inclouBlancs || dinsParaula) {
-                    
+                String bloc = "";
+
+                while (i < text.length() && Character.isWhitespace(text.charAt(i))) {
+                    bloc = bloc + text.charAt(i);
+                    i++;
                 }
-                inici = i;
-                dinsParaula = !esBlanc;
-            }
-        }
 
-        if (inclouBlancs || dinsParaula) {
-            resultat[index] = text.substring(inici);
+                if (inclouBlancs) {
+                    resultat[pos] = bloc;
+                    pos++;
+                }
+
+            } else {
+
+                String bloc = "";
+
+                while (i < text.length() && !Character.isWhitespace(text.charAt(i))) {
+                    bloc = bloc + text.charAt(i);
+                    i++;
+                }
+
+                resultat[pos] = bloc;
+                pos++;
+            }
         }
 
         return resultat;
     }
 }
+
+  
 
