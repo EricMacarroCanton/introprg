@@ -31,7 +31,7 @@ public class TresEnRatlla {
 
     // mostra el contingut de la fila per sortida estàndard
     public static void mostraFila(char[] fila) {
-        for (int col = 0; col < fila.length();i++) {
+        for (int col = 0; col < fila.length;col++) {
             System.out.print(fila[col]);
         }
         System.out.println();
