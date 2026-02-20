@@ -29,8 +29,12 @@ public class TresEnRatlla {
         System.out.println("Columna del següent moviment?");
         int columna = Integer.parseInt(Entrada.readLine());
 
-        if(fila >= 0 && fila <= 2 && columna >= 0 && columna <= 2) {
-            tauler[fila][columna] = 'X';
+        if (fila >= 0 && fila <= 2 && columna >= 0 && columna <= 2) {
+            if (tauler[fila][columna] == '·') {
+                tauler[fila][columna] = 'X';
+            } else {
+                System.out.println("POSICIÓ OCUPADA");
+            }
         } else {
             System.out.println("Introdueix una coordenada vàlida");
         }
