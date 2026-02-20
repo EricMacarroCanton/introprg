@@ -36,7 +36,7 @@ public class TresEnRatlla {
                 System.out.println("Posició ocupada");
             }
         } else {
-            System.out.println("Introdueix una coordenada vàlida");
+            System.out.println("Coordenades incorrectes");
         }
 
         // mostra la posició final
