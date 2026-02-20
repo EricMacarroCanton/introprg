@@ -33,7 +33,7 @@ public class TresEnRatlla {
             if (tauler[fila][columna] == '·') {
                 tauler[fila][columna] = 'X';
             } else {
-                System.out.println("POSICIÓ OCUPADA");
+                System.out.println("Posició ocupada");
             }
         } else {
             System.out.println("Introdueix una coordenada vàlida");
