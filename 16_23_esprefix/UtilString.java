@@ -1,35 +1,38 @@
 //Implementarem ara una nova versió per la funció de String: startsWith que anomenarem esPrefix().
+/*
+En aquest exericic crearem la biblioteca d'un programa que permetrà comprovar si un text comença exactament per un altre de manera laxa o no
+*/
 public class UtilString {
-    public static boolean esPrefix(String prefixText, String cadena, boolean estricte) {
+    public static boolean esPrefix(String prefix, String text, boolean estricte) {
         if (estricte) {
             // Comparació estricta
-            if (prefixText.length() > cadena.length()) return false;
-            for (int idx = 0; idx < prefixText.length(); idx++) {
-                if (prefixText.charAt(idx) != cadena.charAt(idx)) return false;
+            if (prefix.length() > text.length()) return false;
+            for (int i = 0; i < prefix.length(); i++) {
+                if (prefix.charAt(i) != text.charAt(i)) return false;
             }
             return true;
         } else {
 
-            String textNormalitzat = eliminaEspaisSobrers(normalitzaBlancs(normalitzaText(cadena)));
-            String prefixNormalitzat = eliminaEspaisSobrers(normalitzaBlancs(normalitzaText(prefixText)));
+            String t = eliminaEspaisSobrers(normalitzaBlancs(normalitzaText(text)));
+            String p = eliminaEspaisSobrers(normalitzaBlancs(normalitzaText(prefix)));
 
-            if (prefixNormalitzat.length() > textNormalitzat.length()) return false;
+            if (p.length() > t.length()) return false;
 
-            for (int idx = 0; idx < prefixNormalitzat.length(); idx++) {
-                if (textNormalitzat.charAt(idx) != prefixNormalitzat.charAt(idx)) return false;
+            for (int i = 0; i < p.length(); i++) {
+                if (t.charAt(i) != p.charAt(i)) return false;
             }
             return true;
         }
     }
 
-    public static boolean esPrefix(String prefixText, String cadena) {
-        return esPrefix(prefixText, cadena, true);
+    public static boolean esPrefix(String prefix, String text) {
+        return esPrefix(prefix, text, true);
     }
 
-    public static String normalitzaText(String cadena) {
+    public static String normalitzaText(String s) {
         String resultat = "";
-        for (int idx = 0; idx < cadena.length(); idx++) {
-            char c = cadena.charAt(idx);
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
             if (c == 'À' || c == 'à') resultat += 'a';
             else if (c == 'È' || c == 'è' || c == 'É' || c == 'é') resultat += 'e';
             else if (c == 'Í' || c == 'í' || c == 'Ï' || c == 'ï') resultat += 'i';
@@ -41,11 +44,11 @@ public class UtilString {
         return resultat;
     }
 
-    public static String normalitzaBlancs(String cadena) {
+    public static String normalitzaBlancs(String s) {
         String resultat = "";
         boolean espaiAnterior = false;
-        for (int idx = 0; idx < cadena.length(); idx++) {
-            char c = cadena.charAt(idx);
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
             if (c == ' ' || c == '\t' || c == '\n') {
                 if (!espaiAnterior) {
                     resultat += ' ';
@@ -59,15 +62,15 @@ public class UtilString {
         return resultat;
     }
 
-    public static String eliminaEspaisSobrers(String cadena) {
-        int iniciIdx = 0;
-        int fiIdx = cadena.length() - 1;
+    public static String eliminaEspaisSobrers(String s) {
+        int inici = 0;
+        int fi = s.length() - 1;
 
-        while (iniciIdx <= fiIdx && cadena.charAt(iniciIdx) == ' ') iniciIdx++;
-        while (fiIdx >= iniciIdx && cadena.charAt(fiIdx) == ' ') fiIdx--;
+        while (inici <= fi && s.charAt(inici) == ' ') inici++;
+        while (fi >= inici && s.charAt(fi) == ' ') fi--;
 
-        String resultat = "";
-        for (int idx = iniciIdx; idx <= fiIdx; idx++) resultat += cadena.charAt(idx);
-        return resultat;
+        // For normalitzat
+        return s.substring(inici, fi + 1);
     }
 }
+
