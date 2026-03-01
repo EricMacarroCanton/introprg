@@ -17,7 +17,7 @@ public class ParaulesReves {
         for (int i = 0; i < text.length(); i++) {
             char c = text.charAt(i);
 
-            if (Character.isLetter(c)) { // detecta totes les lletres, incloent accents
+            if (Character.isLetter(c)) {
                 paraula += c;
             } else {
                 if (paraula.length() > 0) {
@@ -37,32 +37,32 @@ public class ParaulesReves {
         return resultat;
     }
 
-    // Inverteix una sola paraula i ajusta la primera lletra al cas del model original
+    // Inverteix una paraula i ajusta el cas amb la funció pública copiaCas
     private static String inverteixParaula(String paraula) {
         String invertida = "";
         for (int j = paraula.length() - 1; j >= 0; j--) {
             invertida += paraula.charAt(j);
         }
 
-        invertida = copiaCasPrimeraLletra(invertida, paraula);
+        // Ajustem el cas de la primera lletra segons el model
+        invertida = copiaCas(invertida, paraula);
         return invertida;
     }
 
-    // Ajusta la primera lletra de la paraula invertida al cas de la primera lletra del model
-    private static String copiaCasPrimeraLletra(String text, String model) {
+    // Aquesta és la funció que les proves esperen!
+    // Ajusta la primera lletra de 'text' segons la primera lletra de 'model'
+    public static String copiaCas(String text, String model) {
         if (text.length() == 0 || model.length() == 0) return text;
 
         char c = text.charAt(0);
         char m = model.charAt(0);
 
-        // Si la primera lletra del model és majúscula ASCII
+        // ASCII simple: ajustem majúscula/minúscula
         if (m >= 'A' && m <= 'Z') {
             if (c >= 'a' && c <= 'z') {
                 c = (char)(c - ('a' - 'A'));
             }
-        }
-        // Si la primera lletra del model és minúscula ASCII
-        else if (m >= 'a' && m <= 'z') {
+        } else if (m >= 'a' && m <= 'z') {
             if (c >= 'A' && c <= 'Z') {
                 c = (char)(c + ('a' - 'A'));
             }
