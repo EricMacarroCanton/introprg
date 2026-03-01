@@ -3,7 +3,6 @@
 // UtilString.java
 public class UtilString {
 
-    // Normalitza el text: minúscules + elimina accents
     public static String normalitzaText(String text) {
         if (text == null) return null;
 
@@ -34,8 +33,8 @@ public class UtilString {
         return resultat;
     }
 
-    // Normalitza espais: múltiples espais → 1 espai, elimina espais al principi i final
-    public static String normalitzaBlancs(String text) {
+    // Normalitza espais només de text (no de substring)
+    public static String normalitzaBlancsText(String text) {
         if (text == null) return null;
 
         String resultat = "";
@@ -48,43 +47,60 @@ public class UtilString {
                 resultat = resultat + c;
                 anteriorEspai = false;
             } else {
-                // només afegim espai si no és inicial, no és repetit, i no és l'últim
-                if (!anteriorEspai && i < text.length() - 1) {
+                if (!anteriorEspai) {
                     resultat = resultat + c;
                     anteriorEspai = true;
                 }
             }
         }
 
-        return resultat;
+        // Eliminar espais inicials i finals
+        int start = 0;
+        while (start < resultat.length() && resultat.charAt(start) == ' ') start++;
+
+        int end = resultat.length() - 1;
+        while (end >= start && resultat.charAt(end) == ' ') end--;
+
+        String finalResult = "";
+        for (int i = start; i <= end; i++) finalResult = finalResult + resultat.charAt(i);
+
+        return finalResult;
     }
 
-    // Retorna true si substring és dins text
     public static boolean esSubstring(String substring, String text, boolean estricte) {
         if (substring == null || text == null) return false;
 
         if (!estricte) {
-            text = normalitzaBlancs(text);
-            substring = normalitzaBlancs(substring);
+            text = normalitzaBlancsText(text);
+            substring = substring; // NO retallem espais finals de substring
 
             text = normalitzaText(text);
             substring = normalitzaText(substring);
 
-            if (text.equals(substring)) return true;
+            // Afegim comprovació de substring incloent espais finals de substring
+            for (int i = 0; i <= text.length(); i++) {
+                boolean coincideix = true;
+                for (int j = 0; j < substring.length(); j++) {
+                    if (i + j >= text.length() || text.charAt(i + j) != substring.charAt(j)) {
+                        coincideix = false;
+                        break;
+                    }
+                }
+                if (coincideix) return true;
+            }
+            return false;
         }
 
         if (substring.length() > text.length()) return false;
 
         for (int i = 0; i <= text.length() - substring.length(); i++) {
             boolean coincideix = true;
-
             for (int j = 0; j < substring.length(); j++) {
                 if (text.charAt(i + j) != substring.charAt(j)) {
                     coincideix = false;
                     break;
                 }
             }
-
             if (coincideix) return true;
         }
 
