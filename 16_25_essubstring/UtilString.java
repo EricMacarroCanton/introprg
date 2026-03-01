@@ -49,7 +49,11 @@ public class UtilString {
             resultat = resultat + c;
             anteriorEspai = false;
         } else {
-            if (!anteriorEspai) {
+            // només afegim espai si:
+            // - no és inicial
+            // - no és repetit
+            // - NO és l'últim caràcter del text
+            if (!anteriorEspai && i < text.length() - 1) {
                 resultat = resultat + c;
                 anteriorEspai = true;
             }
