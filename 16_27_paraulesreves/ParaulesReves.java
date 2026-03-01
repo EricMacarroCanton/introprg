@@ -17,12 +17,11 @@ public class ParaulesReves {
         for (int i = 0; i < text.length(); i++) {
             char c = text.charAt(i);
 
-            if (Character.isLetter(c)) {
+            if (Character.isLetter(c)) { // detecta totes les lletres, incloent accents
                 paraula += c;
             } else {
                 if (paraula.length() > 0) {
-                    String invertida = inverteixParaula(paraula);
-                    resultat += invertida;
+                    resultat += inverteixParaula(paraula);
                     paraula = "";
                 }
                 resultat += c;
@@ -30,26 +29,22 @@ public class ParaulesReves {
         }
 
         if (paraula.length() > 0) {
-            String invertida = inverteixParaula(paraula);
-            resultat += invertida;
+            resultat += inverteixParaula(paraula);
         }
 
         return resultat;
     }
 
-    // Inverteix una paraula i ajusta el cas amb la funció pública copiaCas
-    private static String inverteixParaula(String paraula) {
+    // Inverteix una sola paraula i ajusta la primera lletra segons el model
+    public static String inverteixParaula(String paraula) {
         String invertida = "";
         for (int j = paraula.length() - 1; j >= 0; j--) {
             invertida += paraula.charAt(j);
         }
-
-        // Ajustem el cas de la primera lletra segons el model
         invertida = copiaCas(invertida, paraula);
         return invertida;
     }
 
-    // Aquesta és la funció que les proves esperen!
     // Ajusta la primera lletra de 'text' segons la primera lletra de 'model'
     public static String copiaCas(String text, String model) {
         if (text.length() == 0 || model.length() == 0) return text;
@@ -57,15 +52,11 @@ public class ParaulesReves {
         char c = text.charAt(0);
         char m = model.charAt(0);
 
-        // ASCII simple: ajustem majúscula/minúscula
+        // Ajust ASCII simple
         if (m >= 'A' && m <= 'Z') {
-            if (c >= 'a' && c <= 'z') {
-                c = (char)(c - ('a' - 'A'));
-            }
+            if (c >= 'a' && c <= 'z') c = (char)(c - ('a' - 'A'));
         } else if (m >= 'a' && m <= 'z') {
-            if (c >= 'A' && c <= 'Z') {
-                c = (char)(c + ('a' - 'A'));
-            }
+            if (c >= 'A' && c <= 'Z') c = (char)(c + ('a' - 'A'));
         }
 
         return c + text.substring(1);
