@@ -56,35 +56,35 @@ public class UtilString {
         return resultat.trim();
     }
 
-    public static boolean esSubstring(String substring, String text, boolean estricte) {
-        if (substring == null || text == null) return false;
+   public static boolean esSubstring(String substring, String text, boolean estricte) {
+    if (substring == null || text == null) return false;
 
+    if (!estricte) {
         text = normalitzaBlancs(text);
         substring = normalitzaBlancs(substring);
 
-        if (!estricte) {
-            text = normalitzaText(text);
-            substring = normalitzaText(substring);
-        }
-
-        if (substring.length() > text.length()) return false;
-
-        for (int i = 0; i <= text.length() - substring.length(); i++) {
-            boolean coincideix = true;
-
-            for (int j = 0; j < substring.length(); j++) {
-                if (text.charAt(i + j) != substring.charAt(j)) {
-                    coincideix = false;
-                    break;
-                }
-            }
-
-            if (coincideix) return true;
-        }
-
-        return false;
+        text = normalitzaText(text);
+        substring = normalitzaText(substring);
     }
 
+    // En mode estricte no modifiquem res
+    if (substring.length() > text.length()) return false;
+
+    for (int i = 0; i <= text.length() - substring.length(); i++) {
+        boolean coincideix = true;
+
+        for (int j = 0; j < substring.length(); j++) {
+            if (text.charAt(i + j) != substring.charAt(j)) {
+                coincideix = false;
+                break;
+            }
+        }
+
+        if (coincideix) return true;
+    }
+
+    return false;
+}
     public static boolean esSubstring(String substring, String text) {
         return esSubstring(substring, text, true);
     }
