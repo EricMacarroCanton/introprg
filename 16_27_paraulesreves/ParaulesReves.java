@@ -46,36 +46,29 @@ public class ParaulesReves {
     }
 
     // Copia majúscules i minúscules del model a text sense isUpperCase ni isLowerCase
-    public static String copiaCas(String text, String model) {
-        if (text == null || model == null) return text;
+   public static String copiaCas(String text, String model) {
+    if (text == null || model == null) return text;
 
-        String resultat = "";
+    String resultat = "";
 
-        for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
+    for (int i = 0; i < text.length(); i++) {
+        char c = text.charAt(i);
 
-            if (i < model.length()) {
-                char m = model.charAt(i);
+        if (i < model.length()) {
+            char m = model.charAt(i);
 
-                // només lletres A-Z i a-z
-                if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) {
-                    if (m >= 'A' && m <= 'Z') {
-                        // majúscula
-                        if (c >= 'a' && c <= 'z') {
-                            c = (char)(c - ('a' - 'A'));
-                        }
-                    } else if (m >= 'a' && m <= 'z') {
-                        // minúscula
-                        if (c >= 'A' && c <= 'Z') {
-                            c = (char)(c + ('a' - 'A'));
-                        }
-                    }
-                }
+            // Si el model és una lletra, cal que el caràcter de text sigui el mateix cas
+            if (Character.toLowerCase(c) == Character.toLowerCase(m)) {
+                // mantenim exactament el cas del model
+                c = m;
+            } else {
+                // si el model té una lletra diferent, ajustem només la primera lletra invertida
+                // amb c = c (no canviem)
             }
-
-            resultat += c;
         }
-
-        return resultat;
+        resultat += c;
     }
+
+    return resultat;
+}
 }
