@@ -7,7 +7,6 @@ public class ParaulesReves {
         System.out.println(inverteixParaules(text));
     }
 
-    // Inverteix cada paraula, mantenint els caràcters no lletres i l'ordre de les paraules
     public static String inverteixParaules(String text) {
         if (text == null) return null;
 
@@ -35,19 +34,18 @@ public class ParaulesReves {
         return resultat;
     }
 
-    // Inverteix una paraula i ajusta la primera lletra segons el model
     public static String inverteixParaula(String paraula) {
         String invertida = "";
         for (int j = paraula.length() - 1; j >= 0; j--) {
             invertida += paraula.charAt(j);
         }
-        // Ajusta només la primera lletra
+        // Ajusta només la primera lletra al cas de la primera lletra del model
         invertida = copiaCas(invertida, paraula);
         return invertida;
     }
 
-    // Funció que les proves d'estructura esperen
-    // Ajusta la primera lletra de 'text' al cas de la primera lletra de 'model'
+    // Aquesta funció és la que les proves esperen
+    // Ajusta la primera lletra de 'text' segons el cas de la primera lletra de 'model'
     public static String copiaCas(String text, String model) {
         if (text.length() == 0 || model.length() == 0) return text;
 
@@ -55,18 +53,14 @@ public class ParaulesReves {
         char m = model.charAt(0);
 
         // Si el model té la primera lletra majúscula
-        if ((m >= 'A' && m <= 'Z') || (m >= 'À' && m <= 'Þ')) {
-            if ((c >= 'a' && c <= 'z') || (c >= 'à' && c <= 'ÿ')) {
-                c = (char)(c - 32); // majúscula ASCII + accent
-            }
+        if (Character.isUpperCase(m)) {
+            c = Character.toUpperCase(c);
         }
         // Si el model té la primera lletra minúscula
-        else if ((m >= 'a' && m <= 'z') || (m >= 'à' && m <= 'ÿ')) {
-            if ((c >= 'A' && c <= 'Z') || (c >= 'À' && c <= 'Þ')) {
-                c = (char)(c + 32); // minúscula ASCII + accent
-            }
+        else if (Character.isLowerCase(m)) {
+            c = Character.toLowerCase(c);
         }
 
-        return c + text.substring(1); // la resta de la paraula no es toca
+        return c + text.substring(1); // la resta no es toca
     }
 }
