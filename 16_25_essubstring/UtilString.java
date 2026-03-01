@@ -20,14 +20,14 @@ public class UtilString {
 
             for (int j = 0; j < accents.length(); j++) {
                 if (c == accents.charAt(j)) {
-                    resultat += senseAccents.charAt(j);
+                    resultat = resultat + senseAccents.charAt(j);
                     trobat = true;
                     break;
                 }
             }
 
             if (!trobat) {
-                resultat += c;
+                resultat = resultat + c;
             }
         }
 
@@ -35,34 +35,31 @@ public class UtilString {
     }
 
     // Normalitza espais: múltiples espais → 1 espai, elimina espais al principi i final
+    public static String normalitzaBlancs(String text) {
+        if (text == null) return null;
 
-   public static String normalitzaBlancs(String text) {
-    if (text == null) return null;
+        String resultat = "";
+        boolean anteriorEspai = true;
 
-    String resultat = "";
-    boolean anteriorEspai = true;
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
 
-    for (int i = 0; i < text.length(); i++) {
-        char c = text.charAt(i);
-
-        if (c != ' ') {
-            resultat = resultat + c;
-            anteriorEspai = false;
-        } else {
-            // només afegim espai si:
-            // - no és inicial
-            // - no és repetit
-            // - NO és l'últim caràcter del text
-            if (!anteriorEspai && i < text.length() - 1) {
+            if (c != ' ') {
                 resultat = resultat + c;
-                anteriorEspai = true;
+                anteriorEspai = false;
+            } else {
+                // només afegim espai si no és inicial, no és repetit, i no és l'últim
+                if (!anteriorEspai && i < text.length() - 1) {
+                    resultat = resultat + c;
+                    anteriorEspai = true;
+                }
             }
         }
+
+        return resultat;
     }
 
-    return resultat;
-}
-
+    // Retorna true si substring és dins text
     public static boolean esSubstring(String substring, String text, boolean estricte) {
         if (substring == null || text == null) return false;
 
@@ -72,6 +69,8 @@ public class UtilString {
 
             text = normalitzaText(text);
             substring = normalitzaText(substring);
+
+            if (text.equals(substring)) return true;
         }
 
         if (substring.length() > text.length()) return false;
