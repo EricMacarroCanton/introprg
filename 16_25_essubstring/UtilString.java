@@ -33,6 +33,8 @@ public class UtilString {
         return resultat;
     }
 
+    // Normalitza espais: només converteix múltiples espais consecutius en un espai
+    // No fa trim ni usa isWhitespace
     public static String normalitzaBlancs(String text) {
         if (text == null) return null;
 
@@ -42,7 +44,7 @@ public class UtilString {
         for (int i = 0; i < text.length(); i++) {
             char c = text.charAt(i);
 
-            if (Character.isWhitespace(c)) {
+            if (c == ' ') {
                 if (!anteriorEspai) {
                     resultat += " ";
                     anteriorEspai = true;
@@ -53,38 +55,38 @@ public class UtilString {
             }
         }
 
-        return resultat.trim();
+        return resultat; // sense trim
     }
 
-   public static boolean esSubstring(String substring, String text, boolean estricte) {
-    if (substring == null || text == null) return false;
+    public static boolean esSubstring(String substring, String text, boolean estricte) {
+        if (substring == null || text == null) return false;
 
-    if (!estricte) {
-        text = normalitzaBlancs(text);
-        substring = normalitzaBlancs(substring);
+        if (!estricte) {
+            text = normalitzaBlancs(text);
+            substring = normalitzaBlancs(substring);
 
-        text = normalitzaText(text);
-        substring = normalitzaText(substring);
-    }
-
-    // En mode estricte no modifiquem res
-    if (substring.length() > text.length()) return false;
-
-    for (int i = 0; i <= text.length() - substring.length(); i++) {
-        boolean coincideix = true;
-
-        for (int j = 0; j < substring.length(); j++) {
-            if (text.charAt(i + j) != substring.charAt(j)) {
-                coincideix = false;
-                break;
-            }
+            text = normalitzaText(text);
+            substring = normalitzaText(substring);
         }
 
-        if (coincideix) return true;
+        if (substring.length() > text.length()) return false;
+
+        for (int i = 0; i <= text.length() - substring.length(); i++) {
+            boolean coincideix = true;
+
+            for (int j = 0; j < substring.length(); j++) {
+                if (text.charAt(i + j) != substring.charAt(j)) {
+                    coincideix = false;
+                    break;
+                }
+            }
+
+            if (coincideix) return true;
+        }
+
+        return false;
     }
 
-    return false;
-}
     public static boolean esSubstring(String substring, String text) {
         return esSubstring(substring, text, true);
     }
