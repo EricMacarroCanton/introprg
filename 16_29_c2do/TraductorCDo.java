@@ -73,12 +73,12 @@ public class TraductorCDo {
                         // Traducció directa amb if-else
                         String notaLlatina = "";
                         if (c == 'C') notaLlatina = "Do";
-                        else if (c == 'D') notaLlatina = "Re";
-                        else if (c == 'E') notaLlatina = "Mi";
-                        else if (c == 'F') notaLlatina = "Fa";
-                        else if (c == 'G') notaLlatina = "Sol";
-                        else if (c == 'A') notaLlatina = "La";
-                        else if (c == 'B') notaLlatina = "Si";
+                        else if (c == 'D') notaLlatina = "> Re";
+                        else if (c == 'E') notaLlatina = "> Mi";
+                        else if (c == 'F') notaLlatina = "> Fa";
+                        else if (c == 'G') notaLlatina = "> Sol";
+                        else if (c == 'A') notaLlatina = "> La";
+                        else if (c == 'B') notaLlatina = "> Si";
 
                         resultat += notaLlatina + modificador + octave;
                         i = j;
