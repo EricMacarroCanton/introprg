@@ -1,10 +1,36 @@
 //És una funció molt còmoda però té algunes limitacions ja hem adreçat a exercicis anteriors.
 //De la mateixa manera que ja hem fet, per exemple, amb String.endsWith(), crearem una adaptació de contains() amb les següents signatures:
+// UtilString.java
 public class UtilString {
 
     public static String normalitzaText(String text) {
         if (text == null) return null;
-        return text.toLowerCase();
+
+        text = text.toLowerCase();
+
+        String accents = "àáâäãèéêëìíîïòóôöõùúûüç";
+        String senseAccents = "aaaaaeeeeiiiiooooouuuuc";
+
+        String resultat = "";
+
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            boolean trobat = false;
+
+            for (int j = 0; j < accents.length(); j++) {
+                if (c == accents.charAt(j)) {
+                    resultat += senseAccents.charAt(j);
+                    trobat = true;
+                    break;
+                }
+            }
+
+            if (!trobat) {
+                resultat += c;
+            }
+        }
+
+        return resultat;
     }
 
     public static String normalitzaBlancs(String text) {
@@ -31,7 +57,6 @@ public class UtilString {
     }
 
     public static boolean esSubstring(String substring, String text, boolean estricte) {
-
         if (substring == null || text == null) return false;
 
         text = normalitzaBlancs(text);
@@ -45,7 +70,6 @@ public class UtilString {
         if (substring.length() > text.length()) return false;
 
         for (int i = 0; i <= text.length() - substring.length(); i++) {
-
             boolean coincideix = true;
 
             for (int j = 0; j < substring.length(); j++) {
