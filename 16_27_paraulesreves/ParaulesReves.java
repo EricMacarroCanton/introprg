@@ -12,6 +12,7 @@ public class ParaulesReves {
 
         String resultat = "";
         String paraula = "";
+        boolean primeraParaula = true; // Flag per saber si és la primera paraula
 
         for (int i = 0; i < text.length(); i++) {
             char c = text.charAt(i);
@@ -19,45 +20,45 @@ public class ParaulesReves {
             if (Character.isLetter(c)) {
                 paraula += c;
             } else {
-                if (paraula.length() > 0) {
-                    resultat += inverteixParaula(paraula);
+                if (!paraula.isEmpty()) {
+                    resultat += inverteixParaula(paraula, primeraParaula);
+                    primeraParaula = false;
                     paraula = "";
                 }
                 resultat += c;
             }
         }
 
-        if (paraula.length() > 0) {
-            resultat += inverteixParaula(paraula);
+        // Invertim l'última paraula si n'hi ha
+        if (!paraula.isEmpty()) {
+            resultat += inverteixParaula(paraula, primeraParaula);
         }
 
         return resultat;
     }
 
-    public static String inverteixParaula(String paraula) {
+    public static String inverteixParaula(String paraula, boolean primeraParaula) {
         String invertida = "";
         for (int j = paraula.length() - 1; j >= 0; j--) {
             invertida += paraula.charAt(j);
         }
-        // Només ajustem la primera lletra
-        invertida = copiaCas(invertida, paraula);
+        // Ajustem la primera lletra segons si és la primera paraula
+        invertida = copiaCas(invertida, paraula, primeraParaula);
         return invertida;
     }
 
-    // Només ajusta la primera lletra, la resta queda igual
-    public static String copiaCas(String text, String model) {
-        if (text.length() == 0 || model.length() == 0) return text;
+    // Ajusta només la primera lletra; la resta queda igual
+    public static String copiaCas(String text, String model, boolean primeraParaula) {
+        if (text.length() == 0) return text;
 
         char c = text.charAt(0);
-        char m = model.charAt(0);
 
-        if (Character.isUpperCase(m)) {
+        if (primeraParaula && Character.isUpperCase(model.charAt(0))) {
             c = Character.toUpperCase(c);
         } else {
             c = Character.toLowerCase(c);
         }
 
-        // La resta de lletres es deixa tal qual
         return c + text.substring(1);
     }
 }
