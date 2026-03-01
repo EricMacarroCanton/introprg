@@ -8,15 +8,19 @@ public class TraductorCDo {
 
     public static void main(String[] args) {
         
-        System.out.println("Text?");
+        System.out.println("Traductor de notació anglosaxona a llatina");
+   System.out.println("Introdueix frases (buit per finalitzar)");
+
         String text = Entrada.readLine();
         System.out.println(tradueixCDo(text));
    
     }
 
     public static String tradueixCDo(String text) {
-        if (text == null) return null;
-
+        if (text == null) {
+         System.out.println("Fet");
+        return null;
+}
         String resultat = "";
         int i = 0;
 
