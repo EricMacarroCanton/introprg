@@ -3,6 +3,7 @@
 // UtilString.java
 public class UtilString {
 
+    // Normalitza el text: minúscules + elimina accents
     public static String normalitzaText(String text) {
         if (text == null) return null;
 
@@ -33,15 +34,18 @@ public class UtilString {
         return resultat;
     }
 
-    // Normalitza espais: només converteix múltiples espais consecutius en un espai
-    // No fa trim ni usa isWhitespace
+    // Normalitza espais: múltiples espais → 1 espai, elimina espais al principi i final
     public static String normalitzaBlancs(String text) {
         if (text == null) return null;
 
         String resultat = "";
         boolean anteriorEspai = false;
 
-        for (int i = 0; i < text.length(); i++) {
+        // Saltar espais inicials
+        int i = 0;
+        while (i < text.length() && text.charAt(i) == ' ') i++;
+
+        for (; i < text.length(); i++) {
             char c = text.charAt(i);
 
             if (c == ' ') {
@@ -55,9 +59,15 @@ public class UtilString {
             }
         }
 
-        return resultat; // sense trim
+        // Eliminar espai final si existeix
+        if (resultat.length() > 0 && resultat.charAt(resultat.length() - 1) == ' ') {
+            resultat = resultat.substring(0, resultat.length() - 1);
+        }
+
+        return resultat;
     }
 
+    // Retorna true si substring és dins text
     public static boolean esSubstring(String substring, String text, boolean estricte) {
         if (substring == null || text == null) return false;
 
