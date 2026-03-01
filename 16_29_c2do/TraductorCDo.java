@@ -1,7 +1,6 @@
 /* Desenvolupa un lloro que vagi acceptant frases i que vagi convertint les notes anglosaxones a notació llatina.
 
 Perquè el teu programa passi totes les proves, caldrà que la teva solució inclogui la funció String tradueixCDo(String) que, donat un text amb possibles notes anglosaxones, retorni el text amb les notes reemplaçades per la seva versió llatina.*/
-
 public class TraductorCDo {
 
     public static void main(String[] args) {
@@ -10,13 +9,14 @@ public class TraductorCDo {
         System.out.println("Introdueix frases (buit per finalitzar)");
 
         while (true) {
-            String text = Entrada.readLine(); // mantenim tal qual
+            String text = Entrada.readLine();
 
             if (text.equals("")) { // entrada buida → finalitzar
                 System.out.println("Fet");
                 break;
             }
 
+            System.out.print("> "); // prefix obligatori
             System.out.println(tradueixCDo(text));
         }
     }
@@ -37,7 +37,8 @@ public class TraductorCDo {
                 // Comprovem caràcter anterior
                 if (i > 0) {
                     char ant = text.charAt(i - 1);
-                    if (Character.isLetterOrDigit(ant) || ant == '#') {
+                    // No pot ser lletra, número ni '#'
+                    if ((ant >= 'A' && ant <= 'Z') || (ant >= 'a' && ant <= 'z') || (ant >= '0' && ant <= '9') || ant == '#') {
                         potSerNota = false;
                     }
                 }
@@ -69,16 +70,21 @@ public class TraductorCDo {
                     }
 
                     // Comprovem caràcter posterior
-                    if (j == text.length() || (!Character.isLetterOrDigit(text.charAt(j)) && text.charAt(j) != '#')) {
-                        // Traducció directa amb if-else
+                    if (j == text.length() || !(
+                            (text.charAt(j) >= 'A' && text.charAt(j) <= 'Z') ||
+                            (text.charAt(j) >= 'a' && text.charAt(j) <= 'z') ||
+                            (text.charAt(j) >= '0' && text.charAt(j) <= '9') ||
+                            text.charAt(j) == '#'
+                    )) {
+                        // Traducció directa
                         String notaLlatina = "";
                         if (c == 'C') notaLlatina = "Do";
-                        else if (c == 'D') notaLlatina = "> Re";
-                        else if (c == 'E') notaLlatina = "> Mi";
-                        else if (c == 'F') notaLlatina = "> Fa";
-                        else if (c == 'G') notaLlatina = "> Sol";
-                        else if (c == 'A') notaLlatina = "> La";
-                        else if (c == 'B') notaLlatina = "> Si";
+                        else if (c == 'D') notaLlatina = "Re";
+                        else if (c == 'E') notaLlatina = "Mi";
+                        else if (c == 'F') notaLlatina = "Fa";
+                        else if (c == 'G') notaLlatina = "Sol";
+                        else if (c == 'A') notaLlatina = "La";
+                        else if (c == 'B') notaLlatina = "Si";
 
                         resultat += notaLlatina + modificador + octave;
                         i = j;
