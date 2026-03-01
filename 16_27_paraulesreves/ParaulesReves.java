@@ -17,11 +17,9 @@ public class ParaulesReves {
         for (int i = 0; i < text.length(); i++) {
             char c = text.charAt(i);
 
-            if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) {
-                // acumulem la paraula
+            if (Character.isLetter(c)) { // detecta totes les lletres, incloent accents
                 paraula += c;
             } else {
-                // quan trobem un caràcter que no és lletra, invertim la paraula acumulada
                 if (paraula.length() > 0) {
                     String invertida = "";
                     for (int j = paraula.length() - 1; j >= 0; j--) {
@@ -31,11 +29,10 @@ public class ParaulesReves {
                     resultat += invertida;
                     paraula = "";
                 }
-                resultat += c; // afegim el caràcter no lletra
+                resultat += c;
             }
         }
 
-        // Invertim l'última paraula si el text acaba amb lletra
         if (paraula.length() > 0) {
             String invertida = "";
             for (int j = paraula.length() - 1; j >= 0; j--) {
@@ -48,7 +45,7 @@ public class ParaulesReves {
         return resultat;
     }
 
-    // Copia majúscules i minúscules del model a text
+    // Copia majúscules i minúscules del model a text sense isUpperCase ni isLowerCase
     public static String copiaCas(String text, String model) {
         if (text == null || model == null) return text;
 
@@ -60,6 +57,7 @@ public class ParaulesReves {
             if (i < model.length()) {
                 char m = model.charAt(i);
 
+                // només lletres A-Z i a-z
                 if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) {
                     if (m >= 'A' && m <= 'Z') {
                         // majúscula
