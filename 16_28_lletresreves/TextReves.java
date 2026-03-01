@@ -4,7 +4,7 @@ public class TextReves {
     public static void main(String[] args) {
         System.out.println("Text?");
 
-        String text = Ettrada.readLine();
+        String text = Entrada.readLine();
         System.out.println(inverteixLletres(text));
 
     }
@@ -18,11 +18,11 @@ public class TextReves {
         for (int i = 0; i < text.length(); i++) {
             char c = text.charAt(i);
 
-            if (Character.isLetter || Character.isDigit(c)) {
+           if (Character.isLetter(c) || Character.isDigit(c)) {
                 // busquem el següent caràcter vàlid des de la dreta
-                while (!Character.isLetter || Character.isDigit(text.charAt(j))) {
-                    j--;
-                }
+                while (!Character.isLetter(text.charAt(j)) && !Character.isDigit(text.charAt(j))) {
+    j--;
+}
                 resultat += text.charAt(j);
                 j--;
             } else {
