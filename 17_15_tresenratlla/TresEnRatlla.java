@@ -1,85 +1,101 @@
+//En aquest exercici implementarem el joc del tres en ratlla de manera que es pugui jugar.
+
+//El joc començarà amb el tauler en blanc i anirà demanant moviments alternativament a cada jugador.
 public class TresEnRatlla {
-	public static void main(String[] args)  {
-	
-		char[] [] taulell = new char[3] [3];
-//fem bucle for per emplenar les caselles	   
-	   for(int i = 0; i < taulell.length; i++){
-		for(int j = 0; j < taulell[i].length; j++) {
-		taulell[i] [j] = '.';		
-	}
-    }
-    	System.out.println("Comença el joc");
-    	System.out.println("Comença les X")  
-    	
-    	 while (/* XXX */) {
+
+    public static void main(String[] args) {
+
+        char[][] taulell = new char[3][3];
+        for (int fila = 0; fila < taulell.length; fila++)
+            for (int col = 0; col < taulell[fila].length; col++)
+                taulell[fila][col] = '·';
+
+        System.out.println("Comença el joc");
+
+        char jugadorActual = 'X';
+
+        while (true) {
+
             mostraTaulell(taulell);
-}
-public static boolean CasellaOcupada(char[][] taulell, int fila, int columna) {
-return taulell[fila] [columna] != '.';
-}
 
-public static boolean JugdorGuanya(char[][] taulell, char jugador) {
-for ( int i = 0; i < 3; i++) {
-	if (taulell[i][0] == jugador &&taulell[i][1] == jugador && taulell[i][2] == jugador) {
-                return true;
-            }
-}
-for ( int i = 0; i < 3; i++) {
-	if (taulell[0][i] == jugador && taulell[1][i] == jugador && taulell[2][i] == jugador) {
-		return true; 
-	    }	    
-}
-	if (taulell[0][0] == jugador && taulell[1][1] == jugador && taulell[2][2] == jugador) {
-		return true;         
-}
-	if (taulell[0][2] == jugador && taulell[1][1] == jugador && taulell[2][0] == jugador) {
-		return true;         
-}
-return false;
-}
+            System.out.println(jugadorActual + "?");
+            String entradaJugador = Entrada.readLine();
 
-public static boolean hiHaEmpat(char[][] taulell) {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (taulell[i][j] == '·') {
-                    return false;
-                }
+            if (entradaJugador.equalsIgnoreCase("a")) {
+                System.out.println(jugadorActual + " abandona");
+                break;
             }
+
+            if (entradaJugador.length() != 2 ||
+                entradaJugador.charAt(0) < '0' || entradaJugador.charAt(0) > '2' ||
+                entradaJugador.charAt(1) < '0' || entradaJugador.charAt(1) > '2') {
+                System.out.println("Coordenades no vàlides");
+                continue; 
+            }
+
+            int filaSeleccionada = entradaJugador.charAt(0) - '0';
+            int columnaSeleccionada = entradaJugador.charAt(1) - '0';
+
+            if (casellaOcupada(taulell, filaSeleccionada, columnaSeleccionada)) {
+                System.out.println("Casella ocupada");
+                continue;
+            }
+
+            taulell[filaSeleccionada][columnaSeleccionada] = jugadorActual;
+
+            if (jugadorGuanya(taulell, jugadorActual)) {
+                mostraTaulell(taulell);
+                System.out.println(jugadorActual + " guanya");
+                break;
+            }
+
+            if (hiHaEmpat(taulell)) {
+                mostraTaulell(taulell);
+                System.out.println("Empat");
+                break;
+            }
+
+            jugadorActual = (jugadorActual == 'X') ? 'O' : 'X';
         }
+    }
+
+    public static void mostraTaulell(char[][] taulell) {
+        for (int fila = 0; fila < taulell.length; fila++) {
+            for (int col = 0; col < taulell[fila].length; col++) {
+                System.out.print(taulell[fila][col]);
+            }
+            System.out.println();
+        }
+    }
+
+    public static boolean casellaOcupada(char[][] taulell, int fila, int columna) {
+        return taulell[fila][columna] != '·';
+    }
+
+    public static boolean jugadorGuanya(char[][] taulell, char jugador) {
+
+        for (int idx = 0; idx < 3; idx++)
+            if (taulell[idx][0] == jugador && taulell[idx][1] == jugador && taulell[idx][2] == jugador)
+                return true;
+
+        for (int idx = 0; idx < 3; idx++)
+            if (taulell[0][idx] == jugador && taulell[1][idx] == jugador && taulell[2][idx] == jugador)
+                return true;
+
+        if (taulell[0][0] == jugador && taulell[1][1] == jugador && taulell[2][2] == jugador)
+            return true;
+        if (taulell[0][2] == jugador && taulell[1][1] == jugador && taulell[2][0] == jugador)
+            return true;
+
+        return false;
+    }
+
+    public static boolean hiHaEmpat(char[][] taulell) {
+        for (int fila = 0; fila < 3; fila++)
+            for (int col = 0; col < 3; col++)
+                if (taulell[fila][col] == '·')
+                    return false; 
         return true;
     }
-
-public static void MostraTaulell(char taulell) {
-	 for(int i = 0; i < taulell.length; i++){
-		for(int j = 0; j < taulell[i].length; j++) {
-		System.out.print(taulell[i] [j]) = '.';
-	}
-	System.out.println();
-  // obté el moviment del jugador actual
-            /* XXX */
-
-            // comprova abandonament
-            /* XXX */
-
-            // obté coordenades del moviment
-            /* XXX */
-
-            // comprova si la casella està ocupada
-            /* XXX */
-
-            // realitza el moviment
-            /* XXX */
-
-            // comprova jugador guanya
-            /* XXX */
-
-            // comprova empat
-            /* XXX */
-
-            // passa torn a l'altre jugador
-            /* XXX */
-        }
-    }
-}
 }
 
