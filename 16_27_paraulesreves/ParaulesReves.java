@@ -21,11 +21,7 @@ public class ParaulesReves {
                 paraula += c;
             } else {
                 if (paraula.length() > 0) {
-                    String invertida = "";
-                    for (int j = paraula.length() - 1; j >= 0; j--) {
-                        invertida += paraula.charAt(j);
-                    }
-                    invertida = copiaCas(invertida, paraula);
+                    String invertida = inverteixParaula(paraula);
                     resultat += invertida;
                     paraula = "";
                 }
@@ -34,41 +30,44 @@ public class ParaulesReves {
         }
 
         if (paraula.length() > 0) {
-            String invertida = "";
-            for (int j = paraula.length() - 1; j >= 0; j--) {
-                invertida += paraula.charAt(j);
-            }
-            invertida = copiaCas(invertida, paraula);
+            String invertida = inverteixParaula(paraula);
             resultat += invertida;
         }
 
         return resultat;
     }
 
-    // Copia majúscules i minúscules del model a text sense isUpperCase ni isLowerCase
-   public static String copiaCas(String text, String model) {
-    if (text == null || model == null) return text;
-
-    String resultat = "";
-
-    for (int i = 0; i < text.length(); i++) {
-        char c = text.charAt(i);
-
-        if (i < model.length()) {
-            char m = model.charAt(i);
-
-            // Si el model és una lletra, cal que el caràcter de text sigui el mateix cas
-            if (Character.toLowerCase(c) == Character.toLowerCase(m)) {
-                // mantenim exactament el cas del model
-                c = m;
-            } else {
-                // si el model té una lletra diferent, ajustem només la primera lletra invertida
-                // amb c = c (no canviem)
-            }
+    // Inverteix una sola paraula i ajusta la primera lletra al cas del model original
+    private static String inverteixParaula(String paraula) {
+        String invertida = "";
+        for (int j = paraula.length() - 1; j >= 0; j--) {
+            invertida += paraula.charAt(j);
         }
-        resultat += c;
+
+        invertida = copiaCasPrimeraLletra(invertida, paraula);
+        return invertida;
     }
 
-    return resultat;
-}
+    // Ajusta la primera lletra de la paraula invertida al cas de la primera lletra del model
+    private static String copiaCasPrimeraLletra(String text, String model) {
+        if (text.length() == 0 || model.length() == 0) return text;
+
+        char c = text.charAt(0);
+        char m = model.charAt(0);
+
+        // Si la primera lletra del model és majúscula ASCII
+        if (m >= 'A' && m <= 'Z') {
+            if (c >= 'a' && c <= 'z') {
+                c = (char)(c - ('a' - 'A'));
+            }
+        }
+        // Si la primera lletra del model és minúscula ASCII
+        else if (m >= 'a' && m <= 'z') {
+            if (c >= 'A' && c <= 'Z') {
+                c = (char)(c + ('a' - 'A'));
+            }
+        }
+
+        return c + text.substring(1);
+    }
 }
