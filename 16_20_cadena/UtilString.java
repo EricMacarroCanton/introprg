@@ -1,3 +1,5 @@
+//En aquest exercici crearem un programa junt a un UtilString que realitzarales mateixes funcions que l'exercici 15_06 però els càlculs els realitzarà una funció dins la llibreria
+
 public class UtilString {
 
     public static String cadenaContinua(String cadena, int longitud) {
