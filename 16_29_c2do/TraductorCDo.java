@@ -1,26 +1,29 @@
 /* Desenvolupa un lloro que vagi acceptant frases i que vagi convertint les notes anglosaxones a notació llatina.
 
-Perquè el teu programa passi totes les proves, caldrà que la teva solució inclogui la funció String tradueixCDo(String) que, donat un text amb possibles notes anglosaxones, retorni el text amb les notes reemplaçades per la seva versió llatina.
-
-Anomena el programa TraductorCDo.*/
+Perquè el teu programa passi totes les proves, caldrà que la teva solució inclogui la funció String tradueixCDo(String) que, donat un text amb possibles notes anglosaxones, retorni el text amb les notes reemplaçades per la seva versió llatina.*/
 
 public class TraductorCDo {
 
     public static void main(String[] args) {
-        
-        System.out.println("Traductor de notació anglosaxona a llatina");
-   System.out.println("Introdueix frases (buit per finalitzar)");
 
-        String text = Entrada.readLine();
-        System.out.println(tradueixCDo(text));
-   
+        System.out.println("Traductor de notació anglosaxona a llatina");
+        System.out.println("Introdueix frases (buit per finalitzar)");
+
+        while (true) {
+            String text = Entrada.readLine(); // mantenim tal qual
+
+            if (text.equals("")) { // entrada buida → finalitzar
+                System.out.println("Fet");
+                break;
+            }
+
+            System.out.println(tradueixCDo(text));
+        }
     }
 
     public static String tradueixCDo(String text) {
-        if (text == null) {
-         System.out.println("Fet");
-        return null;
-}
+        if (text == null) return null;
+
         String resultat = "";
         int i = 0;
 
@@ -40,7 +43,6 @@ public class TraductorCDo {
                 }
 
                 if (potSerNota) {
-                    // Intentem extreure la nota completa (lletra + optional '#'/'b' + optional octave)
                     int j = i + 1;
                     String modificador = "";
                     String octave = "";
@@ -67,8 +69,8 @@ public class TraductorCDo {
                     }
 
                     // Comprovem caràcter posterior
-                    if (j == text.length() || !Character.isLetterOrDigit(text.charAt(j)) && text.charAt(j) != '#') {
-                        // Traduïm lletra principal directament amb if-else
+                    if (j == text.length() || (!Character.isLetterOrDigit(text.charAt(j)) && text.charAt(j) != '#')) {
+                        // Traducció directa amb if-else
                         String notaLlatina = "";
                         if (c == 'C') notaLlatina = "Do";
                         else if (c == 'D') notaLlatina = "Re";
@@ -78,7 +80,6 @@ public class TraductorCDo {
                         else if (c == 'A') notaLlatina = "La";
                         else if (c == 'B') notaLlatina = "Si";
 
-                        // Afegim modificador i octave
                         resultat += notaLlatina + modificador + octave;
                         i = j;
                         continue;
