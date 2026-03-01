@@ -35,29 +35,29 @@ public class ParaulesReves {
     }
 
     public static String inverteixParaula(String paraula) {
-        // Invertim la paraula
         String invertida = "";
         for (int j = paraula.length() - 1; j >= 0; j--) {
             invertida += paraula.charAt(j);
         }
-        // Ajustem només la primera lletra segons el model
+        // Només ajustem la primera lletra
         invertida = copiaCas(invertida, paraula);
         return invertida;
     }
 
+    // Només ajusta la primera lletra, la resta queda igual
     public static String copiaCas(String text, String model) {
         if (text.length() == 0 || model.length() == 0) return text;
 
         char c = text.charAt(0);
         char m = model.charAt(0);
 
-        // Ajust segur de majúscula/minúscula amb Unicode
         if (Character.isUpperCase(m)) {
             c = Character.toUpperCase(c);
         } else {
             c = Character.toLowerCase(c);
         }
 
+        // La resta de lletres es deixa tal qual
         return c + text.substring(1);
     }
 }
