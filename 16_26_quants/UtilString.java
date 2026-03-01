@@ -37,39 +37,39 @@ public class UtilString {
     }
 
     // Normalitza espais: múltiples espais → 1 espai, elimina espais al principi i final
-    public static String normalitzaBlancs(String text) {
-        if (text == null) return null;
+  public static String normalitzaBlancs(String text) {
+    if (text == null) return null;
 
-        String resultat = "";
-        boolean anteriorEspai = false;
+    String resultat = "";
+    boolean anteriorEspai = true; // per ignorar espais inicials
 
-        // Saltar espais inicials
-        int i = 0;
-        while (i < text.length() && text.charAt(i) == ' ') i++;
+    for (int i = 0; i < text.length(); i++) {
+        char c = text.charAt(i);
 
-        for (; i < text.length(); i++) {
-            char c = text.charAt(i);
-
-            if (c == ' ') {
-                if (!anteriorEspai) {
-                    resultat += " ";
-                    anteriorEspai = true;
-                }
-            } else {
-                resultat += c;
-                anteriorEspai = false;
+        if (c != ' ') {
+            resultat = resultat + c;
+            anteriorEspai = false;
+        } else {
+            if (!anteriorEspai) {
+                resultat = resultat + c;
+                anteriorEspai = true;
             }
         }
-
-        // Eliminar espai final si existeix
-        if (resultat.length() > 0 && resultat.charAt(resultat.length() - 1) == ' ') {
-            resultat = resultat.substring(0, resultat.length() - 1);
-        }
-
-        return resultat;
     }
 
-    // Retorna true si substring és dins text
+    // eliminar espais finals sense substring
+    int llarg = resultat.length();
+    while (llarg > 0 && resultat.charAt(llarg - 1) == ' ') {
+        String nou = "";
+        for (int i = 0; i < llarg - 1; i++) {
+            nou = nou + resultat.charAt(i);
+        }
+        resultat = nou;
+        llarg = resultat.length();
+    }
+
+    return resultat;
+}
     public static boolean esSubstring(String substring, String text, boolean estricte) {
         if (substring == null || text == null) return false;
 
