@@ -1,6 +1,5 @@
 //És una funció molt còmoda però té algunes limitacions ja hem adreçat a exercicis anteriors.
-
-De la mateixa manera que ja hem fet, per exemple, amb String.endsWith(), crearem una adaptació de contains() amb les següents signatures:
+//De la mateixa manera que ja hem fet, per exemple, amb String.endsWith(), crearem una adaptació de contains() amb les següents signatures:
 public class UtilString {
 
 
