@@ -4,66 +4,69 @@
 public static boolean esSufix(String sufix, String text, boolean estricte)
 // equival a esSufix(text, sufix, true)
 public static boolean esSufix(String sufix, String text)*/
+/*
+En aquest exercici crearem el UtilString per amb l'ajuda del Main detectar si una entrada de text te el mateix sufix, podent compararho de manera laxa o estricta
+*/
 public class UtilString {
 
-    public static boolean esPrefix(String prefixText, String cadena, boolean estricte) {
+    public static boolean esPrefix(String prefix, String text, boolean estricte) {
         if (estricte) {
             // Comparació estricta
-            if (prefixText.length() > cadena.length()) return false;
-            for (int idx = 0; idx < prefixText.length(); idx++) {
-                if (prefixText.charAt(idx) != cadena.charAt(idx)) return false;
+            if (prefix.length() > text.length()) return false;
+            for (int i = 0; i < prefix.length(); i++) {
+                if (prefix.charAt(i) != text.charAt(i)) return false;
             }
             return true;
         } else {
             // Comparació laxa
-            String cadenaNormalitzada = eliminaEspaisSobrers(normalitzaBlancs(normalitzaText(cadena)));
-            String prefixNormalitzat = eliminaEspaisSobrers(normalitzaBlancs(normalitzaText(prefixText)));
+            String t = eliminaEspaisSobrers(normalitzaBlancs(normalitzaText(text)));
+            String p = eliminaEspaisSobrers(normalitzaBlancs(normalitzaText(prefix)));
 
-            if (prefixNormalitzat.length() > cadenaNormalitzada.length()) return false;
+            if (p.length() > t.length()) return false;
 
-            for (int idx = 0; idx < prefixNormalitzat.length(); idx++) {
-                if (cadenaNormalitzada.charAt(idx) != prefixNormalitzat.charAt(idx)) return false;
+            for (int i = 0; i < p.length(); i++) {
+                if (t.charAt(i) != p.charAt(i)) return false;
             }
             return true;
         }
     }
 
-    public static boolean esPrefix(String prefixText, String cadena) {
-        return esPrefix(prefixText, cadena, true);
+    public static boolean esPrefix(String prefix, String text) {
+        return esPrefix(prefix, text, true);
     }
 
-    public static boolean esSufix(String sufixText, String cadena, boolean estricte) {
+    public static boolean esSufix(String sufix, String text, boolean estricte) {
         if (estricte) {
             // Comparació estricta
-            if (sufixText.length() > cadena.length()) return false;
-            int offset = cadena.length() - sufixText.length();
-            for (int idx = 0; idx < sufixText.length(); idx++) {
-                if (cadena.charAt(offset + idx) != sufixText.charAt(idx)) return false;
+            if (sufix.length() > text.length()) return false;
+            int offset = text.length() - sufix.length();
+            for (int i = 0; i < sufix.length(); i++) {
+                if (text.charAt(offset + i) != sufix.charAt(i)) return false;
             }
             return true;
         } else {
             // Comparació laxa
-            String cadenaNormalitzada = eliminaEspaisSobrers(normalitzaBlancs(normalitzaText(cadena)));
-            String sufixNormalitzat = eliminaEspaisSobrers(normalitzaBlancs(normalitzaText(sufixText)));
+            String t = eliminaEspaisSobrers(normalitzaBlancs(normalitzaText(text)));
+            String s = eliminaEspaisSobrers(normalitzaBlancs(normalitzaText(sufix)));
 
-            if (sufixNormalitzat.length() > cadenaNormalitzada.length()) return false;
+            if (s.length() > t.length()) return false;
 
-            int offset = cadenaNormalitzada.length() - sufixNormalitzat.length();
-            for (int idx = 0; idx < sufixNormalitzat.length(); idx++) {
-                if (cadenaNormalitzada.charAt(offset + idx) != sufixNormalitzat.charAt(idx)) return false;
+            int offset = t.length() - s.length();
+            for (int i = 0; i < s.length(); i++) {
+                if (t.charAt(offset + i) != s.charAt(i)) return false;
             }
             return true;
         }
     }
 
-    public static boolean esSufix(String sufixText, String cadena) {
-        return esSufix(sufixText, cadena, true);
+    public static boolean esSufix(String sufix, String text) {
+        return esSufix(sufix, text, true);
     }
 
-    public static String normalitzaText(String cadena) {
+    public static String normalitzaText(String s) {
         String resultat = "";
-        for (int idx = 0; idx < cadena.length(); idx++) {
-            char c = cadena.charAt(idx);
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
             if (c == 'À' || c == 'à') resultat += 'a';
             else if (c == 'È' || c == 'è' || c == 'É' || c == 'é') resultat += 'e';
             else if (c == 'Í' || c == 'í' || c == 'Ï' || c == 'ï') resultat += 'i';
@@ -75,11 +78,11 @@ public class UtilString {
         return resultat;
     }
 
-    public static String normalitzaBlancs(String cadena) {
+    public static String normalitzaBlancs(String s) {
         String resultat = "";
         boolean espaiAnterior = false;
-        for (int idx = 0; idx < cadena.length(); idx++) {
-            char c = cadena.charAt(idx);
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
             if (c == ' ' || c == '\t' || c == '\n') {
                 if (!espaiAnterior) {
                     resultat += ' ';
@@ -93,16 +96,16 @@ public class UtilString {
         return resultat;
     }
 
-    public static String eliminaEspaisSobrers(String cadena) {
-        int iniciIdx = 0;
-        int fiIdx = cadena.length() - 1;
+    public static String eliminaEspaisSobrers(String s) {
+        int inici = 0;
+        int fi = s.length() - 1;
 
-        while (iniciIdx <= fiIdx && cadena.charAt(iniciIdx) == ' ') iniciIdx++;
-        while (fiIdx >= iniciIdx && cadena.charAt(fiIdx) == ' ') fiIdx--;
+        while (inici <= fi && s.charAt(inici) == ' ') inici++;
+        while (fi >= inici && s.charAt(fi) == ' ') fi--;
 
-        String resultat = "";
-        for (int idx = iniciIdx; idx <= fiIdx; idx++) resultat += cadena.charAt(idx);
-        return resultat;
+        // For normalitzat amb substring
+        return s.substring(inici, fi + 1);
     }
 }
+
 
