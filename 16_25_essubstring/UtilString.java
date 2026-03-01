@@ -7,15 +7,42 @@ public class UtilString {
         return text.toLowerCase();
     }
 
+    public static String normalitzaBlancs(String text) {
+        if (text == null) return null;
+
+        String resultat = "";
+        boolean anteriorEspai = false;
+
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+
+            if (Character.isWhitespace(c)) {
+                if (!anteriorEspai) {
+                    resultat += " ";
+                    anteriorEspai = true;
+                }
+            } else {
+                resultat += c;
+                anteriorEspai = false;
+            }
+        }
+
+        return resultat.trim();
+    }
+
     public static boolean esSubstring(String substring, String text, boolean estricte) {
 
         if (substring == null || text == null) return false;
-        if (substring.length() > text.length()) return false;
+
+        text = normalitzaBlancs(text);
+        substring = normalitzaBlancs(substring);
 
         if (!estricte) {
-            substring = normalitzaText(substring);
             text = normalitzaText(text);
+            substring = normalitzaText(substring);
         }
+
+        if (substring.length() > text.length()) return false;
 
         for (int i = 0; i <= text.length() - substring.length(); i++) {
 
