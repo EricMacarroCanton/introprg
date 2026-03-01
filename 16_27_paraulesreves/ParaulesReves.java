@@ -7,7 +7,6 @@ public class ParaulesReves {
         System.out.println(inverteixParaules(text));
     }
 
-    // Inverteix les lletres de cada paraula mantenint l'ordre de paraules i caràcters no lletres
     public static String inverteixParaules(String text) {
         if (text == null) return null;
 
@@ -17,7 +16,7 @@ public class ParaulesReves {
         for (int i = 0; i < text.length(); i++) {
             char c = text.charAt(i);
 
-            if (Character.isLetter(c)) { // detecta totes les lletres, incloent accents
+            if (Character.isLetter(c)) {
                 paraula += c;
             } else {
                 if (paraula.length() > 0) {
@@ -35,7 +34,6 @@ public class ParaulesReves {
         return resultat;
     }
 
-    // Inverteix una sola paraula i ajusta la primera lletra segons el model
     public static String inverteixParaula(String paraula) {
         String invertida = "";
         for (int j = paraula.length() - 1; j >= 0; j--) {
@@ -45,20 +43,22 @@ public class ParaulesReves {
         return invertida;
     }
 
-    // Ajusta la primera lletra de 'text' segons la primera lletra de 'model'
+    // Ajusta només la primera lletra al cas del model
     public static String copiaCas(String text, String model) {
         if (text.length() == 0 || model.length() == 0) return text;
 
         char c = text.charAt(0);
         char m = model.charAt(0);
 
-        // Ajust ASCII simple
-        if (m >= 'A' && m <= 'Z') {
-            if (c >= 'a' && c <= 'z') c = (char)(c - ('a' - 'A'));
-        } else if (m >= 'a' && m <= 'z') {
-            if (c >= 'A' && c <= 'Z') c = (char)(c + ('a' - 'A'));
+        // si el caràcter és lletra, ajustem només la primera lletra
+        if (Character.toUpperCase(m) == m && Character.toLowerCase(m) != m) {
+            // primera lletra majúscula
+            c = Character.toUpperCase(c);
+        } else if (Character.toLowerCase(m) == m && Character.toUpperCase(m) != m) {
+            // primera lletra minúscula
+            c = Character.toLowerCase(c);
         }
-
+        // la resta de lletres no es toquen
         return c + text.substring(1);
     }
 }
