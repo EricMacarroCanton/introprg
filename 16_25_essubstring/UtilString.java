@@ -33,8 +33,8 @@ public class UtilString {
         return resultat;
     }
 
-    // Normalitza espais només de text (no de substring)
-    public static String normalitzaBlancsText(String text) {
+    // Nom exacte requerida pel test
+    public static String normalitzaBlancs(String text) {
         if (text == null) return null;
 
         String resultat = "";
@@ -54,7 +54,7 @@ public class UtilString {
             }
         }
 
-        // Eliminar espais inicials i finals
+        // eliminar espais inicials i finals
         int start = 0;
         while (start < resultat.length() && resultat.charAt(start) == ' ') start++;
 
@@ -71,13 +71,13 @@ public class UtilString {
         if (substring == null || text == null) return false;
 
         if (!estricte) {
-            text = normalitzaBlancsText(text);
+            text = normalitzaBlancs(text);
             substring = substring; // NO retallem espais finals de substring
 
             text = normalitzaText(text);
             substring = normalitzaText(substring);
 
-            // Afegim comprovació de substring incloent espais finals de substring
+            // comprovació de substring incloent espais finals de substring
             for (int i = 0; i <= text.length(); i++) {
                 boolean coincideix = true;
                 for (int j = 0; j < substring.length(); j++) {
