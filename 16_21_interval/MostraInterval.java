@@ -1,3 +1,6 @@
+/*
+En aquest exercici recrearem el exercicic anterior on a partir d'un text i un interval de caracters s'inmprimeixi el interval */
+
 public class MostraInterval {
     public static void main(String[] args) {
 
