@@ -3,7 +3,7 @@
 // UtilString.java
 public class UtilString {
 
-    // Normalitza el text: minúscules + elimina accents
+
     public static String normalitzaText(String text) {
         if (text == null) return null;
 
@@ -34,7 +34,7 @@ public class UtilString {
         return resultat;
     }
 
-    // Normalitza espais: múltiples espais → 1 espai, elimina espais al principi i final
+
     public static String normalitzaBlancs(String text) {
         if (text == null) return null;
 
@@ -68,18 +68,18 @@ public class UtilString {
         return finalResult;
     }
 
-    // Retorna true si substring és dins text
+
     public static boolean esSubstring(String substring, String text, boolean estricte) {
         if (substring == null || text == null) return false;
 
         if (!estricte) {
             text = normalitzaBlancs(text);
-            substring = normalitzaBlancs(substring); // ✅ ara normalitzem també el substring
+            substring = normalitzaBlancs(substring); 
 
             text = normalitzaText(text);
             substring = normalitzaText(substring);
 
-            // Bucle per comprovar substring normalitzat
+
             for (int i = 0; i <= text.length(); i++) {
                 boolean coincideix = true;
                 for (int j = 0; j < substring.length(); j++) {
