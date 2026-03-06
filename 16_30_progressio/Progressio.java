@@ -6,27 +6,28 @@
 //normaleta = no pertany a cap (else)
 public class Progressio {
 
-    
-  
-
     public static void main(String[] args) {
-  System.out.println("Introduïu text. Enter per finalitzar.");
+        System.out.println("Introduïu text. Enter per finalitzar.");
         String text = Entrada.readLine();  
 
         String[] paraules = Separar(text);
 
-        mostraClassificacio(paraules);
+
+        for (int i = 0; i < paraules.length; i++) {
+            if (paraules[i] != null) {
+                int categoria = classifica(paraules[i]);
+                mostraClassificacio(paraules[i], categoria);
+            }
+        }
     }
 
 
     public static String[] Separar(String text) {
-
         String paraula = "";
         String[] paraules = new String[text.length()]; 
         int comptador = 0;
 
         for (int i = 0; i < text.length(); i++) {
-
             char c = text.charAt(i);
 
             if (c != ' ') {
@@ -40,7 +41,6 @@ public class Progressio {
             }
         }
 
-
         if (!paraula.equals("")) {
             paraules[comptador] = paraula;
         }
@@ -51,8 +51,7 @@ public class Progressio {
 
     public static int classifica(String paraula) {
 
-        if (paraula == null || paraula.length() == 0) return -1;
-
+        if (paraula == null || paraula.length() == 0) return -2;
 
         for (int i = 0; i < paraula.length(); i++) {
             if (!Character.isLetter(paraula.charAt(i))) return -1;
@@ -64,7 +63,6 @@ public class Progressio {
         int direccioAnterior = 0;
 
         for (int i = 0; i < paraula.length() - 1; i++) {
-
             char actual = paraula.charAt(i);
             char seguent = paraula.charAt(i + 1);
 
@@ -91,9 +89,12 @@ public class Progressio {
         else return 0;
     }
 
-    public static void mostraClassificacio(String[] paraules) {
-}
-}
+    // Mètode per mostrar una paraula i la seva classificació
+    public static void mostraClassificacio(String paraula, int categoria) {
+        
+        }
+    }
+
 
 
 
