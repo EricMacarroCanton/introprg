@@ -36,5 +36,19 @@ public class Progressio {
             }
         return paraules;
     }
+    	public static int classifica(String text) {
+   	
+    boolean puja = false;
+    boolean baixa = false;
+    int canvis = 0;
+    
+     	for (int i = 0; i < text.length() - 1; i++) {
+
+        	char actual = text.charAt(i);
+        	char seguent = text.charAt(i + 1);
+
+		}
+		return 5;	
+	}
 }
 
