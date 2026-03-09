@@ -12,7 +12,7 @@ public class UtilString {
             char c = cami.charAt(i);
 
             if (esVocal(c)) {   
-                resultat += c;
+                resultat = cami;
             }
         }
 
