@@ -20,27 +20,12 @@ public class FitxerVocalIniciFi {
             if (linia == null) {
                 break;
             } else {
-                System.out.println(esVocal(linia));
+                System.out.println(UtilString.esVocal(linia));
             }
         }
 
         input.close();
     }
-
-    public static String esVocal(String cami) {
-        String vocalscat = "àáâäãèéêëìíîïòóôöõùúûüç";
-        String resultat = "";
-
-        for (int i = 0; i < cami.length(); i++) {
-            char c = cami.charAt(i);
-
-            for (int j = 0; j < vocalscat.length(); j++) {
-                if (c == vocalscat.charAt(j)) {
-                    resultat += c;
-                }
-            }
-        }
-
-        return resultat;
-    }
 }
+
+
