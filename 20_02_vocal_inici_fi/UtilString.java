@@ -20,7 +20,7 @@ public class UtilString {
     }
 
     public static boolean esVocal(char c) {
-        String vocalscat = "aàáâäãeèéêëiìíîïoòóôöõuùúûüçaÀÁÂÄÃÈÉÊËÌÍÎÏÒÓÔÖÕÙÚÛÜÇ";
+        String vocalscat = "aàáâäãeèéêëiìíîïoòóôöõuùúûüçaAÀÁÂÄÃEÈÉÊËIÌÍÎÏOÒÓÔÖÕUÙÚÛÜÇ";
 
         for (int i = 0; i < vocalscat.length(); i++) {
             if (c == vocalscat.charAt(i)) {
