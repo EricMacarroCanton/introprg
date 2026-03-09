@@ -3,22 +3,31 @@
  * Nota: pressuposa que el codi font es troba en la mateixa carpeta que
  * l'executable.
  */
- public class UtilString {
-	
-	 public static String esVocal(String cami) {
-        String vocalscat = "àáâäãèéêëìíîïòóôöõùúûüç";
+public class UtilString {
+
+    public static String esVocal(String cami) {
         String resultat = "";
 
         for (int i = 0; i < cami.length(); i++) {
             char c = cami.charAt(i);
 
-            for (int j = 0; j < vocalscat.length(); j++) {
-                if (c == vocalscat.charAt(j)) {
-                    resultat += c;
-                }
+            if (esVocal(c)) {   
+                resultat += c;
             }
         }
 
         return resultat;
+    }
+
+    public static boolean esVocal(char c) {
+        String vocalscat = "àáâäãèéêëìíîïòóôöõùúûüç";
+
+        for (int i = 0; i < vocalscat.length(); i++) {
+            if (c == vocalscat.charAt(i)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
