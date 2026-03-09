@@ -11,7 +11,7 @@ public class UtilString {
         for (int i = 0; i < cami.length(); i++) {
             char c = cami.charAt(i);
 	int llargada = cami.length();
-            if (esVocal(c) && i == 0 || esVocal(c) && i == llargada ) {   
+            if ((esVocal(c) && i == 0 ) || (esVocal(c) && i == llargada)) {   
                 resultat = cami;
             }
         }
