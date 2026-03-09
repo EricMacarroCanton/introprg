@@ -10,7 +10,7 @@ public class UtilString {
 	
         for (int i = 0; i < cami.length(); i++) {
             char c = cami.charAt(i);
-	int llargada = cami.length();
+	int llargada = cami.length() - 1;
             if ((esVocal(c) && i == 0 ) || (esVocal(c) && i == llargada)) {   
                 resultat = cami;
             }
