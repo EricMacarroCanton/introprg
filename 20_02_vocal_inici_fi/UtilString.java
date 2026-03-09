@@ -7,10 +7,10 @@ public class UtilString {
 
     public static String esVocal(String cami) {
         String resultat = "";
-	int llargada = cami.length();
+	
         for (int i = 0; i < cami.length(); i++) {
             char c = cami.charAt(i);
-
+	int llargada = cami.length();
             if (esVocal(c) && i == 0 || esVocal(c) && i == llargada ) {   
                 resultat = cami;
             }
@@ -20,7 +20,7 @@ public class UtilString {
     }
 
     public static boolean esVocal(char c) {
-        String vocalscat = "àáâäãèéêëiìíîïòóôöõùúûüç";
+        String vocalscat = "aàáâäãeèéêëiìíîïoòóôöõuùúûüç";
 
         for (int i = 0; i < vocalscat.length(); i++) {
             if (c == vocalscat.charAt(i)) {
