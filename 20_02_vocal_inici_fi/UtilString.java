@@ -7,11 +7,11 @@ public class UtilString {
 
     public static String esVocal(String cami) {
         String resultat = "";
-
+	int llargada = cami.length();
         for (int i = 0; i < cami.length(); i++) {
             char c = cami.charAt(i);
 
-            if (esVocal(c)) {   
+            if (esVocal(c) && i == 0 || esVocal(c) && i == llargada ) {   
                 resultat = cami;
             }
         }
