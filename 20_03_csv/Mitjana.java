@@ -14,10 +14,9 @@ public class Mitjana {
       System.out.println("Càlcul de la mitjana de notes per 6 exàmens");
        int contador = 0;
        String linia; 
-       while ((linia = input.readLine()) != null) {
-   		 
-    
-    System.out.println(UtilString.esNumero(linia));
+       
+       while ((linia = input.readLine()) != null) {	
+  	  System.out.println(UtilString.esNumero(linia));
 }
 input.close();
 

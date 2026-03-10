@@ -1,22 +1,48 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-
 public class UtilString {
-    public static String esNumero(String linia) {
+
+    public static double esNumero(String linia) {
         String resultatNom = "";
-        String CaracterSeguent = "";
+        int comptado = 0;
+
+        // Extracció nom
         for (int i = 0; i < linia.length(); i++) {
             char c = linia.charAt(i);
-            char seg = linia.charAt(i + 1);
-
-            if (!Character.isDigit(c)) {
+            // Comprovem si encara no hem arribat a la coma
+            if (c != ',') {
                 resultatNom += c;
-                if (seg == ',') {
-                    break;
+            } else {
+                comptado = i + 1; // guardem l'índex després de la coma
+                break;
+            }
+        }
+
+        int[] arraynotes = new int[6];
+        int comptador = 0;
+
+        // Extracció notes
+        for (int i = comptado; i < linia.length(); i++) {
+            char c = linia.charAt(i);
+            if (Character.isDigit(c)) {
+                arraynotes[comptador] = Character.getNumericValue(c);
+                comptador++;
+                // Saltem la coma següent si existeix
+                if (i + 1 < linia.length() && linia.charAt(i + 1) == ',') {
+                    i++;
                 }
             }
         }
-        return resultatNom;
+
+        //mitjana
+        int suma = 0;
+        for (int i = 0; i < comptador; i++) {
+            suma += arraynotes[i];
+        }
+        double mitjana = (double) suma / comptador;
+
+        System.out.println("Nom: " + resultatNom);
+        return mitjana;
     }
+
+
 }
+
