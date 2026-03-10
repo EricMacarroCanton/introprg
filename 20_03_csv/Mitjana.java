@@ -11,15 +11,17 @@ public class Mitjana {
 
         input.readLine();
 
-        String linia = input.readLine();
-        int contador = 0;
-        while (true) {
-            if (contador == 0) {
-                contador++;
-            } else {
-                System.out.println(UtilString.esNumero(linia));
-            }
-        }
+      
+       int contador = 0;
+       String linia; 
+       while ((linia = input.readLine()) != null) {
+   		 if (contador == 0) {
+        		contador++; 
+        		continue;
+    }
+    System.out.println(UtilString.esNumero(linia));
+}
+input.close();
 
         
 
