@@ -19,12 +19,15 @@ public class Mitjana {
         	if (!linia.isBlank()) {
             linia = UtilString.normalitzaBlancs(linia);   
   
+           
             String nom = UtilString.getNom(linia);
-            double mitjana = UtilString.esNumero(linia);
-            System.out.printf("%s (%.2f)%n", nom, mitjana);
-            comptador++;
-            }
-        }
+
+	if (!nom.isBlank()) {
+    double mitjana = UtilString.esNumero(linia);
+    System.out.printf("%s (%.2f)%n", nom, mitjana);
+    comptador++;
+}
+}
 	if(comptador == 0)  {
 	System.out.print("El fitxer notes.csv no conté cap nota.");
 	}
@@ -33,4 +36,5 @@ public class Mitjana {
 	
         input.close();
     }
+}
 }
