@@ -35,7 +35,8 @@ public static double esNumero(String linia) {
             }
         }
     }
-
+	System.out.print(resultatNom);
     double mitjana = ( double ) suma / comptador;
     return mitjana;
-}}
+}
+}
