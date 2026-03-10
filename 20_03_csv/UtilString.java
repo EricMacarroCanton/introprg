@@ -57,6 +57,6 @@ public class UtilString {
             }
         }
 
-        return (double) suma / comptador;
+        return (double) suma / 6;
     }
 }
