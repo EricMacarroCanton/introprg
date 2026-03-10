@@ -17,7 +17,7 @@ public class Mitjana {
         String linia; 
         while ((linia = input.readLine()) != null) {	
             double mitjana = UtilString.esNumero(linia);
-            System.out.println("Mitjana: " + mitjana);
+            System.out.println(" (" + mitjana + ")");
         }
 
         input.close();
