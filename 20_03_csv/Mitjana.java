@@ -9,20 +9,17 @@ public class Mitjana {
         FileReader fileReader = new FileReader(cami);
         BufferedReader input = new BufferedReader(fileReader);
 
+        // Llegim i ignorem la primera línia (capçalera)
         input.readLine();
 
-      System.out.println("Càlcul de la mitjana de notes per 6 exàmens");
-       int contador = 0;
-       String linia; 
-       
-       while ((linia = input.readLine()) != null) {	
-  	  System.out.println(UtilString.esNumero(linia));
-}
-input.close();
+        System.out.println("Càlcul de la mitjana de notes per 6 exàmens");
 
-        
-
+        String linia; 
+        while ((linia = input.readLine()) != null) {	
+            double mitjana = UtilString.esNumero(linia);
+            System.out.println("Mitjana: " + mitjana);
         }
+
+        input.close();
     }
-
-
+}

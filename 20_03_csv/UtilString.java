@@ -7,11 +7,11 @@ public class UtilString {
         // Extracció nom
         for (int i = 0; i < linia.length(); i++) {
             char c = linia.charAt(i);
-            // Comprovem si encara no hem arribat a la coma
+
             if (c != ',') {
                 resultatNom += c;
             } else {
-                comptado = i + 1; // guardem l'índex després de la coma
+                comptado = i + 1;
                 break;
             }
         }
@@ -25,7 +25,7 @@ public class UtilString {
             if (Character.isDigit(c)) {
                 arraynotes[comptador] = Character.getNumericValue(c);
                 comptador++;
-                // Saltem la coma següent si existeix
+
                 if (i + 1 < linia.length() && linia.charAt(i + 1) == ',') {
                     i++;
                 }
