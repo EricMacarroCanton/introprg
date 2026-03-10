@@ -29,7 +29,7 @@ public class Mitjana {
     
 }
 
-System.out.println("Càlcul de la mitjana de notes per " + numExamens + " exàmens");
+
 
         System.out.println("Càlcul de la mitjana de notes per " + numExamens + " exàmens");
 
