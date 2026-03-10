@@ -77,6 +77,7 @@ public class UtilString {
             if (c == ',' || i == linia.length() - 1) {
                 if (!notaTemp.isEmpty()) {
                     // Comprovem si notaTemp és un número
+                    notaTemp = UtilString.normalitzaBlancs(notaTemp);
                     boolean esNumero = true;
                     for (int j = 0; j < notaTemp.length(); j++) {
                         if (!Character.isDigit(notaTemp.charAt(j))) {
