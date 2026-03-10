@@ -35,18 +35,23 @@ public class UtilString {
 
     // Retorna el nom de l'alumne
     public static String getNom(String linia) {
-        String resultatNom = "";
-        for (int i = 0; i < linia.length(); i++) {
-            char c = linia.charAt(i);
-            if (c != ',') {
-                resultatNom += c;
-            } else {
-                break;
-            }
+    String resultatNom = "";
+    for (int i = 0; i < linia.length(); i++) {
+        char c = linia.charAt(i);
+        if (c != ',') {
+            resultatNom += c;
+        } else {
+            break;
         }
-        return resultatNom;
     }
 
+    // eliminar espais finals
+    while (resultatNom.length() > 0 && resultatNom.charAt(resultatNom.length() - 1) == ' ') {
+        resultatNom = resultatNom.substring(0, resultatNom.length() - 1);
+    }
+
+    return resultatNom;
+}
     // Retorna la mitjana de les notes
     public static double esNumero(String linia) {
         // Troba l'índex on comencen les notes
