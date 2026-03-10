@@ -6,18 +6,20 @@ public class Mitjana {
 
     public static void main(String[] args) throws IOException {
         String cami = "notes.csv";
-        FileReader fileReader = new FileReader(cami);
-        BufferedReader input = new BufferedReader(fileReader);
+        BufferedReader input = new BufferedReader(new FileReader(cami));
+
+        // Ignora la primera línia (capçalera)
+        input.readLine();
 
         System.out.println("Càlcul de la mitjana de notes per 6 exàmens");
 
         String linia; 
-        while ((linia = input.readLine()) != null) {	
+        while ((linia = input.readLine()) != null) {    
+            String nom = UtilString.getNom(linia);
             double mitjana = UtilString.esNumero(linia);
-            
-    while ((linia = input.readLine()) != null) {    
-    System.out.printf("%s (%.2f)%n", UtilString.getNom(linia), mitjana);
-}
+            System.out.printf("%s (%.2f)%n", nom, mitjana);
+        }
+
+        input.close();
     }
-}
 }
