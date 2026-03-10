@@ -17,11 +17,9 @@ public class Mitjana {
         String linia; 
         while ((linia = input.readLine()) != null) {	
             double mitjana = UtilString.esNumero(linia);
-            System.out.print(" (");
-   System.out.printf("%.2f%n", mitjana);
-   System.out.print(")");
-        }
-
-        input.close();
+    while ((linia = input.readLine()) != null) {    
+    System.out.printf("%s (%.2f)%n", UtilString.getNom(linia), mitjana);
+}
     }
+}
 }
