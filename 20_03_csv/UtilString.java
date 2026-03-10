@@ -36,9 +36,9 @@ public class UtilString {
         for (int i = 0; i < comptador; i++) {
             suma += arraynotes[i];
         }
-        double mitjana = (double) suma / comptador;
+        double mitjana = suma / comptador;
 
-        System.out.print(resultatNom);
+	System.out.printf("%s %.2f%n", resultatNom, mitjana);
         return mitjana;
     }
 
