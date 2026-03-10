@@ -38,7 +38,7 @@ public class UtilString {
         }
         double mitjana = (double) suma / comptador;
 
-        System.out.println(resultatNom);
+        System.out.print(resultatNom);
         return mitjana;
     }
 
