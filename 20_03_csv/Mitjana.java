@@ -5,37 +5,44 @@ import java.io.IOException;
 public class Mitjana {
 
     public static void main(String[] args) throws IOException {
+
         String cami = "notes.csv";
         BufferedReader input = new BufferedReader(new FileReader(cami));
 
         // Ignora la primera línia (capçalera)
         input.readLine();
 
-        System.out.println("Càlcul de la mitjana de notes per 6 exàmens");
+        int numExamens = 6;
+        if (args.length > 0) {
+            numExamens = Integer.parseInt(args[0]);
+        }
 
-        String linia; 
+        System.out.println("Càlcul de la mitjana de notes per " + numExamens + " exàmens");
+
+        String linia;
         int comptador = 0;
-        while ((linia = input.readLine()) != null) { 
-        	if (!linia.isBlank()) {
-            linia = UtilString.normalitzaBlancs(linia);   
-  
-           
-            String nom = UtilString.getNom(linia);
 
-if (nom.length() > 0) {
-  	  double mitjana = UtilString.esNumero(linia);
-    	System.out.printf("%s (%.2f)%n", nom, mitjana);
-    	comptador++;
-    	
-    }	
-}
-}
-	if(comptador == 0)  {
-	System.out.print("El fitxer notes.csv no conté cap nota.");
-	}
-	
-	
-	
+        while ((linia = input.readLine()) != null) {
+
+            if (!linia.isBlank()) {
+
+                linia = UtilString.normalitzaBlancs(linia);
+
+                String nom = UtilString.getNom(linia);
+
+                if (nom.length() > 0) {
+
+                    double mitjana = UtilString.esNumero(linia, numExamens);
+                    System.out.printf("%s (%.2f)%n", nom, mitjana);
+                    comptador++;
+                }
+            }
+        }
+
+        if (comptador == 0) {
+            System.out.print("El fitxer notes.csv no conté cap nota.");
+        }
+
         input.close();
     }
 }

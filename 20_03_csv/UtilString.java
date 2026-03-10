@@ -53,7 +53,7 @@ public class UtilString {
     return resultatNom;
 }
     // Retorna la mitjana de les notes
-    public static double esNumero(String linia) {
+public static double esNumero(String linia, int numExamens) {
         // Troba l'índex on comencen les notes
         int comptado = 0;
         for (int i = 0; i < linia.length(); i++) {
@@ -85,7 +85,7 @@ public class UtilString {
                             break;
                         }
                     }
-                    if (esNumero && comptador < 6) {
+           if (esNumero && comptador < numExamens) {
                         suma += Integer.parseInt(notaTemp);
                     } else {
                         suma += 0; 
@@ -96,7 +96,7 @@ public class UtilString {
             }
         }
 	
-        return (double) suma / 6; 
+      return (double) suma / numExamens;
         
       
       }  
