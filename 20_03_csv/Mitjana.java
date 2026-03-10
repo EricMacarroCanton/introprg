@@ -15,11 +15,14 @@ public class Mitjana {
 
         String linia; 
         int comptador = 0;
-        while ((linia = input.readLine()) != null) {    
+        while ((linia = input.readLine()) != null) { 
+        	if (!linia.isBlank()) {
+  
             String nom = UtilString.getNom(linia);
             double mitjana = UtilString.esNumero(linia);
             System.out.printf("%s (%.2f)%n", nom, mitjana);
             comptador++;
+            }
         }
 	if(comptador == 0)  {
 	System.out.print("El fitxer notes.csv no conté cap nota.");
