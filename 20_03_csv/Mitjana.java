@@ -9,14 +9,12 @@ public class Mitjana {
         FileReader fileReader = new FileReader(cami);
         BufferedReader input = new BufferedReader(fileReader);
 
-        // Llegim i ignorem la primera línia (capçalera)
-        input.readLine();
-
         System.out.println("Càlcul de la mitjana de notes per 6 exàmens");
 
         String linia; 
         while ((linia = input.readLine()) != null) {	
             double mitjana = UtilString.esNumero(linia);
+            
     while ((linia = input.readLine()) != null) {    
     System.out.printf("%s (%.2f)%n", UtilString.getNom(linia), mitjana);
 }
