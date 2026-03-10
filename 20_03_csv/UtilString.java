@@ -56,7 +56,11 @@ public class UtilString {
                 }
             }
         }
-
-        return (double) suma / 6;
+	if(comptador <= 6) {
+        return (double) suma / 6; 
+        } else {
+              return (double) suma / comptador; 
+      
+      }  
     }
 }
