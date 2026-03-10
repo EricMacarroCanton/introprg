@@ -28,7 +28,11 @@ public class Mitjana {
     }
     
 }
-
+	if (numExamens < 2) {
+    System.out.println("Com a mínim 2 exàmens.");
+    input.close();
+    return; 
+}
 
 
         System.out.println("Càlcul de la mitjana de notes per " + numExamens + " exàmens");
