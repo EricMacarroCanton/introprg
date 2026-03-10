@@ -25,7 +25,6 @@ public class UtilString {
             if (Character.isDigit(c)) {
                 arraynotes[comptador] = Character.getNumericValue(c);
                 comptador++;
-
                 if (i + 1 < linia.length() && linia.charAt(i + 1) == ',') {
                     i++;
                 }
@@ -39,7 +38,7 @@ public class UtilString {
         }
         double mitjana = (double) suma / comptador;
 
-        System.out.println("Nom: " + resultatNom);
+        System.out.println(resultatNom);
         return mitjana;
     }
 
