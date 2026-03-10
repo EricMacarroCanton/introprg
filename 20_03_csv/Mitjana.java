@@ -13,9 +13,23 @@ public class Mitjana {
         input.readLine();
 
         int numExamens = 6;
-        if (args.length > 0) {
-            numExamens = Integer.parseInt(args[0]);
+
+	if (args.length > 0) {
+   		 String arg = args[0];
+    		boolean esNumero = true;
+    for (int i = 0; i < arg.length(); i++) {
+        if (!Character.isDigit(arg.charAt(i))) {
+            esNumero = false;
+            break;
         }
+    }
+    if (esNumero) {
+        numExamens = Integer.parseInt(arg);
+    }
+    
+}
+
+System.out.println("Càlcul de la mitjana de notes per " + numExamens + " exàmens");
 
         System.out.println("Càlcul de la mitjana de notes per " + numExamens + " exàmens");
 
