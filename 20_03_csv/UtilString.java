@@ -46,21 +46,20 @@ public class UtilString {
                             break;
                         }
                     }
-                    if (esNumero) {
+                    if (esNumero && comptador < 6) {
                         suma += Integer.parseInt(notaTemp);
                     } else {
-                        suma += 0; // assignem 0 si no és número (NP)
+                        suma += 0; 
                     }
                     comptador++;
                     notaTemp = "";
                 }
             }
         }
-	if(comptador <= 6) {
+	
         return (double) suma / 6; 
-        } else {
-              return (double) suma / comptador; 
+        
       
       }  
     }
-}
+
