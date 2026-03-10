@@ -17,6 +17,7 @@ public class Mitjana {
         int comptador = 0;
         while ((linia = input.readLine()) != null) { 
         	if (!linia.isBlank()) {
+            linia = UtilString.normalitzaBlancs(linia);   
   
             String nom = UtilString.getNom(linia);
             double mitjana = UtilString.esNumero(linia);

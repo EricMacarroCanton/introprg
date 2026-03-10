@@ -1,4 +1,37 @@
 public class UtilString {
+ 	public static String normalitzaBlancs(String text) {
+        if (text == null) return null;
+
+        String resultat = "";
+        boolean anteriorEspai = true;
+
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+
+            if (c != ' ') {
+                resultat = resultat + c;
+                anteriorEspai = false;
+            } else {
+                if (!anteriorEspai) {
+                    resultat = resultat + c;
+                    anteriorEspai = true;
+                }
+            }
+        }
+
+   
+        int start = 0;
+        while (start < resultat.length() && resultat.charAt(start) == ' ') start++;
+
+        int end = resultat.length() - 1;
+        while (end >= start && resultat.charAt(end) == ' ') end--;
+
+        String finalResult = "";
+        for (int i = start; i <= end; i++) finalResult = finalResult + resultat.charAt(i);
+
+        return finalResult;
+    }
+
 
     // Retorna el nom de l'alumne
     public static String getNom(String linia) {
