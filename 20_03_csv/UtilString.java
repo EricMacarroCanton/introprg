@@ -38,7 +38,7 @@ public class UtilString {
         }
         double mitjana = suma / 6;
 
-	System.out.printf("%s %.2f%n", resultatNom, mitjana);
+	System.out.print(resultatNom);
         return mitjana;
     }
 
