@@ -32,6 +32,8 @@ public class Recorda {
         bw.newLine();
         bw.close();
     }
+    	public void mostraRecords(String linia) {
+    	}
 }
 
 
