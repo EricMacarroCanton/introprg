@@ -1,3 +1,8 @@
+/* Els fitxers de text poden presentar diferents formats. Un de molt típic és el conegut com a csv que són les sigles de Comma Separated Values o en el nostre idioma Valors Separats per Comes.
+
+Un fitxer csv, en la seva forma més bàsica, és una seqüència de línies de text on cada línia presenta un o més valors separats per un caràcter especial, habitualment la coma ,.
+
+És un format molt típic perquè representa molt eficientment dades en forma tabular com les que s'emmagatzemen a una taula d'una base de dades relacional, o a un full de càlcul*/
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -30,7 +35,7 @@ public class Mitjana {
 }
 	if (numExamens < 2) {
     System.out.println("Com a mínim 2 exàmens.");
-    input.close();
+    
     return; 
 }
 

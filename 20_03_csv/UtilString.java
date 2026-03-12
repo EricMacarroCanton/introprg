@@ -1,3 +1,8 @@
+/* Els fitxers de text poden presentar diferents formats. Un de molt típic és el conegut com a csv que són les sigles de Comma Separated Values o en el nostre idioma Valors Separats per Comes.
+
+Un fitxer csv, en la seva forma més bàsica, és una seqüència de línies de text on cada línia presenta un o més valors separats per un caràcter especial, habitualment la coma ,.
+
+És un format molt típic perquè representa molt eficientment dades en forma tabular com les que s'emmagatzemen a una taula d'una base de dades relacional, o a un full de càlcul*/
 public class UtilString {
  	public static String normalitzaBlancs(String text) {
         if (text == null) return null;
@@ -27,8 +32,9 @@ public class UtilString {
         while (end >= start && resultat.charAt(end) == ' ') end--;
 
         String finalResult = "";
-        for (int i = start; i <= end; i++) finalResult = finalResult + resultat.charAt(i);
-
+        for (int i = start; i <= end; i++) {
+        finalResult = finalResult + resultat.charAt(i);
+}
         return finalResult;
     }
 
