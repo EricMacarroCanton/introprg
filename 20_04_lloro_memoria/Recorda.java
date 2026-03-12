@@ -19,12 +19,14 @@ public class Recorda {
 	 System.out.println("El lloro registra: " + linia);
 
             if (linia.isEmpty()) {
+            	 System.out.println("D'acord");
                 break;
             }
 
             r.processaEntrada(linia);
         }
     }
+    
 
     public void processaEntrada(String linia) throws IOException {
 
