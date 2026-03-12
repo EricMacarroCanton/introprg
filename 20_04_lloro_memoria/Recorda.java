@@ -16,7 +16,7 @@ public class Recorda {
         while (true) {
         System.out.println("El lloro pregunta paraula:");
             linia = sc.nextLine();
-	 System.out.println("El lloro registra" + linia);
+	 System.out.println("El lloro registra: " + linia);
 
             if (linia.isEmpty()) {
                 break;
