@@ -5,19 +5,29 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Scanner;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.Scanner;
 
 public class Recorda {
 
-         public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
         String cami = "records.txt";
-        processaEntrada(cami);
+
+        boolean hiHaRecords = processaEntrada(cami);
         System.out.println("D'acord");
-        mostraRecords(cami);
+        mostraRecords(cami, hiHaRecords);
     }
 
-    public static void processaEntrada(String cami) throws IOException {
+    // Retorna true si l'usuari ha introduït alguna línia
+    public static boolean processaEntrada(String cami) throws IOException {
         Scanner sc = new Scanner(System.in);
         BufferedWriter bw = new BufferedWriter(new FileWriter(cami, true)); // append
+
+        boolean hiHaLinies = false;
 
         while (true) {
             System.out.println("El lloro pregunta paraula:");
@@ -30,21 +40,30 @@ public class Recorda {
             System.out.println("El lloro registra: " + linia);
             bw.write(linia);
             bw.newLine();
+            hiHaLinies = true; 
         }
 
         bw.close();
+        return hiHaLinies;
     }
 
-    public static void mostraRecords(String cami) throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader(cami));
-        String linia;
-
-
-
-        while ((linia = br.readLine()) != null) {
-            System.out.println("El lloro recorda: " + linia);
+    public static void mostraRecords(String cami, boolean hiHaRecords) throws IOException {
+        if (!hiHaRecords) {
+            System.out.println("El lloro no recorda res");
+            System.out.println("Adéu");
+            return;
         }
-	            System.out.println("Adéu");
+
+        BufferedReader br = new BufferedReader(new FileReader(cami));
+
+        String linia = br.readLine(); 
+
+        while (linia != null) {
+            System.out.println("El lloro recorda: " + linia);
+            linia = br.readLine(); 
+        }
+
+        System.out.println("Adéu");
         br.close();
     }
 }
