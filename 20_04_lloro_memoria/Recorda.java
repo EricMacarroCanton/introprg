@@ -8,17 +8,18 @@ import java.util.Scanner;
 
 public class Recorda {
 
-    // Variable estàtica per saber si s'ha registrat alguna línia
+    // Variable estàtica
     static int contador = 0;
 
-    public void main(String[] args) throws IOException {
-        String cami = "records.txt";
+   public static void main(String[] args) throws IOException {
+    String cami = "records.txt";
 
-        processaEntrada(cami);
-        System.out.println("D'acord");
-        mostraRecords(cami);
-    }
+    Recorda r = new Recorda();  
 
+    r.processaEntrada(cami);    
+    System.out.println("D'acord");
+    r.mostraRecords(cami);
+}
     public void processaEntrada(String cami) throws IOException {
     Scanner sc = new Scanner(System.in);
     BufferedWriter bw = new BufferedWriter(new FileWriter(cami, true)); 
