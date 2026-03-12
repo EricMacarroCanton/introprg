@@ -5,29 +5,24 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Scanner;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.util.Scanner;
 
 public class Recorda {
+
+    // Variable estàtica per saber si s'ha registrat alguna línia
+    static int contador = 0;
 
     public static void main(String[] args) throws IOException {
         String cami = "records.txt";
 
-        boolean hiHaRecords = processaEntrada(cami);
+        processaEntrada(cami);
         System.out.println("D'acord");
-        mostraRecords(cami, hiHaRecords);
+        mostraRecords(cami);
     }
 
-    // Retorna true si l'usuari ha introduït alguna línia
-    public static boolean processaEntrada(String cami) throws IOException {
-        Scanner sc = new Scanner(System.in);
-        BufferedWriter bw = new BufferedWriter(new FileWriter(cami, true)); // append
 
-        boolean hiHaLinies = false;
+    public static void processaEntrada(String cami) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        BufferedWriter bw = new BufferedWriter(new FileWriter(cami, true)); 
 
         while (true) {
             System.out.println("El lloro pregunta paraula:");
@@ -40,15 +35,16 @@ public class Recorda {
             System.out.println("El lloro registra: " + linia);
             bw.write(linia);
             bw.newLine();
-            hiHaLinies = true; 
+
+            contador++;
         }
 
         bw.close();
-        return hiHaLinies;
     }
 
-    public static void mostraRecords(String cami, boolean hiHaRecords) throws IOException {
-        if (!hiHaRecords) {
+
+    public static void mostraRecords(String cami) throws IOException {
+        if (contador == 0) {
             System.out.println("El lloro no recorda res");
             System.out.println("Adéu");
             return;
