@@ -11,7 +11,7 @@ public class Recorda {
     // Variable estàtica per saber si s'ha registrat alguna línia
     static int contador = 0;
 
-    public static void main(String[] args) throws IOException {
+    public void main(String[] args) throws IOException {
         String cami = "records.txt";
 
         processaEntrada(cami);
@@ -19,31 +19,32 @@ public class Recorda {
         mostraRecords(cami);
     }
 
+    public void processaEntrada(String cami) throws IOException {
+    Scanner sc = new Scanner(System.in);
+    BufferedWriter bw = new BufferedWriter(new FileWriter(cami, true)); 
 
-    public static void processaEntrada(String cami) throws IOException {
-        Scanner sc = new Scanner(System.in);
-        BufferedWriter bw = new BufferedWriter(new FileWriter(cami, true)); 
+    while (true) {
+        System.out.println("El lloro pregunta paraula:");
+        String linia = sc.nextLine();
 
-        while (true) {
-            System.out.println("El lloro pregunta paraula:");
-            String linia = sc.nextLine();
-
-            if (linia.isEmpty()) { 
-                break;
-            }
-
-            System.out.println("El lloro registra: " + linia);
-            bw.write(linia);
-            bw.newLine();
-
-            contador++;
+        if (linia.isEmpty()) { 
+            break;
         }
 
-        bw.close();
+       
+        linia = normalitzaBlancs(linia);
+
+        System.out.println("El lloro registra: " + linia);
+        bw.write(linia);
+        bw.newLine();
+
+        contador++;
     }
 
+    bw.close();
+}
 
-    public static void mostraRecords(String cami) throws IOException {
+    public void mostraRecords(String cami) throws IOException {
         if (contador == 0) {
             System.out.println("El lloro no recorda res");
             System.out.println("Adéu");
@@ -61,5 +62,39 @@ public class Recorda {
 
         System.out.println("Adéu");
         br.close();
+    }
+
+    public String normalitzaBlancs(String text) {
+        if (text == null) return null;
+
+        String resultat = "";
+        boolean anteriorEspai = true;
+
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+
+            if (c != ' ') {
+                resultat = resultat + c;
+                anteriorEspai = false;
+            } else {
+                if (!anteriorEspai) {
+                    resultat = resultat + c;
+                    anteriorEspai = true;
+                }
+            }
+        }
+
+        int start = 0;
+        while (start < resultat.length() && resultat.charAt(start) == ' ') start++;
+
+        int end = resultat.length() - 1;
+        while (end >= start && resultat.charAt(end) == ' ') end--;
+
+        String finalResult = "";
+        for (int i = start; i <= end; i++) {
+            finalResult = finalResult + resultat.charAt(i);
+        }
+
+        return finalResult;
     }
 }
