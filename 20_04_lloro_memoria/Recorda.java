@@ -42,9 +42,9 @@ public class Recorda {
 
 
         while ((linia = br.readLine()) != null) {
-            System.out.println("El lloro recorda " + linia);
+            System.out.println("El lloro recorda: " + linia);
         }
-
+	            System.out.println("Adéu");
         br.close();
     }
 }
