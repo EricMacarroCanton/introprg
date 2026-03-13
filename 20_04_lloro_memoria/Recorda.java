@@ -8,7 +8,7 @@ import java.io.FileReader;
 public class Recorda {
 
     // Variable estàtica
-    static int contador = 0;
+     int contador = 0;
 
    public static void main(String[] args) throws IOException {
     String cami = "records.txt";
