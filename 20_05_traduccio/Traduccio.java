@@ -8,7 +8,7 @@ import java.io.FileReader;
 import java.io.*;
 
 public class Traduccio {
-
+	 int contador = 0;
     public static void main(String[] args) throws IOException {
 
         String origen = "fitxerOrigen.txt";
@@ -27,29 +27,62 @@ public class Traduccio {
    	String linia = br.readLine(); 
    	
         while (linia != null) {
-            linia = tradueixLinia(linia, fitxerTraduccio);
-            bw.write(linia);
-            bw.newLine();
-        }
+         	if (linia.isEmpty()) { 
+         	System.out.println("Cal especificar els fitxers origen, traduccio i destinació");
+            break;
+            }
 
-        br.close();
-        bw.close();
+       
+        linia = normalitzaBlancs(linia);
+
+        System.out.println("El lloro registra: " + linia);
+        bw.write(linia);
+        bw.newLine();
+
+        contador++;
     }
 
+    bw.close();
+}
     public static String tradueixLinia(String linia, String fitxerTraduccio) throws IOException {
 
-        BufferedReader br = new BufferedReader(new FileReader(fitxerTraduccio));
-   	String trad = br.readLine(); 
+       
+    return "patata";
+     }
+    
+    
+    public String normalitzaBlancs(String text) {
+        if (text == null) return null;
 
-        while (trad != null) {
-            String[] parts = trad.split(",");
+        String resultat = "";
+        boolean anteriorEspai = true;
 
-            if (parts.length == 2) {
-                linia = linia.replace(parts[0], parts[1]);
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+
+            if (c != ' ') {
+                resultat = resultat + c;
+                anteriorEspai = false;
+            } else {
+                if (!anteriorEspai) {
+                    resultat = resultat + c;
+                    anteriorEspai = true;
+                }
             }
         }
 
-        br.close();
-        return linia;
+        int start = 0;
+        while (start < resultat.length() && resultat.charAt(start) == ' ') start++;
+
+        int end = resultat.length() - 1;
+        while (end >= start && resultat.charAt(end) == ' ') end--;
+
+        String finalResult = "";
+        for (int i = start; i <= end; i++) {
+            finalResult = finalResult + resultat.charAt(i);
+        }
+
+        return finalResult;
     }
 }
+
