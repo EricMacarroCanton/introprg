@@ -6,83 +6,67 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-
 public class Traduccio {
-	 int contador = 0;
+
     public static void main(String[] args) throws IOException {
 
-        String origen = "origen.txt";
-        String traduccio = "traduccio.csv";
-        String desti = "destinacio.txt";
+        if (args.length != 3) {
+            System.out.println("Cal especificar els fitxers origen, traduccio i destinació");
+            return;
+        }
 
-        Traduccio r = new Traduccio();
-        r.tradueix(origen, traduccio, desti);
+        String origen = args[0];
+        String traduccio = args[1];
+        String desti = args[2];
+
+        Traduccio t = new Traduccio();
+        t.tradueix(origen, traduccio, desti);
     }
 
     public void tradueix(String fitxerOrigen, String fitxerTraduccio, String fitxerDestinacio) throws IOException {
 
         BufferedReader br = new BufferedReader(new FileReader(fitxerOrigen));
         BufferedWriter bw = new BufferedWriter(new FileWriter(fitxerDestinacio));
-        
-   	String linia = br.readLine(); 
-   	
+
+        String linia = br.readLine();
+
         while (linia != null) {
-         	if (linia.isEmpty()) { 
-         	System.out.println("Cal especificar els fitxers origen, traduccio i destinació");
-            break;
-            }
 
-       
-        linia = normalitzaBlancs(linia);
+            String novaLinia = tradueixLinia(linia, fitxerTraduccio);
 
-        System.out.println("El lloro registra: " + linia);
-        bw.write(linia);
-        bw.newLine();
+            bw.write(novaLinia);
+            bw.newLine();
 
-        contador++;
+            linia = br.readLine();
+        }
+
+        br.close();
+        bw.close();
     }
 
-    bw.close();
-}
     public static String tradueixLinia(String linia, String fitxerTraduccio) throws IOException {
 
-       
-    return "patata";
-     }
-    
-    
-    public String normalitzaBlancs(String text) {
-        if (text == null) return null;
+        BufferedReader br = new BufferedReader(new FileReader(fitxerTraduccio));
+        String fila = br.readLine();
 
-        String resultat = "";
-        boolean anteriorEspai = true;
+        while (fila != null) {
 
-        for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
+            int primer = fila.indexOf(",");
+            int ultim = fila.lastIndexOf(",");
 
-            if (c != ' ') {
-                resultat = resultat + c;
-                anteriorEspai = false;
-            } else {
-                if (!anteriorEspai) {
-                    resultat = resultat + c;
-                    anteriorEspai = true;
-                }
+            if (primer != -1 && primer == ultim) { // exactament una coma
+
+                String clau = fila.substring(0, primer);
+                String valor = fila.substring(primer + 1);
+
+                linia = linia.replace(clau, valor);
             }
+
+            fila = br.readLine();
         }
 
-        int start = 0;
-        while (start < resultat.length() && resultat.charAt(start) == ' ') start++;
+        br.close();
 
-        int end = resultat.length() - 1;
-        while (end >= start && resultat.charAt(end) == ' ') end--;
-
-        String finalResult = "";
-        for (int i = start; i <= end; i++) {
-            finalResult = finalResult + resultat.charAt(i);
-        }
-
-        return finalResult;
+        return linia;
     }
 }
-
