@@ -11,9 +11,9 @@ public class Traduccio {
 	 int contador = 0;
     public static void main(String[] args) throws IOException {
 
-        String origen = "fitxerOrigen.txt";
-        String traduccio = "fitxerTraduccio.txt";
-        String desti = "fitxerDestinacio.txt";
+        String origen = "fitxerorigen.txt";
+        String traduccio = "fitxertraduccio.csv";
+        String desti = "fitxerdestinacio.txt";
 
         Traduccio r = new Traduccio();
         r.tradueix(origen, traduccio, desti);
