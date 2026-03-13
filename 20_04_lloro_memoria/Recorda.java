@@ -4,7 +4,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.Scanner;
 
 public class Recorda {
 
@@ -21,12 +20,12 @@ public class Recorda {
     r.mostraRecords(cami);
 }
     public void processaEntrada(String cami) throws IOException {
-    Scanner sc = new Scanner(System.in);
+    
     BufferedWriter bw = new BufferedWriter(new FileWriter(cami, true)); 
 
     while (true) {
         System.out.println("El lloro pregunta paraula:");
-        String linia = sc.nextLine();
+        String linia = Entrada.readLine();
 
         if (linia.isEmpty()) { 
             break;
