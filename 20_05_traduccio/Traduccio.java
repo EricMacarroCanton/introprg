@@ -7,17 +7,25 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 public class Traduccio {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
     
-    
+        String origen = "fitxerOrigen.txt";
+        String traduccio = "fitxerTraduccio.txt";
+        String desti = "fitxerDestinacio.txt";
+
     
 }
       public static void tradueix(String fitxerOrigen, String fitxerTraduccio, String fitxerDestinacio) {
+      
+    
+      
 
       }
       public static String tradueixLinia(String linia, String fitxerTraduccio) {
 
 
+     return "hola"; 
       }
-    } 
+      
+    }
 
