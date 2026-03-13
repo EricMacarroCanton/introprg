@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.*;
+
 
 public class Traduccio {
 	 int contador = 0;
@@ -13,7 +13,7 @@ public class Traduccio {
 
         String origen = "origen.txt";
         String traduccio = "traduccio.csv";
-        String desti = "fitxerdestinacio.txt";
+        String desti = "destinacio.txt";
 
         Traduccio r = new Traduccio();
         r.tradueix(origen, traduccio, desti);
