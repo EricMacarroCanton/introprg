@@ -44,7 +44,7 @@ public class Traduccio {
         bw.close();
     }
 
-   public static String tradueixLinia(String linia, String fitxerTraduccio) throws IOException {
+  public static String tradueixLinia(String linia, String fitxerTraduccio) throws IOException {
 
     BufferedReader br = new BufferedReader(new FileReader(fitxerTraduccio));
     String fila = br.readLine();
@@ -53,10 +53,15 @@ public class Traduccio {
 
         String[] parts = fila.split(",");
 
-        if (parts.length == 2) { 
+        if (parts.length == 2) {
 
             String clau = parts[0];
             String valor = parts[1];
+
+
+            while (valor.length() > 0 && valor.charAt(0) == ' ') {
+                valor = valor.substring(1);
+            }
 
             linia = linia.replace(clau, valor);
         }
@@ -65,7 +70,6 @@ public class Traduccio {
     }
 
     br.close();
-
     return linia;
 }
 }
