@@ -44,29 +44,28 @@ public class Traduccio {
         bw.close();
     }
 
-    public static String tradueixLinia(String linia, String fitxerTraduccio) throws IOException {
+   public static String tradueixLinia(String linia, String fitxerTraduccio) throws IOException {
 
-        BufferedReader br = new BufferedReader(new FileReader(fitxerTraduccio));
-        String fila = br.readLine();
+    BufferedReader br = new BufferedReader(new FileReader(fitxerTraduccio));
+    String fila = br.readLine();
 
-        while (fila != null) {
+    while (fila != null) {
 
-            int primer = fila.indexOf(",");
-            int ultim = fila.lastIndexOf(",");
+        String[] parts = fila.split(",");
 
-            if (primer != -1 && primer == ultim) { // exactament una coma
+        if (parts.length == 2) { 
 
-                String clau = fila.substring(0, primer);
-                String valor = fila.substring(primer + 1);
+            String clau = parts[0];
+            String valor = parts[1];
 
-                linia = linia.replace(clau, valor);
-            }
-
-            fila = br.readLine();
+            linia = linia.replace(clau, valor);
         }
 
-        br.close();
-
-        return linia;
+        fila = br.readLine();
     }
+
+    br.close();
+
+    return linia;
+}
 }
