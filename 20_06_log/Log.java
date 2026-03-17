@@ -45,7 +45,6 @@ public class Log {
         escriptor.write(registre);
         escriptor.newLine();
         escriptor.close();
-
         numLinia++;
                 return registre;
         }
