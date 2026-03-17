@@ -28,11 +28,16 @@ public class Log {
     }
 
     public static String printWarning(String text) throws IOException {      
-        String registre = "[" ;
+        String registre = "[" + numLinia + "] WARNING: " + text;
 
+        BufferedWriter escriptor = new BufferedWriter(new FileWriter(nomFitxer, true));
+        escriptor.write(registre);
+        escriptor.newLine();
+        escriptor.close();
+
+        numLinia++;
         return registre;
     }
-
     public static String printInfo(String text) throws IOException {       
         String registre = "[" ;
 
