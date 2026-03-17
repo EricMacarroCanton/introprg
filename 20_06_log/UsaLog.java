@@ -6,5 +6,9 @@ public class UsaLog {
         // aquí farem les crides més endavant
     }
 
-    private static int comptador = 1; // comptador seqüencial
+    private static int comptador = 1;
+    
+    public static void reset() {
+    comptador = 1;
+}
 }
