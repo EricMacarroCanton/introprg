@@ -39,7 +39,7 @@ public class Log {
         return registre;
     }
     public static String printInfo(String text) throws IOException {       
-        String registre = "[" ;
+        String registre = "[";
 
         return registre;
     }
