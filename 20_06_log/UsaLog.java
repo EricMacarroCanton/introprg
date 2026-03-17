@@ -1,21 +1,10 @@
-/*
- * Aquest programa realitza una demostració de l'ús del mòdul de Log
- * El funcionament és el següent:
- * - Escriu un missatge d'error
- * - Escriu un missatge d'avisi
- * - Escriu un missatge d'informació per cada argument de línia de comandes
- * - Realitza un reset per comprovar la inicialització del comptador
- * - Escriu un missatge de depuració
- */
-import java.io.IOException;
+/*Quan executem programes complexos, sol ser interessant poder registrar les situacions significatives que es van produint. Això ens permet a posteriori entre altres coses, auditar com s'ha executat, descobrir i reproduir errors.
+
+Aquests registres es solen guardar en un fitxer de text amb una o més línies que descriuen què ha passat i sovint quan va passar. A aquest fitxer se'l sol conèixer com a fitxer de log.*/
 public class UsaLog {
-   public static void main(String[] args) throws IOException {
-       Log.printError("Això és un error greu");
-       Log.printWarning("Això és un avís");
-       for (int i=0; i < args.length; i++) {
-           Log.printInfo(String.format("Argument %d: %s", i, args[i]));
-       }
-       Log.reset();     // comencem a comptar un altre cop
-       Log.printDebug("Aquí s'acaba el main()");
-   }
+    private static int comptador = 1;
+
+    public static void reset() {
+        comptador = 1;
+    }
 }
