@@ -2,6 +2,8 @@
 
 Aquests registres es solen guardar en un fitxer de text amb una o més línies que descriuen què ha passat i sovint quan va passar. A aquest fitxer se'l sol conèixer com a fitxer de log.*/
 public class UsaLog {
+	public static void main(String[] args) {
+}
     private static int comptador = 1;
 
     public static void reset() {
