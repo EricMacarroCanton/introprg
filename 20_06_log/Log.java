@@ -27,3 +27,22 @@ public class Log {
         return registre;
     }
 
+    public static String printWarning(String text) throws IOException {      
+        String registre = "[" ;
+
+        return registre;
+    }
+
+    public static String printInfo(String text) throws IOException {       
+        String registre = "[" ;
+
+        return registre;
+    }
+
+    public static String printDebug(String text) throws IOException {     
+        String registre = "[";
+
+     
+        return registre;
+    }
+}
