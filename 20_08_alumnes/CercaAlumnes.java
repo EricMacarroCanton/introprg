@@ -123,8 +123,10 @@ public class CercaAlumnes {
             String emailLower = alumne.email.toLowerCase();
             String criteriLower = criteri.toLowerCase();
 
-            if (nomLower.contains(criteriLower) ||
-                emailLower.contains(criteriLower)) {
+            String emailUsuari = alumne.email.split("@")[0].toLowerCase();
+
+	if (nomLower.contains(criteriLower) ||
+    emailUsuari.contains(criteriLower)) {
 
                 mostraAlumne(alumne);
                 trobat = true;
