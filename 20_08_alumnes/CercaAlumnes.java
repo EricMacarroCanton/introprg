@@ -13,7 +13,9 @@ public class CercaAlumnes {
         int[] notes;
     }
 
-   public static Alumne construeixAlumne(String nom, String email, int edat, boolean esOient, int[] notes) {
+   public static Alumne construeixAlumne(String nom, String email,
+                                      int edat, boolean esOient,
+                                      int[] notes) {
     Alumne alumne = new Alumne();
     alumne.nom = nom;
     alumne.email = email;
@@ -23,19 +25,8 @@ public class CercaAlumnes {
     return alumne;
 }
 
-   public static void mostraAlumne(Alumne alumne) {
-    System.out.println("Nom: " + alumne.nom);
-    System.out.println("Email: " + alumne.email);
-    System.out.println("Edat: " + alumne.edat);
-    System.out.println("És oient: " + alumne.esOient);
-
-    System.out.print("Notes: ");
-    if (alumne.notes != null) {
-        for (int i = 0; i < alumne.notes.length; i++) {
-            System.out.print(alumne.notes[i] + " ");
-        }
-    }
-  
+  public static void mostraAlumne(Alumne alumne) {
+    System.out.println(alumneAString(alumne));
 }
 
     public static String alumneAString(Alumne alumne) {
@@ -46,21 +37,40 @@ public class CercaAlumnes {
                 notesACsv(alumne.notes));
     }
 
-    // converteix un array de notes a CSV
-    // Té en comptes els valors NP com a -1
-    public static String notesACsv(int[] notes) {
-        // XXX a completar
-       
-        return "caca";    }
-
-    public static String alumneACsv(Alumne alumne) {
-        // XXX a completar encara que no es fa servir en aquest programa
-        return "nada";
+   
+   public static String notesACsv(int[] notes) {
+    if (notes == null || notes.length == 0) {
+        return "";
     }
 
-   public static Alumne csvAAlumne(String csv) {
-   return null;
+    String result = "";
+
+    for (int i = 0; i < notes.length; i++) {
+        if (i > 0) {
+            result += ",";
+        }
+
+        if (notes[i] == -1) {
+            result += "NP";
+        } else {
+            result += notes[i];
+        }
+    }
+
+    return result;
 }
+    public static String alumneACsv(Alumne alumne) {
+    return alumne.nom + "," +
+           alumne.email + "," +
+           alumne.edat + "," +
+           alumne.esOient + "," +
+           notesACsv(alumne.notes);
+}
+    public static Alumne csvAAlumne(String csv) {
+       Alumne alumne = new Alumne();
+       return alumne;
+     
+    }
 
     public static void main(String[] args) throws IOException {
         // assegura que hi ha el criteri de cerca
@@ -84,4 +94,3 @@ public class CercaAlumnes {
         // XXX a completar
     }
 }
-
