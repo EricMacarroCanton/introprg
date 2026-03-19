@@ -45,7 +45,7 @@ public class CercaAlumnes {
 
     public static String notesACsv(int[] notes) {
         if (notes == null || notes.length == 0) {
-            return "";
+            return "No s'ha trobat cap alumne";
         }
 
         String result = "";
