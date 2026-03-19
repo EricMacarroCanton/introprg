@@ -45,7 +45,7 @@ public class CercaAlumnes {
 
     public static String notesACsv(int[] notes) {
         if (notes == null || notes.length == 0) {
-            return "No s'ha trobat cap alumne";
+            return "";
         }
 
         String result = "";
@@ -100,39 +100,43 @@ public class CercaAlumnes {
         return alumne;
     }
 
- 
-public static void main(String[] args) throws IOException {
-    if (args.length < 1) {
-        System.out.println("Cal indicar un criteri de cerca");
-        return;
-    }
-
-    String criteri = args[0];
-
-    BufferedReader br = new BufferedReader(new FileReader("alumnes.csv"));
-
- 
-    br.readLine();
-
-    String linia = br.readLine();
-
-    while (linia != null) {
-        Alumne alumne = csvAAlumne(linia);
-
-        String nomLower = alumne.nom.toLowerCase();
-        String emailLower = alumne.email.toLowerCase();
-        String criteriLower = criteri.toLowerCase();
-
-        if (nomLower.contains(criteriLower) ||
-            emailLower.contains(criteriLower)) {
-
-            mostraAlumne(alumne);
+    public static void main(String[] args) throws IOException {
+        if (args.length < 1) {
+            System.out.println("Cal indicar un criteri de cerca");
+            return;
         }
 
-        linia = br.readLine();
+        String criteri = args[0];
+
+        BufferedReader br = new BufferedReader(new FileReader("alumnes.csv"));
+
+        // Saltem capçalera
+        br.readLine();
+
+        String linia = br.readLine();
+        boolean trobat = false;
+
+        while (linia != null) {
+            Alumne alumne = csvAAlumne(linia);
+
+            String nomLower = alumne.nom.toLowerCase();
+            String emailLower = alumne.email.toLowerCase();
+            String criteriLower = criteri.toLowerCase();
+
+            if (nomLower.contains(criteriLower) ||
+                emailLower.contains(criteriLower)) {
+
+                mostraAlumne(alumne);
+                trobat = true;
+            }
+
+            linia = br.readLine();
+        }
+
+        br.close();
+
+        if (!trobat) {
+            System.out.println("No s'ha trobat cap alumne");
+        }
     }
-
-    br.close();
 }
-}
-
