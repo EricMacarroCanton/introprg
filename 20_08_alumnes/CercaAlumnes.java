@@ -23,10 +23,20 @@ public class CercaAlumnes {
     return alumne;
 }
 
-    public static void mostraAlumne(Alumne alumne) {
-        // XXX cal mostrar les dades de l'alumne
+   public static void mostraAlumne(Alumne alumne) {
+    System.out.println("Nom: " + alumne.nom);
+    System.out.println("Email: " + alumne.email);
+    System.out.println("Edat: " + alumne.edat);
+    System.out.println("És oient: " + alumne.esOient);
 
+    System.out.print("Notes: ");
+    if (alumne.notes != null) {
+        for (int i = 0; i < alumne.notes.length; i++) {
+            System.out.print(alumne.notes[i] + " ");
+        }
     }
+  
+}
 
     public static String alumneAString(Alumne alumne) {
         return String.format(
