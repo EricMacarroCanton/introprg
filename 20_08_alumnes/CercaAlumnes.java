@@ -35,14 +35,6 @@ public class CercaAlumnes {
         System.out.println("- notes: " + notesACsv(alumne.notes));
     }
 
-    public static String alumneAString(Alumne alumne) {
-        return String.format(
-                "Alumne(nom: \"%s\", email: \"%s\", " +
-                "edat: %d, esOient: %b, notes: {%s})",
-                alumne.nom, alumne.email, alumne.edat, alumne.esOient,
-                notesACsv(alumne.notes));
-    }
-
     public static String notesACsv(int[] notes) {
         if (notes == null || notes.length == 0) {
             return "";
@@ -63,14 +55,6 @@ public class CercaAlumnes {
         }
 
         return result;
-    }
-
-    public static String alumneACsv(Alumne alumne) {
-        return alumne.nom + "," +
-               alumne.email + "," +
-               alumne.edat + "," +
-               alumne.esOient + "," +
-               notesACsv(alumne.notes);
     }
 
     public static Alumne csvAAlumne(String csv) {
@@ -106,31 +90,32 @@ public class CercaAlumnes {
             return;
         }
 
-        String criteri = args[0];
+        String criteri = args[0].toLowerCase();
 
         BufferedReader br = new BufferedReader(new FileReader("alumnes.csv"));
 
         // Saltem capçalera
         br.readLine();
 
-        String linia = br.readLine();
+        String linia;
         boolean trobat = false;
 
-        while (linia != null) {
+        while ((linia = br.readLine()) != null) {
             Alumne alumne = csvAAlumne(linia);
 
             String nomLower = alumne.nom.toLowerCase();
             String emailLower = alumne.email.toLowerCase();
-            String criteriLower = criteri.toLowerCase();
 
-            if (nomLower.contains(criteriLower) ||
-                emailLower.contains(criteriLower)) {
+            // Extreiem el domini principal de l'email
+            String domini = emailLower.split("@")[1];
+            String dominiPrincipal = domini.split("\\.")[0];
+
+            if (nomLower.contains(criteri) ||
+                dominiPrincipal.equals(criteri)) {
 
                 mostraAlumne(alumne);
                 trobat = true;
             }
-
-            linia = br.readLine();
         }
 
         br.close();
