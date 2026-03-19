@@ -67,10 +67,32 @@ public class CercaAlumnes {
            notesACsv(alumne.notes);
 }
     public static Alumne csvAAlumne(String csv) {
-       Alumne alumne = new Alumne();
-       return alumne;
-     
+    if (csv == null || csv.isEmpty()) {
+        return null;
     }
+
+    String[] parts = csv.split(",");
+
+    Alumne alumne = new Alumne();
+
+    alumne.nom = parts[0];
+    alumne.email = parts[1];
+    alumne.edat = Integer.parseInt(parts[2]);
+    alumne.esOient = Boolean.parseBoolean(parts[3]);
+
+    // notes
+    int[] notes = new int[parts.length - 4];
+    for (int i = 4; i < parts.length; i++) {
+        if (parts[i].equals("NP")) {
+            notes[i - 4] = -1;
+        } else {
+            notes[i - 4] = Integer.parseInt(parts[i]);
+        }
+    }
+    alumne.notes = notes;
+
+    return alumne;
+}
 
     public static void main(String[] args) throws IOException {
         // assegura que hi ha el criteri de cerca
