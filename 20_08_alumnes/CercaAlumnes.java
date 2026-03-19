@@ -95,24 +95,31 @@ public class CercaAlumnes {
 }
 
     public static void main(String[] args) throws IOException {
-        // assegura que hi ha el criteri de cerca
-        // XXX a completar
 
-        // declaracions, inicialitzacions, apertura de fitxer, ignora línia de capçaleres, etc.
-        // XXX a completar
-
-        while (true) {
-            // llegeix entrada i finalitza bucle si no en queden més
-            // XXX a completar
-
-            // converteix l'entrada a Alumne
-            // XXX a completar
-
-            // comprova si el criteri de cerca es troba dins del nom o
-            // el email. Si és així, mostra'l
-            // XXX a completar
-        }
-        // consideracions finals com ara el tancament del fitxer
-        // XXX a completar
+    if (args.length < 1) {
+        System.out.println("Cal indicar un criteri de cerca");
+        return;
     }
+
+    String criteri = args[0];
+
+    BufferedReader br = new BufferedReader(new FileReader("alumnes.csv"));
+
+    // ignora capçalera
+    br.readLine();
+
+    String linia;
+
+    while ((linia = br.readLine()) != null) {
+        Alumne alumne = csvAAlumne(linia);
+
+        if (alumne.nom.contains(criteri) ||
+            alumne.email.contains(criteri)) {
+
+            mostraAlumne(alumne);
+        }
+    }
+
+    br.close();
+}
 }
