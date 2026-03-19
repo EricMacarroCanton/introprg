@@ -91,7 +91,7 @@ public class CercaAlumnes {
     }
     alumne.notes = notes;
 
-    return alumne;
+    return alumne; 
 }
 
     public static void main(String[] args) throws IOException {
