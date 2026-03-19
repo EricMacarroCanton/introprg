@@ -29,10 +29,10 @@ public class CercaAlumnes {
 
     public static void mostraAlumne(Alumne alumne) {
         System.out.println("Alumne: " + alumne.nom);
-        System.out.println("  - email: " + alumne.email);
-        System.out.println("  - edat: " + alumne.edat);
-        System.out.println("  - és oïent: " + (alumne.esOient ? "Si" : "No"));
-        System.out.println("  - notes: " + notesACsv(alumne.notes));
+        System.out.println("- email: " + alumne.email);
+        System.out.println("- edat: " + alumne.edat);
+        System.out.println("- és oïent: " + (alumne.esOient ? "Si" : "No"));
+        System.out.println("- notes: " + notesACsv(alumne.notes));
     }
 
     public static String alumneAString(Alumne alumne) {
