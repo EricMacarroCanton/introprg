@@ -13,14 +13,15 @@ public class CercaAlumnes {
         int[] notes;
     }
 
-    public static Alumne construeixAlumne(String nom, String email,
-                                          int edat, boolean esOient,
-                                          int[] notes) {
-        Alumne alumne = new Alumne();
-        alumne.nom = nom;
-        // XXX a completar
-        return alumne;
-    }
+   public static Alumne construeixAlumne(String nom, String email, int edat, boolean esOient, int[] notes) {
+    Alumne alumne = new Alumne();
+    alumne.nom = nom;
+    alumne.email = email;
+    alumne.edat = edat;
+    alumne.esOient = esOient;
+    alumne.notes = notes;
+    return alumne;
+}
 
     public static void mostraAlumne(Alumne alumne) {
         // XXX cal mostrar les dades de l'alumne
