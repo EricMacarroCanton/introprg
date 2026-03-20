@@ -46,6 +46,35 @@ public static void processarCami(String cami) {
     System.out.print(permisos + " ");
 }
 	public static void tractarDirectori(File f) {
+    String[] contingut = f.list();
+
+    if (contingut == null || contingut.length == 0) {
+        System.out.println("directori buit");
+    } else {
+
+ 
+        for (int i = 0; i < contingut.length - 1; i++) {
+            for (int j = 0; j < contingut.length - i - 1; j++) {
+                if (contingut[j].compareTo(contingut[j + 1]) > 0) {
+                    String temp = contingut[j];
+                    contingut[j] = contingut[j + 1];
+                    contingut[j + 1] = temp;
+                }
+            }
+        }
+
+        System.out.print("directori que conté: ");
+
+        for (int i = 0; i < contingut.length; i++) {
+            System.out.print(contingut[i]);
+
+            if (i < contingut.length - 1) {
+                System.out.print(", ");
+            }
+        }
+
+        System.out.println();
+    }
 }
 	public static void tractarFitxer(File f) {
 }
