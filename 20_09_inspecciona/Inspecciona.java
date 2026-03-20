@@ -16,7 +16,7 @@ public class Inspecciona {
             String cami = args[i];
 
             System.out.println("Processant argument: " + cami);
-            System.out.println("=============================");
+            System.out.println("===========================");
 
             processarCami(cami);
 
