@@ -19,11 +19,33 @@ public class Inspecciona {
 
     System.out.println();
 }
-	}
-		public static void processarCami(String cami) {
-		
+	}		
+public static void processarCami(String cami) {
+    File f = new File(cami);
 
-}
+    if (!f.exists()) {
+        System.out.println("No trobat");
+        return;
     }
 
+    mostrarPermisos(f);
+
+    if (f.isDirectory()) {
+        tractarDirectori(f);
+    } else if (f.isFile()) {
+        tractarFitxer(f);
+    		}	
+	}
+	public static void mostrarPermisos(File f) {
+
+}
+	public static void tractarDirectori(File f) {
+}
+	public static void tractarFitxer(File f) {
+}
+
+	public static void mostrarContingut(File f) {
+
+}
+}
 
