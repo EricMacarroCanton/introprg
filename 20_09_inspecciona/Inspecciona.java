@@ -37,7 +37,13 @@ public static void processarCami(String cami) {
     		}	
 	}
 	public static void mostrarPermisos(File f) {
+    String permisos = "";
 
+    permisos += f.canRead() ? "r" : "-";
+    permisos += f.canWrite() ? "w" : "-";
+    permisos += f.canExecute() ? "x" : "-";
+
+    System.out.print(permisos + " ");
 }
 	public static void tractarDirectori(File f) {
 }
