@@ -22,13 +22,13 @@ public class Inspecciona {
 
     for (int j = 0; j < linia.length(); j++) {
         System.out.print("=");
-    
+    }
     System.out.println();
 
     processarCami(cami);
 
     System.out.println();
-}
+
     }
    }
 
