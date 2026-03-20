@@ -12,17 +12,25 @@ public class Inspecciona {
 
     public static void main(String[] args) throws IOException {
 
-        for (int i = 0; i < args.length; i++) {
-            String cami = args[i];
+       for (int i = 0; i < args.length; i++) {
+    String cami = args[i];
 
-            System.out.println("Processant argument: " + cami);
-            System.out.println("===============================");
+    String linia = "Processant argument: " + cami;
 
-            processarCami(cami);
+    System.out.println(linia);
 
-            System.out.println();
-        }
+
+    for (int j = 0; j < linia.length(); j++) {
+        System.out.print("=");
+    
+    System.out.println();
+
+    processarCami(cami);
+
+    System.out.println();
+}
     }
+   }
 
     public static void processarCami(String cami) throws IOException {
         File f = new File(cami);
