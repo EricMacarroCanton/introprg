@@ -4,6 +4,6 @@ public class Ascensor
            public static void main(String[] args) {
               Ascensor ascensor;           // declarem la referència al gat
                ascensor = new Ascensor();   // creem la instància del gat Renat.
-               System.out.println("L'ascensor està a la planta" + ascensor.pis);
+               System.out.println("L'ascensor està a la planta " + ascensor.pis);
           }
       }
