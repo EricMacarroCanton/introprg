@@ -14,8 +14,24 @@ public class Ascensor {
         return ascensors;
     }
 
+    public static boolean esEnter(String s) {
+        if (s.length() == 0) return false;
+
+        for (int i = 0; i < s.length(); i++) {
+            if (!Character.isDigit(s.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args){
         if (args.length != 1) {
+            System.out.println("Cal indicar un únic valor enter.");
+            return;
+        }
+
+        if (!esEnter(args[0])) {
             System.out.println("Cal indicar un únic valor enter.");
             return;
         }
