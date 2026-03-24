@@ -2,7 +2,6 @@
 public class Ascensor {
     int pis;
 
-    // Constructor
     public Ascensor(int pis) {
         this.pis = pis;
     }
@@ -17,10 +16,16 @@ public class Ascensor {
 
     public static void main(String[] args){
         if (args.length != 1) {
+            System.out.println("Cal indicar un únic valor enter.");
             return;
         }
 
         int quants = Integer.parseInt(args[0]);
+
+        if (quants <= 0) {
+            System.out.println("Cal indicar un únic valor enter.");
+            return;
+        }
 
         Ascensor[] ascensors = creaAscensorsEnEscala(quants);
         for (int i = 0; i < ascensors.length; i++) {
