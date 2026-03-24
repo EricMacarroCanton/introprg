@@ -1,9 +1,9 @@
 //En aquesta ocasió disposarà d'una funció anomenada creaAscensorsEnEscala() que rebrà un nombre d'ascensors i retornarà un array amb el nombre d'ascensors especificat de manera que cada ascensor estarà en el pis indicat per la seva posició a l'array.
 public class Ascensor {
-    int pis;
+    int pis = 0;
 
-    public Ascensor(int pis) {
-        this.pis = pis;
+    public Ascensor(int p) {
+        pis = p;
     }
 
     public static Ascensor[] creaAscensorsEnEscala(int quants) {
