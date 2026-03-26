@@ -2,10 +2,10 @@
  public class UsaGatRenat {
      public static void main(String[] args) {
          GatRenat renat = new GatRenat();
-         System.out.println("Les vides inicials són: " + renat.XXX);
-         System.out.println("La posició inicial és: " + renat.XXX);
+         System.out.println("Les vides inicials són: " + renat.vides);
+         System.out.println("La posició inicial és: " + renat.posicio);
          System.out.println("Introdueix nova posició:");
          renat.setPosicio(Entrada.readLine());
-         System.out.println("La posició final és: " + renat.XXX);
+         System.out.println("La posició final és: " + renat.posicio);
      }
  }
