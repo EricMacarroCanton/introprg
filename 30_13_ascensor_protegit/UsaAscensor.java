@@ -7,12 +7,19 @@ el moviment sempre sigui un dels següents valors: aturat, pujant, baixant
 Inicialment, l'ascensor començarà a la planta -1 i aturat */
 
  public class UsaAscensor { 
-     public static void main(String[] args) {
-         // XXX
-         System.out.println("Pis inicial: " + ascensor.XXX);
-         System.out.println("Moviment inicial: " + ascensor.XXX);
-         // XXX
-         System.out.println("Pis final: " + ascensor.XXX);
-         System.out.println("Moviment final: " + ascensor.XXX);
-     }
- }
+    public static void main(String[] args) {
+        Ascensor ascensor = new Ascensor();
+
+        System.out.println("Pis inicial: " + ascensor.getPis());
+        System.out.println("Moviment inicial: " + ascensor.getMoviment());
+
+        System.out.println("Introdueix nou pis:");
+        ascensor.setPis(Integer.parseInt(Entrada.readLine()));
+
+        System.out.println("Introdueix moviment (aturat, pujant, baixant):");
+        ascensor.setMoviment(Entrada.readLine());
+
+        System.out.println("Pis final: " + ascensor.getPis());
+        System.out.println("Moviment final: " + ascensor.getMoviment());
+    }
+}
