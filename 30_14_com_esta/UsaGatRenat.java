@@ -17,6 +17,6 @@ public class UsaGatRenat {
         System.out.println("Finalment renat.esViu(): " + renat.esViu());
         System.out.println("Finalment renat.esDret(): " + renat.esDret());
         System.out.println("Finalment renat.esAssegut(): " + renat.esAssegut());
-        System.out.println("Finalment renat.esEstirat(): " + renat.esEstirat());
+        System.out.println("Finalment renat.esEstirat(): " + renat.esEstirat()); 
     }
 }
