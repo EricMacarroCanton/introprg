@@ -36,7 +36,7 @@ public class Ascensor {
 }
 
     public boolean esAdalt() {
-        return pis == 12;
+        return pis == 10;
     }
 
      public boolean esAturat() {
