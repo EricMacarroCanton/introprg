@@ -15,12 +15,15 @@ public class UsaAscensor {
         System.out.println("Moviment inicial: " + ascensor.getMoviment());
 
         System.out.println("Introdueix nou pis:");
-        int nouPis = sc.nextInt();
-        ascensor.setPis(nouPis);
+	int nouPis = sc.nextInt();
 
-        System.out.println("Introdueix nou moviment:");
-        String nouMoviment = sc.next();
-        ascensor.setMoviment(nouMoviment);
+	if (nouPis >= 0 && nouPis <= 10) {
+    ascensor.setPis(nouPis);
+}
+
+System.out.println("Introdueix nou moviment:");
+String nouMoviment = sc.next();
+ascensor.setMoviment(nouMoviment);
 
         System.out.println("Pis final: " + ascensor.getPis());
         System.out.println("Moviment final: " + ascensor.getMoviment());
