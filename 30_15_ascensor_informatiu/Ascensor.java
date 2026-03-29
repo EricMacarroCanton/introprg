@@ -17,9 +17,13 @@ public class Ascensor {
         return pis;
     }
 
-    public void setPis(int pis) {
+   public void setPis(int pis) {
+    if (pis >= -1 && pis <= 10) {
         this.pis = pis;
+    } else {
+        this.pis = -1;
     }
+}
 
     public String getMoviment() {
         return moviment;
@@ -33,7 +37,7 @@ public class Ascensor {
     } else {
         this.moviment = "aturat";
     }
-}
+} 
 
 
 
