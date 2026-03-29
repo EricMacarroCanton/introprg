@@ -56,6 +56,8 @@ public class Ascensor {
     }
 
     public String comEsta() {
-	return "hola";
+        return moviment + " al pis " + pis;
     }
 }
+    
+
