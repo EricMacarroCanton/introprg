@@ -14,13 +14,17 @@ public class UsaAscensor {
         System.out.println("Pis inicial: " + ascensor.getPis());
         System.out.println("Moviment inicial: " + ascensor.getMoviment());
 
-        System.out.println("Introdueix nou pis:");
-	int nouPis = sc.nextInt();
+       System.out.println("Introdueix nou pis:");
 
-	if (nouPis >= 0 && nouPis <= 10) {
-    ascensor.setPis(nouPis);
-}
+	if (sc.hasNextInt()) {
+	    int nouPis = sc.nextInt();
 
+ 	   if (nouPis >= 0 && nouPis <= 10) {
+  	      ascensor.setPis(nouPis);
+	    }
+	} else {
+	    sc.next(); 
+	}
 System.out.println("Introdueix nou moviment:");
 String nouMoviment = sc.next();
 ascensor.setMoviment(nouMoviment);
