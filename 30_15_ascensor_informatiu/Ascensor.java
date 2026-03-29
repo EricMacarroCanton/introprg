@@ -31,12 +31,12 @@ public class Ascensor {
 
 
 
-    public boolean esAbaix() {
-	return true ;
+     public boolean esAbaix() {
+        return pis == 0; // primer pis
     }
 
     public boolean esAdalt() {
-	return true ;
+        return pis == 12;
     }
 
     public boolean esAturat() {
