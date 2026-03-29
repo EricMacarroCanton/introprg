@@ -47,13 +47,14 @@ public class Ascensor {
         return esPujant() || esBaixant();
     }
 
-    public boolean esPujant() {
-	return true ;
+     public boolean esPujant() {
+        return moviment.equals("pujant");
     }
 
     public boolean esBaixant() {
-	return true ;
+        return moviment.equals("baixant");
     }
+
 
     public String comEsta() {
         return moviment + " al pis " + pis;
