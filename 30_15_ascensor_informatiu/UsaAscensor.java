@@ -27,7 +27,12 @@ public class UsaAscensor {
 	}
 System.out.println("Introdueix nou moviment:");
 String nouMoviment = sc.next();
-ascensor.setMoviment(nouMoviment);
+
+if (nouMoviment.equals("pujant") ||
+    nouMoviment.equals("baixant") ||
+    nouMoviment.equals("aturat")) {
+    ascensor.setMoviment(nouMoviment);
+}
 
         System.out.println("Pis final: " + ascensor.getPis());
         System.out.println("Moviment final: " + ascensor.getMoviment());
