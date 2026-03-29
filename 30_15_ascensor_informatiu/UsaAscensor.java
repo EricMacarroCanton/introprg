@@ -1,0 +1,31 @@
+/*esAbaix() i esAdalt() retornen cert quan l'ascensor es troba al primer i al darrer pis respectivament.
+
+esEnMoviment() retorna cert quan està pujant o baixant.
+
+comEsta() retorna un String amb el moviment i el pis. Per exemple, si està pujant en el pis 1, el missatge serà pujant al pis 1.*/
+import java.util.Scanner;
+
+public class UsaAscensor {
+
+    public static void main(String[] args) {
+        Ascensor ascensor = new Ascensor();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Pis inicial: " + ascensor.getPis());
+        System.out.println("Moviment inicial: " + ascensor.getMoviment());
+
+        System.out.println("Introdueix nou pis:");
+        int nouPis = sc.nextInt();
+        ascensor.setPis(nouPis);
+
+        System.out.println("Introdueix nou moviment:");
+        String nouMoviment = sc.next();
+        ascensor.setMoviment(nouMoviment);
+
+        System.out.println("Pis final: " + ascensor.getPis());
+        System.out.println("Moviment final: " + ascensor.getMoviment());
+        System.out.println("Estat de l'ascensor: " + ascensor.comEsta());
+
+        sc.close();
+    }
+}
