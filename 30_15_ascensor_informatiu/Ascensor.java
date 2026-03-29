@@ -32,19 +32,19 @@ public class Ascensor {
 
 
      public boolean esAbaix() {
-        return pis == 0; // primer pis
+        return pis == 0;
     }
 
     public boolean esAdalt() {
         return pis == 12;
     }
 
-    public boolean esAturat() {
-	return true ;
+     public boolean esAturat() {
+        return moviment.equals("aturat");
     }
 
     public boolean esEnMoviment() {
-	return true ;
+        return esPujant() || esBaixant();
     }
 
     public boolean esPujant() {
