@@ -26,8 +26,14 @@ public class Ascensor {
     }
 
     public void setMoviment(String moviment) {
+    if (moviment.equals("pujant") ||
+        moviment.equals("baixant") ||
+        moviment.equals("aturat")) {
         this.moviment = moviment;
+    } else {
+        this.moviment = "aturat";
     }
+}
 
 
 
