@@ -1,3 +1,4 @@
+//Afegeix tres nous mètodes: String aixecat(), String seu(), i String estirat() de manera que quan vulguem, per exemple, que en Renat s'aixequi simplement li diguem renat.aixecat();.
 public class GatRenat {
 
     private int vides = 7;
