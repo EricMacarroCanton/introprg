@@ -63,7 +63,7 @@ public class Ascensor {
         }
     }
 
-    //  NOUS MÈTODES
+    // 🔽 NOUS MÈTODES
 
     public boolean aturat() {
         if (!esAturat()) {
@@ -81,4 +81,36 @@ public class Ascensor {
         return false;
     }
 
+    public boolean arrencaAbaix() {
+        if (esAturat()) {
+            moviment = "baixant";
+            return true;
+        }
+        return false;
+    }
 
+    public int seguentPis() {
+
+        if (esAturat()) {
+            return pis;
+        }
+
+        if (esPujant()) {
+            if (pis == 10) {
+                pis = 9;
+                moviment = "baixant";
+            } else {
+                pis++;
+            }
+        } else if (esBaixant()) {
+            if (pis == -1) {
+                pis = 0;
+                moviment = "pujant";
+            } else {
+                pis--;
+            }
+        }
+
+        return pis;
+    }
+}

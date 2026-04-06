@@ -1,7 +1,7 @@
 public class UsaAscensor {
      public static int llegeixEnter() {
          String resposta = Entrada.readLine();
-         if (! UtilString.esEnter(resposta)) {
+         if (!UtilString.esEnter(resposta)) {
              return -2;
          }
          return Integer.parseInt(resposta);
