@@ -1,3 +1,6 @@
+//Aquest exercici torna a revisar l'ascensor que hem fet en exercicis anteriors. En aquesta ocasió ampliaràs els mètodes que ofereix l'ascensor de manera que aquest sigui més usable.
+
+//Afegeix al repertori de mètodes de Ascensor els següents:
 public class UsaAscensor {
      public static int llegeixEnter() {
          String resposta = Entrada.readLine();
