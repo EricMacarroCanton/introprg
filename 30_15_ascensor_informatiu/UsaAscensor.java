@@ -3,41 +3,40 @@
 esEnMoviment() retorna cert quan està pujant o baixant.
 
 comEsta() retorna un String amb el moviment i el pis. Per exemple, si està pujant en el pis 1, el missatge serà pujant al pis 1.*/
-import java.util.Scanner;
-
 public class UsaAscensor {
 
+
+    public static boolean esNombre(String s) {
+        if (s == null || s.isEmpty()) return false;
+
+        for (int i = 0; i < s.length(); i++) {
+            if (!Character.isDigit(s.charAt(i))) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public static void main(String[] args) {
+
         Ascensor ascensor = new Ascensor();
-        Scanner sc = new Scanner(System.in);
 
         System.out.println("Pis inicial: " + ascensor.getPis());
         System.out.println("Moviment inicial: " + ascensor.getMoviment());
 
-       System.out.println("Introdueix nou pis:");
+        System.out.println("Introdueix nou pis:");
+        String entrada = Entrada.readLine();
 
-	if (sc.hasNextInt()) {
-	    int nouPis = sc.nextInt();
+        if (esNombre(entrada) == true) {
+            ascensor.setPis(Integer.parseInt(entrada));
+        }
 
- 	   if (nouPis >= 0 && nouPis <= 10) {
-  	      ascensor.setPis(nouPis);
-	    }
-	} else {
-	    sc.next(); 
-	}
-System.out.println("Introdueix nou moviment:");
-String nouMoviment = sc.next();
-
-if (nouMoviment.equals("pujant") ||
-    nouMoviment.equals("baixant") ||
-    nouMoviment.equals("aturat")) {
-    ascensor.setMoviment(nouMoviment);
-}
+        System.out.println("Introdueix nou moviment:");
+        ascensor.setMoviment(Entrada.readLine());
 
         System.out.println("Pis final: " + ascensor.getPis());
         System.out.println("Moviment final: " + ascensor.getMoviment());
         System.out.println("Estat de l'ascensor: " + ascensor.comEsta());
-
-        sc.close();
     }
 }
