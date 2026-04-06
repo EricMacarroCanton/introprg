@@ -12,7 +12,13 @@ public class GatRenat {
         posicio = novaPosicio;
     }
 
-    public int getVides() { return vides; }
+    public int getVides() {
+        return vides;
+    }
+
+    public String getPosicio() {
+        return posicio;
+    }
 
     @Override
     public String toString() {
@@ -20,6 +26,6 @@ public class GatRenat {
     }
 
     public static void main(String[] args) {
-        System.out.println(new GatRenat(7, "estirat "));
+        System.out.println(new GatRenat(7, "estirat"));
     }
 }
