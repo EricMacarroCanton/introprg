@@ -24,7 +24,7 @@ System.out.printf("Inicialment l'ascensor està %s%n", ascensor.comEsta());
         resposta, ascensor.comEsta());
 
 
-         // passem del pis indicat al la planta baixa
+
          System.out.println("Anant a la planta baixa quan està " + ascensor.comEsta());
          while (! ascensor.esAbaix()) {
              ascensor.seguentPis();
