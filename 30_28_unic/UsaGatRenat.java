@@ -9,9 +9,14 @@
          }
      }
      private static void canviaPosicio(String novaPosicio) {
-         // Tradueix novaPosicio: 1 -> estirat, 2 -> assegut, 3 -> dret,
-         // altrament es queda com estava
-         // XXX
-        // GatRenat.getInstancia(novaPosicio);
-     }
- }
+    GatRenat renat = GatRenat.getInstancia();
+
+    if (novaPosicio.equals("1")) {
+        renat.setPosicio("estirat");
+    } else if (novaPosicio.equals("2")) {
+        renat.setPosicio("assegut");
+    } else if (novaPosicio.equals("3")) {
+        renat.setPosicio("dret");
+    		}
+	}
+}
