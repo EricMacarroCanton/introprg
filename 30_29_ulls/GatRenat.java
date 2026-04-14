@@ -9,6 +9,18 @@ public class GatRenat {
         this.posicio = "estirat";
     }
 
+    public void seu() {
+        posicio = "assegut";
+    }
+
+    public void aixecat() {
+        posicio = "dret";
+    }
+
+    public void estirat() {
+        posicio = "estirat";
+    }
+
     public String getNom()     { return nom; }
     public String getPosicio() { return posicio; }
 }
