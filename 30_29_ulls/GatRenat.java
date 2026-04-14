@@ -6,20 +6,27 @@ public class GatRenat {
     private UllDeGat ullDret;
     private UllDeGat ullEsquerre;
 
-    public GatRenat() {
-       
-    }
-
-
-public GatRenat(String nom) {
-    
+    	public GatRenat() {
+    this.nom         = "Renat";
+    this.posicio     = "estirat";
+    this.ullDret     = new UllDeGat(false);
+    this.ullEsquerre = new UllDeGat(false);
 }
 
+	public GatRenat(String nom) {
+    this.nom         = nom;
+    this.posicio     = "estirat";
+    this.ullDret     = new UllDeGat(false);
+    this.ullEsquerre = new UllDeGat(false);
+}
 
-    public GatRenat(String nom, String posicio) {
-
-     
-    }
+	public GatRenat(String nom, String posicio) {
+    this.nom         = nom;
+    this.posicio     = posicio;
+    this.ullDret     = new UllDeGat();
+    this.ullEsquerre = new UllDeGat();
+    actualitzaUlls();
+}
 
     private void actualitzaUlls() {
         
