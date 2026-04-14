@@ -3,24 +3,60 @@ public class GatRenat {
 
     private String nom;
     private String posicio;
+    private UllDeGat ullDret;
+    private UllDeGat ullEsquerre;
 
     public GatRenat() {
-        this.nom     = "Renat";
-        this.posicio = "estirat";
+       
+    }
+
+    public GatRenat(String nom, String posicio) {
+
+     
+    }
+
+    private void actualitzaUlls() {
+        
     }
 
     public void seu() {
-        posicio = "assegut";
+        
     }
 
     public void aixecat() {
-        posicio = "dret";
+      
     }
 
     public void estirat() {
-        posicio = "estirat";
+        
+    }
+    
+    public UllDeGat getUllDret() {
+        return new UllDeGat(ullDret.esObert());
+    }
+
+    public UllDeGat getUllEsquerre() {
+        return new UllDeGat(ullEsquerre.esObert());
     }
 
     public String getNom()     { return nom; }
     public String getPosicio() { return posicio; }
+
+    public static void main(String[] args) {
+        GatRenat renat = new GatRenat();
+        System.out.printf("Quan està %s: %b + %b%n",
+                renat.getPosicio(),
+                renat.getUllDret().esObert(),
+                renat.getUllEsquerre().esObert());
+        renat.seu();
+        System.out.printf("Quan està %s: %b + %b%n",
+                renat.getPosicio(),
+                renat.getUllDret().esObert(),
+                renat.getUllEsquerre().esObert());
+        renat.aixecat();
+        System.out.printf("Quan està %s: %b + %b%n",
+                renat.getPosicio(),
+                renat.getUllDret().esObert(),
+                renat.getUllEsquerre().esObert());
+    }
 }
