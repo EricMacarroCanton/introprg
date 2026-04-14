@@ -10,6 +10,12 @@ public class GatRenat {
        
     }
 
+
+public GatRenat(String nom) {
+    
+}
+
+
     public GatRenat(String nom, String posicio) {
 
      
