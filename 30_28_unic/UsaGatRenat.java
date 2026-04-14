@@ -12,6 +12,6 @@
          // Tradueix novaPosicio: 1 -> estirat, 2 -> assegut, 3 -> dret,
          // altrament es queda com estava
          // XXX
-         GatRenat.getInstancia(novaPosicio);
+        // GatRenat.getInstancia(novaPosicio);
      }
  }
