@@ -4,14 +4,17 @@
 
 public class GatRenat {
     private static GatRenat instancia;
+
+    private int vides;
     private String posicio;
 
-   
+    // Constructor privat
     private GatRenat() {
-        posicio = "estirat";
+        this.vides = 7;
+        this.posicio = "estirat";
     }
 
-
+    // Singleton bàsic
     public static GatRenat getInstancia() {
         if (instancia == null) {
             instancia = new GatRenat();
@@ -19,11 +22,33 @@ public class GatRenat {
         return instancia;
     }
 
-    public String getPosicio() {
-        return posicio;
+    // Amb vides
+    public static GatRenat getInstancia(int vides) {
+        GatRenat r = getInstancia();
+        r.vides = vides;
+        return r;
     }
 
-    public void setPosicio(String posicio) {
-        this.posicio = posicio;
+    // Amb posició
+    public static GatRenat getInstancia(String posicio) {
+        GatRenat r = getInstancia();
+        r.posicio = posicio;
+        return r;
+    }
+
+    // Amb vides i posició
+    public static GatRenat getInstancia(int vides, String posicio) {
+        GatRenat r = getInstancia();
+        r.vides = vides;
+        r.posicio = posicio;
+        return r;
+    }
+
+    public int getVides() {
+        return vides;
+    }
+
+    public String getPosicio() {
+        return posicio;
     }
 }
