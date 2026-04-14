@@ -1,20 +1,28 @@
 //En aquest exercici implementaràs una versió de la classe GatRenat de manera que només hi pugui haver una única instància.
 
 //Recupera alguna versió antiga de GatRenat, per exemple mots constructors i segueix les passes que t'enumero a continuació:
-
 public class GatRenat {
-    private static GatRenat instancia;
 
-    private int vides;
+
+    private static GatRenat instancia = null;
+
+
+    private String nom;
     private String posicio;
 
-    // Constructor privat
+
     private GatRenat() {
-        this.vides = 7;
+        this.nom     = "Renat";
         this.posicio = "estirat";
     }
 
-    // Singleton bàsic
+
+    private GatRenat(String nom, String posicio) {
+        this.nom     = nom;
+        this.posicio = posicio;
+    }
+
+
     public static GatRenat getInstancia() {
         if (instancia == null) {
             instancia = new GatRenat();
@@ -22,33 +30,17 @@ public class GatRenat {
         return instancia;
     }
 
-    // Amb vides
-    public static GatRenat getInstancia(int vides) {
-        GatRenat r = getInstancia();
-        r.vides = vides;
-        return r;
-    }
 
-    // Amb posició
     public static GatRenat getInstancia(String posicio) {
-        GatRenat r = getInstancia();
-        r.posicio = posicio;
-        return r;
+        if (instancia == null) {
+            instancia = new GatRenat("Renat", posicio);
+        } else {
+            instancia.posicio = posicio;
+        }
+        return instancia;
     }
 
-    // Amb vides i posició
-    public static GatRenat getInstancia(int vides, String posicio) {
-        GatRenat r = getInstancia();
-        r.vides = vides;
-        r.posicio = posicio;
-        return r;
-    }
 
-    public int getVides() {
-        return vides;
-    }
-
-    public String getPosicio() {
-        return posicio;
-    }
+    public String getNom()     { return nom; }
+    public String getPosicio() { return posicio; }
 }
