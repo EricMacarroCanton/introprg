@@ -10,21 +10,21 @@ public class GatRenat {
     private int vides;
 
     private GatRenat() {
-        this.nom     = "Renat";
+        this.nom = "Renat";
         this.posicio = "estirat";
-        this.vides   = 7;
+        this.vides = 7;
     }
 
     private GatRenat(String nom, String posicio) {
-        this.nom     = nom;
+        this.nom = nom;
         this.posicio = posicio;
-        this.vides   = 7;
+        this.vides = 7;
     }
 
     private GatRenat(int vides, String posicio) {
-        this.nom     = "Renat";
+        this.nom = "Renat";
         this.posicio = posicio;
-        this.vides   = vides;
+        this.vides = vides;
     }
 
     public static GatRenat getInstancia() {
@@ -61,8 +61,11 @@ public class GatRenat {
         return instancia;
     }
 
-    public String getNom()     { return nom; }
-    public String getPosicio() { return posicio; }
-    public int    getVides()   { return vides; }
+    public String getNom()     { 
+    return nom; }
+    public String getPosicio() { 
+    return posicio; }
+    public int    getVides()   { 
+    return vides; }
 
 }
